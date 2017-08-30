@@ -1,9 +1,10 @@
 #!/bin/bash
-#
+#Author: Gilles Biagomba
+#Program: IPSecv1_test.sh
+#Description: This script tries to test for the IKE can vulnerability.\n
 #http://opensourceforu.com/2012/01/ipsec-vpn-penetration-testing-backtrack-tools/
 #http://blog.stoked-security.com/2010/12/how-hard-could-it-be-to-brute-force.html
-#
-#
+
 for IPs in $(cat targets);do
 #Scanning or identifying the VPN gateway
 nmap -sU -p 500 $IPs -o Results.txt

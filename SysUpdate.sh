@@ -1,4 +1,8 @@
 #!/bin/bash
+#Author: Gilles Biagomba
+#Program: SysUpdater.sh
+#Description: This script automates updating a debian based OS.\n
+# 	      It was written on and for Kali2, because I was being lazy.\n
 # init
 function pause()
 {

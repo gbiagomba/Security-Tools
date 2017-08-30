@@ -1,15 +1,8 @@
 #!/bin/bash
-for c in $(cat targets); do
- for i in $(cat DES_Ciphers.txt); do 
-  echo "----------------------------------------------TLSv1--------------------------------------------------------"
-  echo "-----------------------------------------------------------------------------------------------------------"
-  openssl s_client -connect $c:443 -tls1 -cipher $i
-  echo "-----------------------------------------------------------------------------------------------------------"
-  echo "----------------------------------------------TLSv1.1------------------------------------------------------"
-  openssl s_client -connect $c:443 -tls1_1 -cipher $i
-  echo "-----------------------------------------------------------------------------------------------------------"
-  echo "---------------------------------------------TLSv1.2-------------------------------------------------------"
-  openssl s_client -connect $c:443 -tls1_2 -cipher $i
-  echo "-----------------------------------------------------------------------------------------------------------"
- done
+#Author: Gilles Biagomba
+#Program: CertChecker.sh
+#Description: This script was designed to pull the certificate of websites in the targets file.\n
+
+for IPs in $(cat targets);do
+openssl s_client -showcerts -connect $IPs | grep " Verify return code"
 done
