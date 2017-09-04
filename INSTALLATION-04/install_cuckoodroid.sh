@@ -1,3 +1,8 @@
+#Author: Gilles Biagomba
+#Program: install_cuckoodroid.sh
+#Description: This script was written to automate the installation of cuckoodroid.\n
+# https://github.com/idanr1986/cuckoodroid-2.0
+
 git clone https://github.com/idanr1986/cuckoodroid-2.0
 cd cuckoodroid-2.0
 apt-get install -y python git python-pip

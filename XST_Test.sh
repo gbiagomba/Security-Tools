@@ -1,4 +1,8 @@
 #!/bin/bash
+#Author: Gilles Biagomba
+#Program: XST_TEST.sh
+#Description: This script was design to test for Cross-Site tracing (XST).\n
+
 for IPs in $(cat targets);do
 #Discover the supported methods
 nmap -p 443 --script http-methods $IPs
