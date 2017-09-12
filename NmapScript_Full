@@ -1,5 +1,6 @@
 # Variables - Set these
-pth=/root/Clients/CLIENTFOLDER
+#pth=/root/Clients/CLIENTFOLDER
+pth=$(pwd)
 
 # HOST DISCOVERY
 
