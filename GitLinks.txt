@@ -1,1 +1,4 @@
- 
+https://github.com/g0tmi1k/mpc
+https://github.com/0x09AL/raven
+https://github.com/gvb84/pbscan
+https://github.com/ytisf/theZoo 
