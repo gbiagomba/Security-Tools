@@ -14,5 +14,6 @@ apt-get dist-upgrade -y
 #apt-get autoclean
 #apt-get autoremove -y
 gem update
+gem2.3 update
 pause 'Press [Enter] key to continue...'
 reboot
