@@ -7,7 +7,7 @@
 #	      This was written to help automate penetration testing\n
 #	      and research purposes. It was not intented to be used\n
 #	      maliciously, if used as such, I will not be held liable!\n
-
+#PATH=$(pwd)
 for url in $(cat targets);do
-nikto -C all -h $url
+nikto -C all -h $url -o Nikto_Output.txt
 done

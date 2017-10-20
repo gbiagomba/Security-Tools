@@ -103,3 +103,9 @@ https://github.com/kgretzky/dcrawl
 https://github.com/cmu-sei/pharos
 https://github.com/inquisb/shellcodeexec
 
+https://github.com/rfxn/advanced-policy-firewall
+https://github.com/e-ago/bitcracker
+https://github.com/basil00/Divert
+https://github.com/K4YT3X/SCUTUM
+https://github.com/hatRiot/clusterd.git
+

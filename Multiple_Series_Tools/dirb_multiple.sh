@@ -7,6 +7,7 @@
 #	      This was written to help automate penetration testing\n
 #	      and research purposes. It was not intented to be used\n
 #	      maliciously, if used as such, I will not be held liable!\n
+#PATH=$(pwd)
 for url in $(cat targets);do
-dirb $url /usr/share/dirbuster/wordlists/directory-list-1.0.txt -o /home/gilbia01/Projects/TCB/dirb_output.txt
+dirb $url /root/.ZAP/fuzzers/dirbuster/directory-list-1.0.txt -o dirb_output.txt -w
 done
