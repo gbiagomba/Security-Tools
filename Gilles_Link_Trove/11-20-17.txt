@@ -1,0 +1,187 @@
+Microsoft and GitHub team up to take Git virtual file system to macOS, Linux
+https://arstechnica.com/?p=1203581
+
+New “Quad9” DNS service blocks malicious domains for everyone
+https://arstechnica.com/?p=1205883
+To use this service (its free) change your DNS settings to 9.9.9.9
+
+Sorry, poor people: The FCC is coming after your broadband plans
+https://arstechnica.com/?p=1205791
+
+Kaspersky: Yes, we obtained NSA secrets. No, we didn’t help steal them
+https://arstechnica.com/?p=1205169
+
+MariaDB coming to Azure as Microsoft joins the MariaDB Foundation
+https://arstechnica.com/?p=1202919
+
+Meterpreter Loader Generator: SpookFlare
+http://feedproxy.google.com/~r/n0where/~3/nqseKW99yys/
+https://artofpwn.com/spookflare.html
+https://github.com/hlldz/SpookFlare
+https://youtu.be/p_eKKVoEl0o
+
+NSA Veterans Land $1.5 Million in Funding for Startup
+https://www.darkreading.com/mobile/nsa-veterans-land-$15-million-in-funding-for-startup/d/d-id/1330437?_mc=rss_x_drr_edt_aud_dr_x_x-rss-simple
+
+Top 10 Penetration Testing & Ethical Hacking Linux Distributions – 2017
+https://gbhackers.com/top-10-penetration-testing-ethical-hacking-linux-distributions/
+
+How to Analyse a PCAP file WITH XPLICO – Network Forensic Analysis Tool
+https://gbhackers.com/xplico-network-forensics-analysis-tool/
+https://www.xplico.org/download
+
+CimPSDrive 0.3.0 
+https://www.powershellgallery.com/packages/CimPSDrive/0.3.0 
+https://github.com/leoloobeek/LAPSToolkit
+
+Places of Interest in Stealing NetNTLM Hashes
+https://osandamalith.com/2017/03/24/places-of-interest-in-stealing-netntlm-hashes/
+https://github.com/OsandaMalith/Shellcodes
+
+Enigma - Multiplatform Payload Dropper
+http://feedproxy.google.com/~r/PentestTools/~3/rqy9aA6uFw4/enigma-multiplatform-payload-dropper.html
+https://github.com/UndeadSec/Enigma
+https://youtu.be/ZszpJAF7Ti8
+
+DumpsterFire - Security Incidents In A Box!
+http://feedproxy.google.com/~r/PentestTools/~3/_EVsCplEimc/dumpsterfire-security-incidents-in-box.html
+https://github.com/TryCatchHCF/DumpsterFire
+
+ROC - Infineon RSA Vulnerability
+http://feedproxy.google.com/~r/PentestTools/~3/3t5F5egrh34/roc-infineon-rsa-vulnerability.html
+https://crocs.fi.muni.cz/public/papers/rsa_ccs17
+https://github.com/crocs-muni/roca
+
+Fake Sandbox Processes (FSP) - Tool to simulate fake processes of analysis sandbox/VM software
+http://feedproxy.google.com/~r/PentestTools/~3/_r_--sPv9sE/fake-sandbox-processes-fsp-tool-to.html
+https://github.com/Phoenix1747/fake-sandbox
+
+MHA - Mail Header Analyzer
+http://feedproxy.google.com/~r/PentestTools/~3/0nzBzUYlNqE/mha-mail-header-analyzer.html
+https://github.com/lnxg33k/MHA
+
+DNS Shell – Tool to Compromise and Maintain control Over Victim Machine
+https://gbhackers.com/dns-shell-command-control-dns/
+https://github.com/sensepost/DNS-Shell.git
+
+StegCracker – Brute-force Utility to Uncover Hidden Data Inside Files
+https://gbhackers.com/stegcracker-brute-force-utility/
+https://github.com/Paradoxis/StegCracker.git
+
+Exploit Windows Remote PC with EternalBlue & DoublePulsar Exploit through Metasploit
+https://gbhackers.com/windows-eternalblue-doublepulsar/
+
+OnionShare - Securely and anonymously share a file of any size
+http://feedproxy.google.com/~r/PentestTools/~3/gjdKEuMdhWg/onionshare-securely-and-anonymously.html
+https://github.com/micahflee/onionshare.git
+
+Tilt - Terminal Ip Lookup Tool
+http://feedproxy.google.com/~r/PentestTools/~3/f3iyMYpBD6o/tilt-terminal-ip-lookup-tool.html
+https://github.com/AeonDave/tilt
+
+Excalibur - An Eternalblue exploit payload based Powershell
+http://feedproxy.google.com/~r/PentestTools/~3/WW_tYNzj9lw/excalibur-eternalblue-exploit-payload.html
+https://github.com/Dviros/Excalibur
+
+Phishing Catcher - Catching malicious phishing domain names using Certstream SSL certificates live stream
+http://feedproxy.google.com/~r/PentestTools/~3/BvK-b1z78Jk/phishing-catcher-catching-malicious.html
+https://github.com/x0rz/phishing_catcher
+
+Password Recovery Platform: Wavecrack
+https://github.com/wavestone-cdt/wavecrack.git
+http://feedproxy.google.com/~r/n0where/~3/qQteDU3D88U/
+
+Meterpreter Loader Generator: SpookFlare
+http://feedproxy.google.com/~r/n0where/~3/qQteDU3D88U/
+https://github.com/hlldz/SpookFlare.git
+
+Real-Time Intelligence Feed to Catch Malicious Phishing Domains SSL Certificate
+https://gbhackers.com/emotet-malware-hijacking-windows-api/
+https://github.com/x0rz/phishing_catcher.git
+
+Skype Log Viewer - Download and View Skype History Without Skype 
+http://feedproxy.google.com/~r/PentestTools/~3/Jfykw3rwwTw/skype-log-viewer-download-and-view.html
+https://github.com/lordgreggreg/skype-log-viewer
+
+AT&T and Comcast lawsuit has nullified a city’s broadband competition law
+https://arstechnica.com/?p=1210437
+
+All The Best Cyber Monday & Black Friday Deals
+http://feedproxy.google.com/~r/n0where/~3/l3sT9vy9d-E/
+
+Web Privacy Measurement Framework: OpenWPM
+http://feedproxy.google.com/~r/n0where/~3/9BRPj11CGBc/
+https://github.com/citp/OpenWPM/wiki
+http://randomwalker.info/publications/OpenWPM_1_million_site_tracking_measurement.pdf
+
+scanless Tool for using Websites to Perform Port Scans on your Behalf
+https://gbhackers.com/scanless-port-scans-websites-behalf/
+
+Zeus-Scanner - Advanced Reconnaissance Utility
+http://feedproxy.google.com/~r/PentestTools/~3/W-qNf01aRjU/zeus-scanner-advanced-reconnaissance.html
+https://github.com/Ekultek/Zeus-Scanner.git
+
+TeleShadow v2 -  Advanced Telegram Desktop Session Hijacker!
+http://feedproxy.google.com/~r/PentestTools/~3/GR1NDz5KP8M/teleshadow-v2-advanced-telegram-desktop.html
+https://github.com/ParsingTeam/TeleShadow2
+
+ysoserial.net - Deserialization payload generator for a variety of .NET formatters
+http://feedproxy.google.com/~r/PentestTools/~3/DfPVN_2nqoo/ysoserialnet-deserialization-payload.html
+https://github.com/pwntester/ysoserial.net
+
+DR.CHECKER - A Soundy Vulnerability Detection Tool for Linux Kernel Drivers
+https://github.com/ucsb-seclab/dr_checker
+http://feedproxy.google.com/~r/PentestTools/~3/0Ij2GhMAwEc/drchecker-soundy-vulnerability.html
+
+EmbedInHTML - Embed and hide any file in an HTML file
+http://feedproxy.google.com/~r/PentestTools/~3/_GxGs0UmT6k/embedinhtml-embed-and-hide-any-file-in.html
+https://github.com/Arno0x/EmbedInHTML
+
+DBC2 (DropboxC2) - A Modular Post-Exploitation Tool, Composed Of An Agent Running On The Victim'S Machine
+http://feedproxy.google.com/~r/PentestTools/~3/PUVcR6hShIM/dbc2-dropboxc2-modular-post.html
+https://github.com/Arno0x/DBC2
+
+Golden SAML Attack Lets Attackers Forge Authentication to Cloud Apps
+https://www.bleepingcomputer.com/news/security/golden-saml-attack-lets-attackers-forge-authentication-to-cloud-apps/
+
+VNC, RDP and SSH Over HTML5
+https://guacamole.apache.org/ 
+
+ThreatHunting -  Powershell collection designed to assist in Threat Hunting Windows systems. 
+https://github.com/DLACERT/ThreatHunting.git
+
+Sysmon 6.20 released - adds the ability to change the Sysmon service and driver names to foil malware that use them to detect its presence
+https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon
+
+Linux Memory Cryptographic Keys Extractor: CryKeX
+http://feedproxy.google.com/~r/n0where/~3/BpI2xnfnFF4/
+https://github.com/cryptolok/crykex
+
+Machine Learning Image Steganalysis: Aletheia
+http://feedproxy.google.com/~r/n0where/~3/wei0I-zqNzA/
+https://github.com/daniellerch/aletheia
+
+Transparent Man-in-the-Middle TLS Proxy: ratched
+http://feedproxy.google.com/~r/n0where/~3/gl1HoS1i4I8/
+https://github.com/johndoe31415/ratched
+
+Applicative Protocol Multiplexer: SSLH
+http://feedproxy.google.com/~r/n0where/~3/_mOJPb5n1tc/
+https://github.com/yrutschle/sslh
+
+net-Shield - An Easy and Simple Anti-DDoS solution for VPS, Dedicated Servers and IoT devices
+http://feedproxy.google.com/~r/PentestTools/~3/L9swbk63_qU/net-shield-easy-and-simple-anti-ddos.html
+https://github.com/fnzv/net-Shield
+
+Amber - POC Reflective PE Packer
+http://feedproxy.google.com/~r/PentestTools/~3/HK5wsS_Tqxo/amber-poc-reflective-pe-packer.html
+https://github.com/EgeBalci/Amber
+
+Eugene Kaspersky: We would quit Moscow if Russia asked us to spy
+http://www.zdnet.com/article/eugene-kaspersky-we-would-quit-moscow-if-russia-asked-us-to-spy/#ftag=RSSbaffb68
+
+NSA's Ragtime program targets Americans, leaked files show
+http://www.zdnet.com/article/ragtime-program-appear-in-nsa-leaked-files/#ftag=RSSbaffb68
+
+The CALDERA automated adversary emulation system 
+https://github.com/mitre/caldera
