@@ -1,0 +1,60 @@
+WhatWeb 0.4.9 - Next Generation Web Scanner 
+http://feedproxy.google.com/~r/PentestTools/~3/cngj8cueTZQ/whatweb-049-next-generation-web-scanner.html
+https://www.morningstarsecurity.com/research/whatweb
+https://github.com/urbanadventurer/WhatWeb
+
+Cr3dOv3r 0.2 - Know The Dangers Of Credential Reuse Attacks
+http://feedproxy.google.com/~r/PentestTools/~3/C8fSg83b9Oo/cr3dov3r-02-know-dangers-of-credential.html
+https://github.com/D4Vinci/Cr3dOv3r
+
+Cryptojacking Script Continues to Operate After Users Close Their Browser
+https://www.bleepingcomputer.com/news/security/cryptojacking-script-continues-to-operate-after-users-close-their-browser/
+
+tenta-dns: Recursive and authoritative DNS server in go, including DNSSEC and DNS-over-TLS https://tenta.com/test
+https://github.com/tenta-browser/tenta-dns
+https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz
+
+Windows front end for DNSCrypt Proxy 
+https://github.com/opendns/dnscrypt-win-client
+https://github.com/alterstep/dnscrypt-osxclient
+
+Websites use your CPU to mine cryptocurrency even when you close your browser
+https://arstechnica.com/information-technology/2017/11/sneakier-more-persistent-drive-by-cryptomining-comes-to-a-browser-near-you/
+
+Inspiron Gaming Desktop
+https://r.zdbb.net/u/46vl
+https://r.zdbb.net/u/47ro
+https://r.zdbb.net/u/46qy
+
+Pentesting Mobile Applications with Burpsuite
+http://feedproxy.google.com/~r/infosecResources/~3/R1wVieu2CWw/
+
+Bucket Stream - Find interesting Amazon S3 Buckets by watching certificate transparency logs
+http://feedproxy.google.com/~r/PentestTools/~3/xp_pOXkpDFw/bucket-stream-find-interesting-amazon.html
+https://github.com/eth0izzle/bucket-stream
+
+M3UAScan - A Scanner for M3UA protocol to detect Sigtran supporting nodes
+http://feedproxy.google.com/~r/PentestTools/~3/6N-raM3qGqc/m3uascan-scanner-for-m3ua-protocol-to.html
+https://github.com/SigPloiter/M3UAScan
+
+New-But-Old US Bill Introduces Prison Time for Execs Who Conceal Data Breaches
+https://www.bleepingcomputer.com/news/security/new-but-old-us-bill-introduces-prison-time-for-execs-who-conceal-data-breaches/
+
+Microsoft Edge Browser Exits Preview and Now Available for iOS and Android
+https://www.bleepingcomputer.com/news/microsoft/microsoft-edge-browser-exits-preview-and-now-available-for-ios-and-android/
+
+The EU Will Foot the Bill for VLC Player's Public Bug Bounty Program
+https://www.bleepingcomputer.com/news/security/the-eu-will-foot-the-bill-for-vlc-players-public-bug-bounty-program/
+
+Russia Wants to Launch Backup DNS System by August 1, 2018
+https://www.bleepingcomputer.com/news/government/russia-wants-to-launch-backup-dns-system-by-august-1-2018/
+
+Google to Block Third-Party Software from Injecting Code into Chrome Browser
+http://feedproxy.google.com/~r/TheHackersNews/~3/k5zDcIYhd2k/code-injection-chrome.html
+
+Linux laptop-flinger says bye-bye to buggy Intel Management Engine
+https://www.theregister.co.uk/2017/12/01/system76_bans_bugridden_intel_management_engine/
+
+
+Intel finds critical holes in secret Management Engine hidden in tons of desktop, server chipsets
+https://www.theregister.co.uk/2017/11/20/intel_flags_firmware_flaws/
