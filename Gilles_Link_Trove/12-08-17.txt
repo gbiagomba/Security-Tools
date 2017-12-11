@@ -1,0 +1,116 @@
+HonSSH - Log all SSH communications between a client and server
+http://feedproxy.google.com/~r/PentestTools/~3/UFxl2V442GU/honssh-log-all-ssh-communications.html
+https://github.com/tnich/honssh
+
+WebDavC2 - A WebDAV C2 Tool
+http://feedproxy.google.com/~r/PentestTools/~3/T1iDvsRM7k8/webdavc2-webdav-c2-tool.html
+https://github.com/Arno0x/WebDavC2
+
+difuze - Fuzzer for Linux Kernel Drivers
+http://feedproxy.google.com/~r/PentestTools/~3/Z6zVhZM52DI/difuze-fuzzer-for-linux-kernel-drivers.html
+https://github.com/ucsb-seclab/difuze
+
+XSSSNIPER - An Automatic XSS Discovery Tool
+http://feedproxy.google.com/~r/PentestTools/~3/qAz5fQ3qLEU/xsssniper-automatic-xss-discovery-tool.html
+https://github.com/gbrindisi/xsssniper
+
+arp-validator - Security Tool To Detect ARP Poisoning Attacks
+http://feedproxy.google.com/~r/PentestTools/~3/WB3B7oSLMJM/arp-validator-security-tool-to-detect.html
+https://github.com/rnehra01/arp-validator
+
+Invoke-CradleCrafter - PowerShell Remote Download Cradle Generator and Obfuscator 
+http://feedproxy.google.com/~r/PentestTools/~3/JXY8Gbt4Hb4/invoke-cradlecrafter-powershell-remote.html
+https://github.com/danielbohannon/Invoke-CradleCrafter
+
+BadIntent - Intercept, Modify, Repeat and Attack Android's Binder Transactions Using Burp Suite 
+http://feedproxy.google.com/~r/PentestTools/~3/TglX81GZldM/badintent-intercept-modify-repeat-and.html
+https://github.com/mateuszk87/BadIntent
+
+BoopSuite - A Suite of Tools for Wireless Auditing and Security Testing
+http://feedproxy.google.com/~r/PentestTools/~3/I96svMsXeoo/boopsuite-suite-of-tools-for-wireless.html
+https://github.com/MisterBianco/BoopSuite
+
+WS-Attacker v1.8 - Modular Framework For Web Services Penetration Testing
+http://feedproxy.google.com/~r/PentestTools/~3/6QywnKUX3j8/ws-attacker-v18-modular-framework-for.html
+https://github.com/RUB-NDS/WS-Attacker
+
+lscript - This script will make your life easier, and of course faster
+http://feedproxy.google.com/~r/PentestTools/~3/LdbFR-CzHv8/lscript-this-script-will-make-your-life.html
+https://github.com/arismelachroinos/lscript
+
+WiFi Bruteforcer - Android application to brute force WiFi passwords (No Root Required)
+http://feedproxy.google.com/~r/PentestTools/~3/djGDMAhagaQ/wifi-bruteforcer-android-application-to.html
+https://github.com/faizann24/wifi-bruteforcer-fsecurify
+
+Universal Radio Hacker - Investigate Wireless Protocols Like A Boss
+http://feedproxy.google.com/~r/PentestTools/~3/YM3AKkBkV_I/universal-radio-hacker-investigate.html
+https://github.com/jopohl/urh
+
+Mercure - A Tool For Security Managers Who Want To Train Their Colleague To Phishing
+http://feedproxy.google.com/~r/PentestTools/~3/IjeYz-dxL7g/mercure-tool-for-security-managers-who.html
+https://github.com/synhack/mercure
+
+XSStrike v1.2 - Fuzz, Crawl and Bruteforce Parameters for XSS
+http://feedproxy.google.com/~r/PentestTools/~3/XnxwXgPnsbY/xsstrike-v12-fuzz-crawl-and-bruteforce.html
+https://github.com/UltimateHackers/XSStrike
+
+CookieCatcher - Tool to assist in the exploitation of XSS 
+http://feedproxy.google.com/~r/PentestTools/~3/nA3eOldWLlE/cookiecatcher-tool-to-assist-in.html
+https://github.com/DisK0nn3cT/CookieCatcher
+
+SSH MITM - SSH Man-In-The-Middle Tool
+http://feedproxy.google.com/~r/PentestTools/~3/6UYdWsgxQL8/ssh-mitm-ssh-man-in-middle-tool.html
+https://github.com/jtesta/ssh-mitm
+
+Atomic Sysmon configs individually mapped to the ATT&CK Matrix anyone?
+https://github.com/Cyb3rWard0g/ThreatHunter-Playbook
+
+Simplifying Password Spraying 
+https://www.trustwave.com/Resources/SpiderLabs-Blog/Simplifying-Password-Spraying/
+https://github.com/SpiderLabs/Spray
+
+New release of PS>Attack and the build tool! 
+https://github.com/jaredhaight/PSAttack/
+https://github.com/jaredhaight/psattackbuildtool/
+
+0d1n v2.5 - Web Security Tool to Make Fuzzing at HTTP/S
+http://feedproxy.google.com/~r/PentestTools/~3/DWrl6WjVOoM/0d1n-v25-web-security-tool-to-make.html
+https://github.com/CoolerVoid/0d1n
+
+lscript - This script will make your life easier, and of course faster
+http://feedproxy.google.com/~r/PentestTools/~3/LdbFR-CzHv8/lscript-this-script-will-make-your-life.html
+https://github.com/arismelachroinos/lscript
+
+A Morning with Cobalt Strike & Symantec
+https://www.blackhillsinfosec.com/morning-cobalt-strike-symantec/
+https://github.com/killswitch-GUI/CobaltStrike-ToolKit
+
+0d1n v2.5 - Web Security Tool to Make Fuzzing at HTTP/S
+http://feedproxy.google.com/~r/PentestTools/~3/DWrl6WjVOoM/0d1n-v25-web-security-tool-to-make.html
+https://github.com/CoolerVoid/0d1n
+
+CMSsc4n - Tool to identify if a domain is a CMS such as Wordpress, Moodle, Joomla, Drupal or Prestashop
+http://feedproxy.google.com/~r/PentestTools/~3/E9Ke6mxBZpU/cmssc4n-tool-to-identify-if-domain-is.html
+https://github.com/n4xh4ck5/CMSsc4n
+
+Syhunt ScanTools 6.0 - Console Web Vulnerability Scan Tools 
+http://feedproxy.google.com/~r/PentestTools/~3/pvt1Bi-LuqA/syhunt-scantools-60-console-web.html
+http://www.syhunt.com/en/index.php?n=Tools.DownloadScanTools
+https://depositfiles.com/files/ouurt8y1i
+
+Dr0p1t-Framework 1.3.2.1 - A Framework That Creates An Advanced FUD Dropper With Some Tricks
+http://feedproxy.google.com/~r/PentestTools/~3/rGaReQ3ykcQ/dr0p1t-framework-1321-framework-that.html
+https://github.com/D4Vinci/Dr0p1t-Framework
+
+Open Distributed Threat Intelligence: Yeti
+https://n0where.net/open-distributed-threat-intelligence-yeti/
+http://yeti-platform.readthedocs.io/en/latest/
+https://github.com/yeti-platform/yeti
+
+Man-in-the-middle Router
+https://n0where.net/man-in-the-middle-router/
+https://github.com/brannondorsey/mitm-router
+
+Automated ettercap TCP/IP Hijacking Tool: Morpheus
+https://n0where.net/automated-ettercap-tcpip-hijacking-tool-morpheus/
+https://github.com/r00t-3xp10it/morpheus
