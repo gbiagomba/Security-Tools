@@ -11,7 +11,7 @@ function pause()
 apt-get update
 apt-get upgrade -y
 apt-get dist-upgrade -y
-#apt-get autoclean
+apt-get autoclean
 #apt-get autoremove -y
 gem update
 gem2.3 update
