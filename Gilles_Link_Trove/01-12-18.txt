@@ -1,0 +1,158 @@
+testssl.sh – Tool to check cryptographic flaws and TLS/SSL Ciphers on any Ports
+https://gbhackers.com/testssl-sh-tls-ssl-vulnerabilities/
+https://github.com/drwetter/testssl.sh
+
+Linux Expl0rer - Easy-To-Use Live Forensics Toolbox For Linux Endpoints
+http://feedproxy.google.com/~r/PentestTools/~3/BWroM1uT1zE/linux-expl0rer-easy-to-use-live.html
+https://github.com/intezer/linux-explorer
+
+N4xD0rk - Listing Subdomains About A Main Domain
+http://feedproxy.google.com/~r/PentestTools/~3/PXYr3oScpGk/n4xd0rk-listing-subdomains-about-main.html
+https://github.com/n4xh4ck5/N4xD0rk
+
+BootStomp - A Bootloader Vulnerability Finder
+http://feedproxy.google.com/~r/PentestTools/~3/thtJ3HGbR0o/bootstomp-bootloader-vulnerability.html
+https://github.com/ucsb-seclab/BootStomp
+
+w3af - Web Application Attack and Audit Framework
+http://feedproxy.google.com/~r/PentestTools/~3/-iN9UCHryVA/w3af-web-application-attack-and-audit.html
+https://github.com/andresriancho/w3af
+
+Needl -  Take Back Your Privacy. Lose Yourself In The Haystack.
+http://feedproxy.google.com/~r/PentestTools/~3/u3kbVQXDxh0/needl-take-back-your-privacy-lose.html
+https://github.com/eth0izzle/Needl
+
+InSpy - A Linkedin Enumeration Tool
+http://feedproxy.google.com/~r/PentestTools/~3/TTCM2vRQYto/inspy-linkedin-enumeration-tool.html
+https://github.com/gojhonny/InSpy
+
+These five programming languages have flaws that expose apps to attack
+http://www.zdnet.com/article/these-five-programming-languages-have-flaws-that-expose-apps-to-attack/#ftag=RSSbaffb68
+
+"Pop Nedry" x86-64 Windows shellcode that recreates the Jurassic Park hacking scene 
+https://github.com/zznop/pop-nedry
+
+Syhunt ScanTools 6.0 - Console Web Vulnerability Scan Tools 
+http://feedproxy.google.com/~r/PentestTools/~3/pvt1Bi-LuqA/syhunt-scantools-60-console-web.html
+http://www.syhunt.com/en/index.php?n=Tools.DownloadScanTools
+https://depositfiles.com/files/ouurt8y1i
+
+DetectionLab - Vagrant & Packer scripts to build a lab environment complete with security tooling and logging best practices 
+https://medium.com/@clong/introducing-detection-lab-61db34bed6ae
+https://github.com/clong/DetectionLab
+
+Automatize Obfuscation and Generation of MS Office Documents: macro_pack
+http://feedproxy.google.com/~r/n0where/~3/RuFsQZm607A/
+https://github.com/sevagas/macro_pack
+
+Retargetable Machine-Code Decompiler: RetDec
+http://feedproxy.google.com/~r/n0where/~3/y6C6GCEb1kw/
+https://github.com/avast-tl/retdec
+
+MS-Word Payload Delivery: Macro Creator
+http://feedproxy.google.com/~r/n0where/~3/FoYspjcevO0/
+https://github.com/Arno0x/PowerShellScripts/tree/master/MacroCreator
+
+Active Directory Reconnaissance: ADRecon
+http://feedproxy.google.com/~r/n0where/~3/1YibGrgV23Y/
+https://github.com/sense-of-security/ADRecon
+
+Automated WPA Phishing Attacks: WiFiPhisher
+http://feedproxy.google.com/~r/n0where/~3/SIBFTnZTRMA/
+https://github.com/wifiphisher/wifiphisher
+
+ProcDump for Linux - A Linux version of the ProcDump Sysinternals tool
+http://feedproxy.google.com/~r/PentestTools/~3/cI8fJ0q-BPE/procdump-for-linux-linux-version-of.html
+https://github.com/microsoft/procdump-for-linux
+
+Tiredful API - An intentionally designed broken web application based on REST API
+http://feedproxy.google.com/~r/PentestTools/~3/aIsYjUSLO6E/tiredful-api-intentionally-designed.html
+https://github.com/payatu/Tiredful-API
+
+wildPwn - Brute forcer and shell deployer for WildFly (JBoss AS)
+http://feedproxy.google.com/~r/PentestTools/~3/yVvtkRWcpYE/wildpwn-brute-forcer-and-shell-deployer.html
+https://github.com/hlldz/wildPwn
+
+dirsearch v0.3.8 - Brute Force Directories and Files in Websites
+http://feedproxy.google.com/~r/PentestTools/~3/dmhPowU4tCA/dirsearch-v038-brute-force-directories.html
+https://github.com/maurosoria/dirsearch
+
+Droidefense - Advance Android Malware Analysis Framework
+http://feedproxy.google.com/~r/PentestTools/~3/lzc9rNABOkw/droidefense-advance-android-malware_14.html
+https://github.com/droidefense/engine
+
+AndroTickler - Penetration Testing and Auditing Toolkit for Android Apps
+http://feedproxy.google.com/~r/PentestTools/~3/xYVqPV62R9M/androtickler-penetration-testing-and.html
+https://github.com/ernw/AndroTickler
+
+Hyperfox - HTTP/HTTPs MITM proxy and traffic recorder with on-the-fly TLS cert generation
+http://feedproxy.google.com/~r/PentestTools/~3/XelBv4ESMVc/hyperfox-httphttps-mitm-proxy-and.html
+https://github.com/malfunkt/hyperfox
+
+Telegram RAT Escapes Detection via Cloud Apps
+https://www.darkreading.com/cloud/telegram-rat-escapes-detection-via-cloud-apps/d/d-id/1330669?_mc=rss_x_drr_edt_aud_dr_x_x-rss-simple
+
+Kaspersky Lab Files Lawsuit Over DHS Ban of its Products
+https://www.darkreading.com/attacks-breaches/kaspersky-lab-files-lawsuit-over-dhs-ban-of-its-products/d/d-id/1330665?_mc=rss_x_drr_edt_aud_dr_x_x-rss-simple
+
+Safehats – The Best Alternative Bug Bounty Program for HackerOne and Bugcrowd
+https://gbhackers.com/safehats-best-alternative-bug-bounty-program-hackerone-bugcrowd/
+
+DDOS a Website Anonymously by Using Kali Linux Tools
+https://gbhackers.com/anonymous-ddos-a-website-using-kali-linux/
+
+BlackWidow
+http://feedproxy.google.com/~r/n0where/~3/HOW4hNTW8Hc/web-application-spider-blackwidow
+https://github.com/1N3/BlackWidow
+
+CoffeeMiner
+http://feedproxy.google.com/~r/n0where/~3/8xBTthDEadU/wireless-mitm-cryptocurrency-mining-pool-coffeeminer
+https://github.com/arnaucode/coffeeMiner
+
+AWS infrastructure Security Auditing: Cloud Security Suite
+http://feedproxy.google.com/~r/n0where/~3/zfErtygrs10/aws-infrastructure-security-auditing-cloud-security-suite
+https://github.com/SecurityFTW/cs-suite
+
+The Automated Collection and Enrichment Platform: ACE
+http://feedproxy.google.com/~r/n0where/~3/EMoa8Kg-Kxs/the-automated-collection-and-enrichment-platform-ace
+https://github.com/Invoke-IR/ACE
+
+QuarkslaB Dynamic binary Instrumentation: QBDI
+http://feedproxy.google.com/~r/n0where/~3/YYFkH1h_gZU/quarkslab-dynamic-binary-instrumentation-qbdi
+https://github.com/quarkslab/QBDI
+
+Spy Microphone Detection Tool: Salamandra
+http://feedproxy.google.com/~r/n0where/~3/tU7bonSNins/spy-microphone-detection-tool-salamandra
+https://github.com/eldraco/Salamandra
+https://youtu.be/KfJI8Eu83hg
+
+Fsociety Hacking Tools Pack
+http://feedproxy.google.com/~r/n0where/~3/kKKu7AgFSFA/fsociety-hacking-tools-pack
+
+Data Exfiltration over DNS Request Covert Channel: DNSExfiltrator
+http://feedproxy.google.com/~r/n0where/~3/4xqG4Rb9jeA/data-exfiltration-over-dns-request-covert-channel-dnsexfiltrator
+
+A Deep Learning Approach for Password Guessing: PassGAN
+http://feedproxy.google.com/~r/n0where/~3/3AoigpCblG4/a-deep-learning-approach-for-password-guessing-passgan
+
+Cross-Platform Post-Exploitation HTTP/2 Command & Control  Server: Merlin
+http://feedproxy.google.com/~r/n0where/~3/rastCrieoY4/cross-platform-post-exploitation-http-2-command-control-server-merlin
+
+Open Source Vulnerability Assessment and Management: Archery
+http://feedproxy.google.com/~r/n0where/~3/Oa-102RAmJU/open-source-vulnerability-assessment-and-management-archery
+
+Compromising IPv4 Networks via IPv6: mitm6
+https://n0where.net/compromising-ipv4-networks-via-ipv6-mitm6?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+n0where+%28CyberPunk%29
+https://github.com/fox-it/mitm6/
+
+Network Infrastructure Penetration Testing: SPARTA
+http://feedproxy.google.com/~r/n0where/~3/AwEnnhcBcBA/network-infrastructure-penetration-testing-sparta
+https://github.com/SECFORCE/sparta
+
+NSE Nmap Script Development IDE: Halcyon
+http://feedproxy.google.com/~r/n0where/~3/ai4fKMHwKb0/nse-nmap-script-development-ide-halcyon
+https://github.com/s4n7h0/Halcyon
+
+JSRAT – Secret Command and Control Channel Backdoor to Control Victims Machine Using JavaScript
+https://gbhackers.com/secret-command-control-channel-backdoor/
+https://github.com/aspiggy/JSRAT

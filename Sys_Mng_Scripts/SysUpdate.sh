@@ -4,16 +4,20 @@
 #Description: This script automates updating a debian based OS.\n
 # 	      It was written on and for Kali2, because I was being lazy.\n
 # init
+
 function pause()
 {
    read -p "$*"
 }
-apt-get update
-apt-get upgrade -y
-apt-get dist-upgrade -y
-apt-get autoclean
-#apt-get autoremove -y
-gem update
+
+apt update
+apt upgrade -y
+apt full-upgrade -y
+apt autoclean
+apt autoremove -y
+
 gem2.3 update
+
 pause 'Press [Enter] key to continue...'
+
 reboot
