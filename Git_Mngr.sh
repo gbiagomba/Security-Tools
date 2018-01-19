@@ -17,6 +17,8 @@ git pull
 cd ..
 done
 
+cd /opt/TEST/
+
 for links in $(cat GitLinks.txt);do
 echo "----------------------------------------------------------"
 echo "You are downloading this Git repo:"
