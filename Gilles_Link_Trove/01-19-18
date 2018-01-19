@@ -1,0 +1,175 @@
+One-Lin3r - Gives you one-liners that aids in penetration testing operations
+http://feedproxy.google.com/~r/PentestTools/~3/--IE-5DJdM8/one-lin3r-gives-you-one-liners-that.html
+https://github.com/D4Vinci/One-Lin3r
+
+GTScan - The Nmap Scanner for Telco
+http://feedproxy.google.com/~r/PentestTools/~3/4xA__JuUvL4/gtscan-nmap-scanner-for-telco.html
+https://github.com/SigPloiter/GTScan
+
+RFCrack - A Software Defined Radio Attack Tool
+http://feedproxy.google.com/~r/PentestTools/~3/D3aSIFtVLaM/rfcrack-software-defined-radio-attack.html
+https://github.com/cclabsInc/RFCrack
+
+DNSExfiltrator - Data exfiltration over DNS request covert channel
+http://feedproxy.google.com/~r/PentestTools/~3/X3ZB4UZggFQ/dnsexfiltrator-data-exfiltration-over.html
+https://github.com/Arno0x/DNSExfiltrator
+
+sdrtrunk - Tool For Decoding, Monitoring, Recording And Streaming Trunked Mobile And Related Radio Protocols Using Software Defined Radios (SDR)
+http://feedproxy.google.com/~r/PentestTools/~3/W-QxL3AQUNg/sdrtrunk-tool-for-decoding-monitoring.html
+https://github.com/DSheirer/sdrtrunk
+
+cSploit Android - The most complete and advanced IT security professional toolkit on Android
+http://feedproxy.google.com/~r/PentestTools/~3/Jb2MP6ID8IM/csploit-android-most-complete-and.html
+https://github.com/cSploit/android
+
+ACE - Automated, Collection, and Enrichment Platform
+http://feedproxy.google.com/~r/PentestTools/~3/7E_yHu8DqdA/ace-automated-collection-and-enrichment.html
+https://github.com/Invoke-IR/ACE
+
+Salamandra - Spy Microphone Detection Tool
+http://feedproxy.google.com/~r/PentestTools/~3/bGOcBwlkKIc/salamandra-spy-microphone-detection-tool.html
+https://github.com/eldraco/Salamandra
+
+OnionHarvester - A small TOR Onion Address harvester for checking if the address is available or not
+http://feedproxy.google.com/~r/PentestTools/~3/rWQjzJD-nq4/onionharvester-small-tor-onion-address.html
+https://github.com/mirsamantajbakhsh/OnionHarvester
+
+Vegile - Tool for Post exploitation Techniques in Linux
+http://feedproxy.google.com/~r/PentestTools/~3/kU28xhvHn_4/vegile-tool-for-post-exploitation.html
+https://github.com/Screetsec/Vegile
+
+SNMPwn - An SNMPv3 User Enumerator and Attack tool
+http://feedproxy.google.com/~r/PentestTools/~3/uT7Gda89eYs/snmpwn-snmpv3-user-enumerator-and.html
+https://github.com/hatlord/snmpwn
+
+Anubis - Subdomain Enumeration And Information Gathering Tool
+http://feedproxy.google.com/~r/PentestTools/~3/WyC9SKcyKVs/anubis-subdomain-enumeration-and.html
+https://github.com/jonluca/Anubis
+
+Wapiti 3.0.0 - The Web-Application Vulnerability Scanner
+http://feedproxy.google.com/~r/PentestTools/~3/vKJRPx9xvts/wapiti-300-web-application.html
+https://sourceforge.net/projects/wapiti/files/
+
+Spectre-Meltdown-Checker - Spectre & Meltdown Vulnerability/Mitigation Checker For Linux
+http://feedproxy.google.com/~r/PentestTools/~3/c2Tt79JAw2c/spectre-meltdown-checker-spectre.html
+https://github.com/speed47/spectre-meltdown-checker
+
+Meltdown Exploit PoC
+http://feedproxy.google.com/~r/PentestTools/~3/pO1G-_uWCk8/meltdown-exploit-poc.html
+https://github.com/paboldin/meltdown-exploit
+
+In-Spectre-Meltdown - Tool to identify Meltdown & Spectre Vulnerabilities in processors
+http://feedproxy.google.com/~r/PentestTools/~3/KYD5mbP6GPQ/in-spectre-meltdown-tool-to-identify.html
+https://github.com/Viralmaniar/In-Spectre-Meltdown
+
+fuxploider - File Upload Vulnerability Scanner And Exploitation Tool
+http://feedproxy.google.com/~r/PentestTools/~3/bnji-qfLIeo/fuxploider-file-upload-vulnerability.html
+https://github.com/almandin/fuxploider
+
+shimit - A tool that implements the Golden SAML attack
+http://feedproxy.google.com/~r/PentestTools/~3/sQT5SBaD7_8/shimit-tool-that-implements-golden-saml.html
+https://github.com/cyberark/shimit
+
+RetDec - A Retargetable Machine-Code Decompiler
+http://feedproxy.google.com/~r/PentestTools/~3/b9QbsygfQng/retdec-retargetable-machine-code.html
+https://github.com/avast-tl/retdec
+
+Reposcanner - Python Script To Scan Git Repos For Interesting Strings
+http://feedproxy.google.com/~r/PentestTools/~3/mJInF5G7eDU/reposcanner-python-script-to-scan-git.html
+https://github.com/Dionach/reposcanner
+
+Decodify -  Detect And Decode Encoded Strings Recursively
+http://feedproxy.google.com/~r/PentestTools/~3/40p6XyM199U/decodify-detect-and-decode-encoded.html
+https://github.com/UltimateHackers/Decodify
+
+CMSsc4n v2.0 - Tool to identify if a domain is a CMS such as Wordpress, Moodle, Joomla, Drupal or Prestashop
+http://feedproxy.google.com/~r/PentestTools/~3/bhO894XC4iY/cmssc4n-v20-tool-to-identify-if-domain.html
+https://github.com/n4xh4ck5/CMSsc4n
+
+ADRecon - Tool Which Gathers Information About The Active Directory
+http://feedproxy.google.com/~r/PentestTools/~3/05ZxK7dLIbM/adrecon-tool-which-gathers-information.html
+https://github.com/sense-of-security/ADRecon
+
+LaZagne v2.3 - Credentials Recovery Project
+http://feedproxy.google.com/~r/PentestTools/~3/lC0aohgof5Q/lazagne-v23-credentials-recovery-project.html
+https://github.com/AlessandroZ/LaZagne
+
+WordPress Exploit Framework v1.8 - A Ruby Framework For Developing And Using Modules Which Aid In The Penetration Testing Of Wordpress 
+http://feedproxy.google.com/~r/PentestTools/~3/UDmZDW8z4cA/wordpress-exploit-framework-v18-ruby.html
+https://github.com/rastating/wordpress-exploit-framework
+
+Cloak - Backdoor In Any Python Script With Some Tricks
+http://feedproxy.google.com/~r/PentestTools/~3/YAZEyqN8bdk/cloak-backdoor-in-any-python-script.html
+https://github.com/UltimateHackers/Cloak
+
+RedLogin - SSH Brute-force Tools
+http://feedproxy.google.com/~r/PentestTools/~3/C63Nqf1MDWM/redlogin-ssh-brute-force-tools.html
+https://github.com/ParsingTeam/RedLogin/
+
+Lynis 2.5.8 - Security Auditing Tool for Unix/Linux Systems
+http://feedproxy.google.com/~r/PentestTools/~3/RR9CTVmCR7k/lynis-258-security-auditing-tool-for.html
+https://cisofy.com/download/lynis/
+
+BlueMaho v090417 - Bluetooth Security Testing Suite
+http://feedproxy.google.com/~r/PentestTools/~3/GBcBdbMzuMU/bluemaho-v090417-bluetooth-security.html
+https://wiki.thc.org/BlueMaho
+
+Merlin - A cross-platform post-exploitation HTTP/2 Command & Control server and agent
+http://feedproxy.google.com/~r/PentestTools/~3/haxPypLrCLM/merlin-cross-platform-post-exploitation.html
+https://github.com/Ne0nd0g/merlin
+
+PiKarma - Detects Wireless Network Attacks
+http://feedproxy.google.com/~r/PentestTools/~3/e7yip02dY80/pikarma-detects-wireless-network-attacks.html
+https://github.com/WiPi-Hunter/PiKarma
+
+Relayer - SMB Relay Attack Script
+http://feedproxy.google.com/~r/PentestTools/~3/6R_8r5mggE0/relayer-smb-relay-attack-script.html
+https://github.com/Jsitech/relayer
+
+Username Anarchy - Username Tools For Penetration Testing
+http://feedproxy.google.com/~r/PentestTools/~3/vlKEA72Y_4g/username-anarchy-username-tools-for.html
+https://github.com/urbanadventurer/username-anarchy
+
+BruteSpray v1.6.0 - Brute-Forcing from Nmap output (Automatically attempts default creds on found services)
+http://feedproxy.google.com/~r/PentestTools/~3/NxtruT485qo/brutespray-v160-brute-forcing-from-nmap.html
+https://github.com/x90skysn3k/brutespray
+
+GOSINT - Open Source Threat Intelligence Gathering and Processing Framework
+http://feedproxy.google.com/~r/PentestTools/~3/GNlsbcgl-8k/gosint-open-source-threat-intelligence.html
+https://github.com/ciscocsirt/GOSINT
+
+BtleJuice Framework - Bluetooth Smart (LE) Man-in-the-Middle Framework
+http://feedproxy.google.com/~r/PentestTools/~3/T1lohfAig2Y/btlejuice-framework-bluetooth-smart-le.html
+https://github.com/DigitalSecurity/btlejuice
+
+Bluepot - Bluetooth Honeypot
+http://feedproxy.google.com/~r/PentestTools/~3/zJJUUKr1v-I/bluepot-bluetooth-honeypot.html
+https://github.com/andrewmichaelsmith/bluepot/
+
+Invoke-PSImage - Embeds a PowerShell script in the pixels of a PNG file and generates a oneliner to execute
+http://feedproxy.google.com/~r/PentestTools/~3/qfdYObpJcWg/invoke-psimage-embeds-powershell-script.html
+https://github.com/peewpw/Invoke-PSImage
+
+dnscrypt-autoinstall - Automatic installation and configuration of DNSCrypt
+http://feedproxy.google.com/~r/PentestTools/~3/s39g7mJJigQ/dnscrypt-autoinstall-automatic.html
+https://github.com/simonclausen/dnscrypt-autoinstall
+
+ReverShellGenerator - A Tool to Generate Various Ways to Do a Reverse Shell
+http://feedproxy.google.com/~r/PentestTools/~3/IblCvTAnWJU/revershellgenerator-tool-to-generate.html
+https://github.com/mthbernardes/rsg
+
+XAttacker - Website Vulnerability Scanner & Auto Exploiter
+http://feedproxy.google.com/~r/PentestTools/~3/qNIGM8t1V8U/xattacker-website-vulnerability-scanner.html
+https://github.com/Moham3dRiahi/XAttacker
+
+GhostInTheNet - Ultimate Network Stealther that makes Linux a Ghost In The Net and protects from MITM/DOS/scan
+http://feedproxy.google.com/~r/PentestTools/~3/4APvBkUawlg/ghostinthenet-ultimate-network.html
+https://github.com/cryptolok/GhostInTheNet
+
+NoSQL Exploitation Framework 2.0 - A Framework For NoSQL Scanning and Exploitation
+http://feedproxy.google.com/~r/PentestTools/~3/PRzqOxiTC7M/nosql-exploitation-framework-20.html
+https://github.com/torque59/Nosql-Exploitation-Framework
+
+WhatWaf - Detect And Bypass Web Application Firewalls And Protection Systems
+http://feedproxy.google.com/~r/PentestTools/~3/7Vb5kXemCzk/whatwaf-detect-and-bypass-web.html
+https://github.com/Ekultek/WhatWaf
