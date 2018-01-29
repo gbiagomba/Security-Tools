@@ -1,0 +1,87 @@
+Enumdb - MySQL and MSSQL Brute Force And Post Exploitation Tool To Search Through Databases And Extract Sensitive Information
+http://feedproxy.google.com/~r/PentestTools/~3/j8PYkyQ1Hgk/enumdb-mysql-and-mssql-brute-force-and.html
+https://github.com/m8r0wn/enumdb
+
+FakeImageExploiter - Use a Fake image.jpg (hide known file extensions) to exploit targets
+http://feedproxy.google.com/~r/PentestTools/~3/76OTZLGC-kM/fakeimageexploiter-use-fake-imagejpg.html
+https://github.com/r00t-3xp10it/FakeImageExploiter
+
+SNMP-Brute - Fast SNMP brute force, enumeration, CISCO config downloader and password cracking script
+http://feedproxy.google.com/~r/PentestTools/~3/-BJsNTtlCz0/snmp-brute-fast-snmp-brute-force.html
+https://github.com/SECFORCE/SNMP-Brute
+
+Ketshash - A little tool for detecting suspicious privileged NTLM connections, in particular Pass-The-Hash attack, based on event viewer logs
+http://feedproxy.google.com/~r/PentestTools/~3/O4KeqstzOtk/ketshash-little-tool-for-detecting.html
+https://github.com/cyberark/ketshash
+
+SwishDbgExt - Incident Response & Digital Forensics Debugging Extension
+http://feedproxy.google.com/~r/PentestTools/~3/TYBt9kWLzJ0/swishdbgext-incident-response-digital.html
+https://github.com/comaeio/SwishDbgExt
+
+macro_pack - Tool Used To Automatize Obfuscation And Generation Of Ms Office Documents For Pentest, Demo, And Social Engineering Assessments
+http://feedproxy.google.com/~r/PentestTools/~3/L18DQzXLRXo/macropack-tool-used-to-automatize.html
+https://github.com/sevagas/macro_pack
+
+Autorize - Automatic Authorization Enforcement Detection Extension For Burp Suite
+http://feedproxy.google.com/~r/PentestTools/~3/MnFG2_D8vOM/autorize-automatic-authorization.html
+https://github.com/Quitten/Autorize
+
+Hershell - Simple TCP reverse shell written in Go
+http://feedproxy.google.com/~r/PentestTools/~3/7KqWgqoSgxA/hershell-simple-tcp-reverse-shell_19.html
+https://github.com/sysdream/hershell
+
+NetSPI SQL Injection Wiki
+https://blog.netspi.com/netspi-sql-injection-wiki/
+https://sqlwiki.netspi.com/
+https://github.com/NetSPI/SQLInjectionWiki
+
+FindFrontableDomains
+https://www.bamsoftware.com/papers/fronting/
+https://github.com/rvrsh3ll/FindFrontableDomains
+
+PSSysmonTools
+https://github.com/mattifestation/PSSysmonTools
+
+leechristensen/Random/CSharp/
+https://github.com/leechristensen/Random/blob/master/CSharp/DisablePSLogging.cs
+
+RottenPotatoNG
+https://github.com/breenmachine/RottenPotatoNG
+
+PowerShell Obfuscator 
+https://cobbr.io/AbstractSyntaxTree-Based-PowerShell-Obfuscation.html
+https://github.com/danielbohannon/Invoke-Obfuscation
+
+PoC Tool: SubDoc Injector
+https://rhinosecuritylabs.com/research/abusing-microsoft-word-features-phishing-subdoc/
+https://github.com/RhinoSecurityLabs/Security-Research
+
+HostEnum: Updates and Usage Guide
+https://posts.specterops.io/hostenum-updates-and-usage-guide-bc7c04eb7498
+https://github.com/threatexpress/red-team-scripts
+
+CrypoCurrencyPowerShell
+https://github.com/rvrsh3ll/CrypoCurrencyPowerShell
+
+RDP hijacking — how to hijack RDS and RemoteApp sessions transparently to move through an organisation
+https://medium.com/@networksecurity/rdp-hijacking-how-to-hijack-rds-and-remoteapp-sessions-transparently-to-move-through-an-da2a1e73a5f6
+https://github.com/ztgrace/sticky_keys_hunter
+https://github.com/gentilkiwi/mimikatz/releases
+
+EWS Cracker
+https://github.com/mikesiegel/ews-crack
+
+Adversarial Tactics, Techniques & Common Knowledge
+https://attack.mitre.org/wiki/Main_Page
+https://attack.mitre.org/wiki/Updates_January_2018
+
+Trojanizer - Trojanize Your Payload (WinRAR [SFX] Automatization)
+http://feedproxy.google.com/~r/PentestTools/~3/IWAC2fi1dv4/trojanizer-trojanize-your-payload.html
+https://github.com/r00t-3xp10it/trojanizer
+
+OS-Fuzz
+https://github.com/google/oss-fuzz
+https://github.com/Dor1s/libfuzzer-workshop
+
+Responder with an HTML Status front-end for easy monitoring 
+https://github.com/snar5/Responder
