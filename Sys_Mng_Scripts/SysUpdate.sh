@@ -10,12 +10,14 @@ function pause()
    read -p "$*"
 }
 
+#System update
 apt update
-apt upgrade -y
-apt full-upgrade -y
+apt upgrade -y --allow-downgrades
+apt full-upgrade -y --allow-downgrades
 apt autoclean
 apt autoremove -y
 
+#Updating all ruby packages
 gem2.3 update
 
 pause 'Press [Enter] key to continue...'
