@@ -1,3 +1,6 @@
+https://github.com/0x4D31/salt-scanner
+https://github.com/vulnersCom/vulners-scanner
+https://github.com/vulnersCom/nmap-vulners
 https://github.com/n1nj4sec/pupy
 https://github.com/eldraco/domain_analyzer
 https://github.com/LordNoteworthy/al-khaser
