@@ -1,0 +1,87 @@
+Injectify - Perform Advanced MiTM Attacks On Websites With Ease
+http://feedproxy.google.com/~r/PentestTools/~3/xnQ7LfyqDbE/injectify-perform-advanced-mitm-attacks.html
+https://github.com/samdenty99/injectify
+
+DEScrypt-CPU-Collision-Cracker - DEScrypt CPU Collision Cracker
+http://feedproxy.google.com/~r/PentestTools/~3/UF7ufu-AJxc/descrypt-cpu-collision-cracker-descrypt.html
+https://github.com/rek7/DEScrypt-CPU-Collision-Cracker
+
+Infoga - Email Information Gathering
+http://feedproxy.google.com/~r/PentestTools/~3/72uq77hqsVY/infoga-email-information-gathering.html
+https://github.com/m4ll0k/Infoga
+
+SQLmap Tamper-API - SQLMap Tamper API To Accept Tamper Scripts From All Languages
+http://feedproxy.google.com/~r/PentestTools/~3/xf1K6jxrjbE/sqlmap-tamper-api-sqlmap-tamper-api-to.html
+https://github.com/KINGSABRI/sqlmap-tamper-api
+
+Web Shell Detector - PHP Script That Helps You Find And Identify PHP / CGI (Perl) / ASP / ASPX Shells
+http://feedproxy.google.com/~r/PentestTools/~3/K-7A5F84dvI/web-shell-detector-php-script-that.html
+https://github.com/emposha/PHP-Shell-Detector/
+
+Wavecrack - Web Interface For Password Cracking With Hashcat
+http://feedproxy.google.com/~r/PentestTools/~3/aoJJ1wtuSBg/wavecrack-web-interface-for-password.html
+https://github.com/wavestone-cdt/wavecrack
+
+Al-Khaser v0.72 - Public malware techniques used in the wild (Virtual Machine, Emulation, Debuggers, Sandbox detection)
+http://feedproxy.google.com/~r/PentestTools/~3/6tTJ3z71ing/al-khaser-v072-public-malware.html
+https://github.com/LordNoteworthy/al-khaser
+
+Domain Analyzer - Analyze The Security Of Any Domain By Finding All the Information Possible
+http://feedproxy.google.com/~r/PentestTools/~3/9BtNHKYotpE/domain-analyzer-analyze-security-of-any.html
+https://github.com/eldraco/domain_analyzer
+
+Pupy -  Opensource, Cross-Platform (Windows, Linux, OSX, Android) Remote Administration And Post-Exploitation Tool
+http://feedproxy.google.com/~r/PentestTools/~3/uZ9sEHcooFA/pupy-opensource-cross-platform-windows.html
+https://github.com/n1nj4sec/pupy
+
+Heat Map Released by Fitness Tracker Reveals Location of Secret Military Bases
+http://feedproxy.google.com/~r/TheHackersNews/~3/aH1Gmk-bolo/strava-heatmap-location-tracking.html
+
+Black Hat Arsenal Top 10 Security Tools as Voted by the Audience
+http://www.toolswatch.org/2018/01/black-hat-arsenal-top-10-security-tools/
+
+To counter China, White House memo suggests a nationalized 5G network
+https://arstechnica.com/?p=1250839
+
+Parrot Security OS 3.11 Released With Collection of  New Powerful Hacking Tools & Car Hacking Menu
+https://gbhackers.com/parrot-security-os-3-11-released/
+
+Nmap-Vulners - NSE Script Using Some Well-Known Service To Provide Info On Vulnerabilities
+http://feedproxy.google.com/~r/PentestTools/~3/knmt9-KuhzA/nmap-vulners-nse-script-using-some-well.html
+https://github.com/vulnersCom/nmap-vulners
+
+Maybe you should've stuck with NetWare: Hijackers can bypass Active Directory controls
+http://go.theregister.com/feed/www.theregister.co.uk/2018/01/30/dcshadow_active_directory_attack/
+https://www.dropbox.com/s/baypdb6glmvp0j9/Buehat%20IL%20v2.3.pdf
+https://blog.alsid.eu/dcshadow-explained-4510f52fc19d
+
+Atom - A hackable text editor for the 21st Century
+https://atom.io/
+
+SocialFish - Ultimate phishing tool with Ngrok integrated
+http://feedproxy.google.com/~r/PentestTools/~3/BtjAqwH_F9c/socialfish-ultimate-phishing-tool-with.html
+https://github.com/UndeadSec/SocialFish
+
+Social Recon - Investigate The Online Presence And Footprint Of Someone
+http://feedproxy.google.com/~r/PentestTools/~3/HaNOCUsjhnA/social-recon-investigate-online.html
+https://github.com/famavott/osint-scraper
+
+Visual Studio Live Share Preview Update  – February 2018  
+https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare
+https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsls-vs
+https://github.com/MicrosoftDocs/live-share
+https://code.visualstudio.com/insiders/
+https://youtu.be/B3x_Td7HBZ4
+
+RDPY - Remote Desktop Protocol in Twisted Python
+http://feedproxy.google.com/~r/PentestTools/~3/KqeSo2AyiuU/rdpy-remote-desktop-protocol-in-twisted.html
+https://github.com/citronneur/rdpy
+
+Deploy REMnux to the Cloud, Reverse Engineering Malware in the Cloud
+https://www.blackhillsinfosec.com/deploy-remnux-cloud-reverse-engineering-malware-cloud/
+https://github.com/clr2of8/DeployREMnux
+https://remnux.org/
+
+Evilgrade - Modular Framework To Take Advantage Of Poor Upgrade Implementations By Injecting Fake Updates
+http://feedproxy.google.com/~r/PentestTools/~3/q0CnjCXu9oA/evilgrade-modular-framework-to-take.html
+https://github.com/infobyte/evilgrade
