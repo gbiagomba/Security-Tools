@@ -1,0 +1,131 @@
+Find Vulnerable Settings in AD Group Policy: Grouper
+http://feedproxy.google.com/~r/n0where/~3/knWuv8K79kY/find-vulnerable-settings-in-ad-group-policy-grouper
+https://github.com/l0ss/Grouper
+
+Generic Signature Format for SIEM Systems: Sigma
+http://feedproxy.google.com/~r/n0where/~3/WduimKZomPE/generic-signature-format-for-siem-systems-sigma
+https://www.slideshare.net/secret/gvgxeXoKblXRcA
+https://github.com/Neo23x0/sigma/wiki/Specification
+https://github.com/Neo23x0/sigma
+https://youtu.be/OheVuE9Ifhs
+
+Automate Network Attacks Against Active Directory: icebreaker
+http://feedproxy.google.com/~r/n0where/~3/NuNK6pbpM7s/automate-network-attacks-against-active-directory-icebreaker
+https://github.com/DanMcInerney/icebreaker
+
+IDAsec - IDA plugin for reverse-engineering and dynamic interactions with the Binsec platform
+http://feedproxy.google.com/~r/PentestTools/~3/9dSwBrNzo9E/idasec-ida-plugin-for-reverse.html
+https://github.com/RobinDavid/idasec
+
+LSB-Steganography - Python program to steganography files into images using the Least Significant Bit
+http://feedproxy.google.com/~r/PentestTools/~3/grzUJbAsU90/lsb-steganography-python-program-to.html
+https://github.com/RobinDavid/LSB-Steganography
+
+ICMPExfil - Exfiltrate data with ICMP
+http://feedproxy.google.com/~r/PentestTools/~3/pSELE-n6tC4/icmpexfil-exfiltrate-data-with-icmp.html
+https://github.com/martinoj2009/ICMPExfil
+
+Minesweeper - A Burpsuite plugin (BApp) to aid in the detection of cryptocurrency mining domains (cryptojacking)
+http://feedproxy.google.com/~r/PentestTools/~3/LiKqyyk3vhM/minesweeper-burpsuite-plugin-bapp-to.html
+https://github.com/codingo/Minesweeper
+
+CSS Code Can Be Abused to Collect Sensitive User Data
+https://www.bleepingcomputer.com/news/security/css-code-can-be-abused-to-collect-sensitive-user-data/
+https://www.mike-gualtieri.com/posts/stealing-data-with-css-attack-and-defense
+https://github.com/jbtronics/CrookedStyleSheets
+http://crookedss.bplaced.net/
+
+X.509 metadata can carry information through the firewall
+http://go.theregister.com/feed/www.theregister.co.uk/2018/02/06/x509_certificate_attack/
+https://www.fidelissecurity.com/threatgeek/2018/02/exposing-x509-vulnerabilities
+https://github.com/fideliscyber/x509
+
+T-Mobile US let hackers nick my phone number, drain my crypto-wallets, cries man who lost $20k
+http://go.theregister.com/feed/www.theregister.co.uk/2018/02/06/t_mobile_us_crypto_wallet_theft/
+
+Hate_Crack – Automated Hash Cracking Techniques with HashCat
+https://www.trustedsec.com/2018/02/public-release-hate_crack-automated-hash-cracking-techniques-hashcat/
+https://github.com/trustedsec/hate_crack
+
+Grouper - A PowerShell script for helping to find vulnerable settings in AD Group Policy
+http://feedproxy.google.com/~r/PentestTools/~3/Ni4ZEIF3aq0/grouper-powershell-script-for-helping.html
+https://github.com/l0ss/Grouper
+
+LaZagneForensic - Decrypt Windows Credentials From Another Host
+http://feedproxy.google.com/~r/PentestTools/~3/6vBLKvm1ks0/lazagneforensic-decrypt-windows.html
+https://github.com/AlessandroZ/LaZagneForensic
+
+Amazon Fixing Security Loophole With Key Service While Claiming It's Not An Issue
+https://packetstormsecurity.com/news/view/28630/Amazon-Fixing-Security-Loophole-With-Key-Service-While-Claiming-Its-Not-An-Issue.html
+https://motherboard.vice.com/en_us/article/ezvjqk/small-town-cops-claim-burglars-are-using-hackers-device-to-unlock-garage-doors
+https://medium.com/@_MG_/amazon-key-burglary-as-a-service-b296820a20d0
+https://twitter.com/_MG_/status/960269383774842881
+
+Boffins crack smartphone location tracking – even if you've turned off the GPS
+https://www.theregister.co.uk/2018/02/07/boffins_crack_location_tracking_even_if_youve_turned_off_the_gps/
+
+Registrar Namecheap let miscreants slap spam, malware on customers' web domains willy-nilly
+http://go.theregister.com/feed/www.theregister.co.uk/2018/02/07/namecheap_subdomain_security_hole/
+
+ReelPhish: A Real-Time Two-Factor Phishing Tool
+https://www.fireeye.com/blog/threat-research/2018/02/reelphish-real-time-two-factor-phishing-tool.html
+https://github.com/fireeye/ReelPhish
+
+Are You Spying on me? Detecting SSL Man-in-the-Middle
+https://www.blackhillsinfosec.com/spying-detecting-ssl-man-middle/
+https://github.com/clr2of8/Detect-SSLmitm
+
+Yuki Chan – Automated Penetration Testing and Auditing Tool – Detailed Explanation
+https://gbhackers.com/yuki-chan-automated-penetration-testing/
+https://github.com/Yukinoshita47/Yuki-Chan-The-Auto-Pentest
+
+Apple's iBoot Source Code for iPhone Leaked on Github
+http://feedproxy.google.com/~r/TheHackersNews/~3/DkmMm4NUyDY/iboot-ios-source-code.html
+
+Hackers Can Now Steal Data Even From Faraday Cage Air-Gapped Computers
+http://feedproxy.google.com/~r/TheHackersNews/~3/6fvoFZo2qHY/airgap-computer-hacking.html
+https://cyber.bgu.ac.il/advanced-cyber/system/files/MAGNETO_0.pdf
+https://cyber.bgu.ac.il/advanced-cyber/system/files/ODINI_1.pdf
+
+Google Expands Play Marketplace Bug Bounty Program
+https://threatpost.com/google-expands-play-marketplace-bug-bounty-program/129824/
+
+Serverless, Low Cost, Threat Intel Aggregation: ElasticIntel
+http://feedproxy.google.com/~r/n0where/~3/3P-gLlfyR0Y/serverless-low-cost-threat-intel-aggregation-elasticintel
+https://github.com/securityclippy/elasticintel
+
+Build Your Own IPsec VPN Server: Auto Setup Scripts
+http://feedproxy.google.com/~r/n0where/~3/8ZEU6wc6P5c/build-your-own-ipsec-vpn-server-auto-setup-scripts
+https://github.com/hwdsl2/setup-ipsec-vpn
+
+GasMask - Information Gathering Tool (OSINT)
+http://feedproxy.google.com/~r/PentestTools/~3/Rtsx6zqgbB8/gasmask-information-gathering-tool-osint.html
+https://github.com/twelvesec/gasmask
+https://github.com/laramies/theHarvester
+https://github.com/maldevel/EmailHarvester
+
+BLEAH - A BLE Scanner For "Smart" Devices Hacking
+http://feedproxy.google.com/~r/PentestTools/~3/Mhqq4sdlgxk/bleah-ble-scanner-for-smart-devices.html
+https://github.com/evilsocket/bleah
+
+Meterpreter Paranoid Mode - Meterpreter over SSL/TLS connections
+http://feedproxy.google.com/~r/PentestTools/~3/VuUVLafLtLI/meterpreter-paranoid-mode-meterpreter.html
+https://github.com/r00t-3xp10it/Meterpreter_Paranoid_Mode-SSL
+
+roxysploit - Penetration Testing Suite
+http://feedproxy.google.com/~r/PentestTools/~3/kzGLoxuDy-I/roxysploit-penetration-testing-suite.html
+https://github.com/Eitenne/roxysploit
+
+Advanced WiFi Attacks Using Commodity Hardware 
+https://www.mathyvanhoef.com/2015/10/advanced-wifi-attacks-using-commodity.html
+https://github.com/vanhoefm/modwifi
+
+Malicious Installer Plugins
+https://posts.specterops.io/malicious-installer-plugins-6e30991bb529
+
+Red Baron: a red team infrastructure automation tool! Ever wanted to create a C2 server and redirector with 8 lines of code? I got you covered.
+https://twitter.com/coalfirelabs/status/961706438463840258
+https://github.com/Coalfire-Research/Red-Baron
+
+In-Memory Evasion
+https://blog.cobaltstrike.com/2018/02/08/in-memory-evasion/
