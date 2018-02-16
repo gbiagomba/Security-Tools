@@ -7,10 +7,16 @@ echo "What is the name of the targets file?"
 read targets
 
 #Creating workspace
-mkdir -p Nmap SSLyze TestSSL WeakSSL
+mkdir -p Nmap SSLScan SSLyze TestSSL WeakSSL
 
 #Nmap Scan
-nmap -sS -sV -sC ssh2-enum-algos,ssl-enum-ciphers -iL $targets -oA Nmap/nmap_output.txt | aha > nmap_output.html
+nmap -sS -sV --script=ssh2-enum-algos,ssl-enum-ciphers -iL $targets -oA Nmap/nmap_output | aha > Nmap/nmap_stdin_output.html
+xsltproc Nmap/nmap_output.xml -o Nmap_SSL_Output.html
+
+#SSL Scan
+cd SSLScan
+sslscan --targets=$target --xml=sslscan_output.xml | aha > ../sslscan_output.html
+cd ..
 
 #SSLyze Scan
 sslyze --targets_in=$targets --xml_out=SSLyze/SSLyze.xml --regular | aha > sslyze_output.html
@@ -18,8 +24,9 @@ sslyze --targets_in=$targets --xml_out=SSLyze/SSLyze.xml --regular | aha > sslyz
 #TestSSL Scan
 cd TestSSL
 testssl --file $targets --log --csv | aha > ../testssl_output.html
+cd ..
 
-#Checking weak ciphers manually using OpenSSL
+#OpenSSL - Manually checking weak ciphers
 #./Birthday_test.sh | aha > WeakSSL.html
 for c in $(cat targets); do
  for i in $(cat WeakCiphers.txt); do 
@@ -46,3 +53,6 @@ for c in $(cat targets); do
   echo "-----------------------------------------------------------------------------------------------------------"
  done
 done
+
+#Convert XML files to HTML
+#xsltproc <nmap-output.xml> -o <nmap-output.html> 
