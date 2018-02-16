@@ -18,7 +18,8 @@ apt autoclean
 apt autoremove -y
 
 #Updating all ruby packages
-gem2.3 update
+#gem2.3 update
+bundle install
 
 pause 'Press [Enter] key to continue...'
 
