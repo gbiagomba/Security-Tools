@@ -1,5 +1,5 @@
 # Sweet32: Birthday attacks
-The script below is to test for CVE-2016-2183, CVE-2016-6329 or you may know it better as the Sweet32 birthday attac. For more detail please reference the links below;
+The script below is to test for CVE-2016-2183, CVE-2016-6329 or you may know it better as the Sweet32 birthday attack. For more detail please reference the links below;
 
 https://sweet32.info/
 https://access.redhat.com/articles/2548661
