@@ -10,7 +10,7 @@ read targets
 mkdir -p Nmap SSLScan SSLyze TestSSL WeakSSL
 
 #Nmap Scan
-nmap -sS -sV --script=ssh2-enum-algos,ssl-enum-ciphers -iL $targets -oA Nmap/nmap_output | aha > Nmap/nmap_stdin_output.html
+nmap -sS -sV --script=ssh2-enum-algos,ssl-enum-ciphers,rdp-enum-encryption -iL $targets -oA Nmap/nmap_output
 xsltproc Nmap/nmap_output.xml -o Nmap_SSL_Output.html
 
 #SSL Scan
