@@ -1,9 +1,7 @@
-#Weak SSL Scanner
-
+# Weak SSL Scanner
 The script below scans servers for SSL misconfigurations (e.g., weak ciphers, weak encryption protocols, etc) using nmap, sslscan, sslyze, testssl and openssl. I use multiple tools because I want to cross reference and validate all findings without having to manually run additional tools.
 
-#Usage
-
+## Usage
 ./WeakSSL2.sh
 
 You will be prompted for the name of the target file, type it in and dont forget the extension (assuming there is one). 
