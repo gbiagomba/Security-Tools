@@ -21,7 +21,7 @@ echo "--------------------------------------------------------------------------
 echo "Performing the SSL scan using Nmap"
 echo "-----------------------------------------------------------------------------------------------------------"
 nmap -sS -sV --script=ssh2-enum-algos,ssl-enum-ciphers,rdp-enum-encryption -iL $targets -oA Nmap/nmap_output
-xsltproc Nmap/nmap_output.xml -o ../Reports/Nmap_SSL_Output.html
+xsltproc Nmap/nmap_output.xml -o Reports/Nmap_SSL_Output.html
 echo "Done scanning with nmap"
 
 #SSL Scan - Needs troubleshooting
@@ -48,26 +48,26 @@ testssl --file ../$targets --log --csv | aha -t "testssl output"  > ../Reports/t
 cd ..
 echo "Done scanning with testssl"
 
-#OpenSSL - Manually checking weak ciphers
+#OpenSSL - Manually checking weak ciphers (Needs to be fixed)
 #./Birthday_test.sh | aha > WeakSSL.html
-echo "-----------------------------------------------------------------------------------------------------------"
-echo "Validating results using OpenSSL"
-echo "-----------------------------------------------------------------------------------------------------------"
-for c in $(cat $targets); do
- for i in $(cat WeakCiphers.txt); do
-  echo "---------------------------------------------TLSv1---------------------------------------------------------"
-  echo "Address: $c"
-  echo "Cipher: $i"
-  openssl s_client -connect $c:443 -tls1 -cipher $i | aha >> WeakSSL/$c-WeakCiphers.html
-  echo "---------------------------------------------TLSv1.1-------------------------------------------------------"
-  echo "Address: $c"
-  echo "Cipher: $i"
-  openssl s_client -connect $c:443 -tls1_1 -cipher $i | aha >> WeakSSL/$c-WeakCiphers.html
-  echo "---------------------------------------------TLSv1.2-------------------------------------------------------"
-  echo "Address: $c"
-  echo "Cipher: $i"
-  openssl s_client -connect $c:443 -tls1_2 -cipher $i | aha >> WeakSSL/$c-WeakCiphers.html
-  echo "-----------------------------------------------------------------------------------------------------------"
- done
-done
+# echo "-----------------------------------------------------------------------------------------------------------"
+# echo "Validating results using OpenSSL"
+# echo "-----------------------------------------------------------------------------------------------------------"
+# for c in $(cat $targets); do
+#  for i in $(cat WeakCiphers.txt); do
+#   echo "---------------------------------------------TLSv1---------------------------------------------------------"
+#   echo "Address: $c"
+#   echo "Cipher: $i"
+#   openssl s_client -connect $c:443 -tls1 -cipher $i | aha >> WeakSSL/$c-WeakCiphers.html
+#   echo "---------------------------------------------TLSv1.1-------------------------------------------------------"
+#   echo "Address: $c"
+#   echo "Cipher: $i"
+#   openssl s_client -connect $c:443 -tls1_1 -cipher $i | aha >> WeakSSL/$c-WeakCiphers.html
+#   echo "---------------------------------------------TLSv1.2-------------------------------------------------------"
+#   echo "Address: $c"
+#   echo "Cipher: $i"
+#   openssl s_client -connect $c:443 -tls1_2 -cipher $i | aha >> WeakSSL/$c-WeakCiphers.html
+#   echo "-----------------------------------------------------------------------------------------------------------"
+#  done
+# done
 echo "Done validating ciphers & We are done scanning everything!"

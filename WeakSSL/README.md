@@ -10,3 +10,6 @@ If the target file is elsewhere, you will need to manually enter the path to the
 Lastly, make sure you copy the "rs"c folder and the "WeakCiphers.txt" file
 
 Then seat back and let it do its thing.
+
+## TODO
+Fix the openssl validation, need to use older version of openssl
