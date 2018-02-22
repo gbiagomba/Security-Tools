@@ -95,7 +95,7 @@ echo "--------------------------------------------------"
 firefox --new-tab $pth/Reports/*.html
 
 #De-initialize all variables & set them to NULL
-pth = ""
-IP = ""
-targets = ""
+unset pth
+unset IP
+unset targets
 set -u
