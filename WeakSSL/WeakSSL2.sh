@@ -12,7 +12,7 @@ read targets
 echo "--------------------------------------------------"
 echo "Creating the workspace"
 echo "--------------------------------------------------"
-mkdir -p Nmap SSLScan SSLyze 
+mkdir -p Nmap SSLScan SSLyze Cipherscan
 mkdir -p TestSSL WeakSSL Reports
 echo "Done creating workspace"
 
@@ -52,13 +52,15 @@ echo "Done scanning with testssl"
 echo "--------------------------------------------------"
 echo "Performing the SSL scan using cipherscan"
 echo "--------------------------------------------------"
+pth = $(pwd)
+cd /tmp/
 git clone https://github.com/mozilla/cipherscan
-cd cipherscan
+cd cipherscan/
 for IP in $(cat $targets); do
-    ./cipherscan $IP | aha -t "Cipherscan output"  > cipherscan_detailed_output.html
-    ./analyze -t $IP | aha -t "Cipherscan output"  > ../Reports/CipherScan_output.html
+    bash cipherscan $IP | aha -t "Cipherscan output"  > $pth/Cipherscan/cipherscan_detailed_output.html
+    python2 analyze -t $IP | aha -t "Cipherscan output"  > $pth/Reports/CipherScan_output.html
 done
-cd ..
+cd $pth
 echo "Done scanning with cipherscan"
 
 #OpenSSL - Manually checking weak ciphers (Needs to be fixed)
@@ -83,4 +85,17 @@ echo "Done scanning with cipherscan"
 #   echo "--------------------------------------------------"
 #  done
 # done
+
 echo "Done validating ciphers & We are done scanning everything!"
+
+#Open reports in Firefox
+echo "--------------------------------------------------"
+echo "Opening the results now"
+echo "--------------------------------------------------"
+firefox --new-tab $pth/Reports/*.html
+
+#De-initialize all variables & set them to NULL
+pth = ""
+IP = ""
+targets = ""
+set -u
