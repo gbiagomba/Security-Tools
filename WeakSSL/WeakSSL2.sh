@@ -20,7 +20,7 @@ echo "Done creating workspace"
 echo "--------------------------------------------------"
 echo "Performing the SSL scan using Nmap"
 echo "--------------------------------------------------"
-nmap -sS -sV --script=ssh2-enum-algos,ssl-enum-ciphers,rdp-enum-encryption -iL $targets -oA Nmap/nmap_output
+nmap -sS -sV --script=ssh2-enum-algos,ssl-enum-ciphers,rdp-enum-encryption -iL $targets -p 22,25,443,567,593,808,1433,3389,4443,4848,7103,7201,8443,8888 -oA Nmap/nmap_output
 xsltproc Nmap/nmap_output.xml -o Reports/Nmap_SSL_Output.html
 echo "Done scanning with nmap"
 
@@ -57,8 +57,10 @@ cd /tmp/
 git clone https://github.com/mozilla/cipherscan
 cd cipherscan/
 for IP in $(cat $targets); do
-    bash cipherscan $IP | aha -t "Cipherscan output"  > $pth/Cipherscan/cipherscan_detailed_output.html
-    python2 analyze -t $IP | aha -t "Cipherscan output"  > $pth/Reports/CipherScan_output.html
+    for PORTS in $(cat Ports);do
+        bash cipherscan $IP:$PORTS | aha -t "Cipherscan output"  > $pth/Cipherscan/$IP-$PORTS-Cipherscan_detailed_output.html
+        python2 analyze -t $IP:$PORTS | aha -t "Cipherscan output"  >> $pth/Reports/CipherScan_output.html
+    done
 done
 cd $pth
 echo "Done scanning with cipherscan"
