@@ -5,7 +5,8 @@
 # 	      Open the GitLinks.txt file, copy all git links into it.\n
 #	      Save and close the file, then run Git_Cloner.sh.\n
 
-ls > GITPATH.txt
+ls > GITPATHTEMP.txt
+cat GITPATHTEMP.txt | grep -v GITPATHTEMP.txt > GITPATH.txt
 
 for pths in $(cat GITPATH.txt);do
 cd $pths
@@ -17,8 +18,6 @@ git pull
 cd ..
 done
 
-cd /opt/TEST/
-
 for links in $(cat GitLinks.txt);do
 echo "----------------------------------------------------------"
 echo "You are downloading this Git repo:"
@@ -27,3 +26,7 @@ echo "----------------------------------------------------------"
 git clone $links
 done
 
+rm GITPATHTEMP.txt GITPATH.txt
+unset pths
+unset links
+set -u

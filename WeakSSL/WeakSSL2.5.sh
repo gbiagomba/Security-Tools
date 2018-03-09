@@ -9,7 +9,7 @@ declare -a PORT=(22 25 443 567 593 808 1433 3389 4443 4848 7103 7201 8443 8888)
 pth=$(pwd)
 
 #Requesting target file name
-echo "What is the name of the targets file?"
+echo "What is the name of the targets file? The file with all the IP addresses"
 read targets
 
 #Creating workspace

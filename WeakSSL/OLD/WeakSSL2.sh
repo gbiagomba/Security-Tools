@@ -14,13 +14,14 @@ echo "Creating the workspace"
 echo "--------------------------------------------------"
 mkdir -p Nmap SSLScan SSLyze Cipherscan
 mkdir -p TestSSL WeakSSL Reports
+pth=$(pwd)
 echo "Done creating workspace"
 
 #Nmap Scan
 echo "--------------------------------------------------"
 echo "Performing the SSL scan using Nmap"
 echo "--------------------------------------------------"
-nmap -sS -sV --script=ssh2-enum-algos,ssl-enum-ciphers,rdp-enum-encryption -iL $targets -p 22,25,443,567,593,808,1433,3389,4443,4848,7103,7201,8443,8888 -oA Nmap/nmap_output
+nmap -sS -sV --script=ssh2-enum-algos,ssl-enum-ciphers,rdp-enum-encryption,vulners -R -iL $targets -p 22,25,443,567,593,808,1433,3389,4443,4848,7103,7201,8443,8888 -oA Nmap/nmap_output
 xsltproc Nmap/nmap_output.xml -o Reports/Nmap_SSL_Output.html
 echo "Done scanning with nmap"
 
@@ -28,23 +29,34 @@ echo "Done scanning with nmap"
 echo "--------------------------------------------------"
 echo "Performing the SSL scan using sslscan"
 echo "--------------------------------------------------"
-sslscan --targets=$targets --xml=SSLScan/sslscan_output.xml | aha -t "SSLScan Output" > Reports/sslscan_output.html
+for IP in $(cat $pth/$targets); do
+    for PORTS in $(cat $pth/Ports);do
+	    sslscan --xml=SSLScan/sslscan_output.xml $IP:$PORTS | aha -t "SSLScan Output" >> Reports/sslscan_output.html
+    done
+done
 echo "Done scanning with sslscan"
 
 #SSLyze Scan
 echo "--------------------------------------------------"
 echo "Performing the SSL scan using sslyze"
 echo "--------------------------------------------------"
-sslyze --targets_in=$targets --xml_out=SSLyze/SSLyze.xml --regular | aha -t "SSLyze Output"  > Reports/sslyze_output.html
-#sslyze --targets_in=$targets --xml_out=/dev/stdout --regular --quiet | xsltproc rsc/sslyze.xsl - > Reports/sslyze.html
+for IP in $(cat $pth/$targets); do
+    for PORTS in $(cat $pth/Ports);do
+	    sslyze --xml_out=SSLyze/SSLyze.xml --regular $IP:$PORTS | aha -t "SSLyze Output"  >> Reports/sslyze_output.html
+    done
+done
 echo "Done scanning with sslyze"
 
 #TestSSL Scan
 echo "--------------------------------------------------"
 echo "Performing the SSL scan using testssl"
 echo "--------------------------------------------------"
-cd TestSSL
-testssl --file ../$targets --log --csv | aha -t "TestSSL output"  > ../Reports/testssl_output.html
+cd TestSSL #You step into the folder because the testssl command uses the --log & --csv flags
+for IP in $(cat $pth/$targets); do
+    for PORTS in $(cat $pth/Ports);do
+	    testssl --log --csv $IP:$PORTS | aha -t "TestSSL output"  >> ../Reports/testssl_output.html
+    done
+done
 cd ..
 echo "Done scanning with testssl"
 
@@ -52,12 +64,12 @@ echo "Done scanning with testssl"
 echo "--------------------------------------------------"
 echo "Performing the SSL scan using cipherscan"
 echo "--------------------------------------------------"
-pth = $(pwd)
 cd /tmp/
 git clone https://github.com/mozilla/cipherscan
 cd cipherscan/
-for IP in $(cat $targets); do
-    for PORTS in $(cat Ports);do
+for IP in $(cat $pth/$targets); do
+    for PORTS in $(cat $pth/Ports);do
+	    echo "You are scanning $IP:$PORTS"
         bash cipherscan $IP:$PORTS | aha -t "Cipherscan output"  > $pth/Cipherscan/$IP-$PORTS-Cipherscan_detailed_output.html
         python2 analyze -t $IP:$PORTS | aha -t "Cipherscan output"  >> $pth/Reports/CipherScan_output.html
     done
@@ -99,5 +111,6 @@ firefox --new-tab $pth/Reports/*.html
 #De-initialize all variables & set them to NULL
 unset pth
 unset IP
+unset PORTS
 unset targets
 set -u
