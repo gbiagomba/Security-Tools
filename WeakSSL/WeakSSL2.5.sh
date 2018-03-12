@@ -1,5 +1,5 @@
 #Author: Gilles Biagomba
-#Program: WeakSSL2.sh
+#Program: WeakSSL2.5.sh
 #Description: This script was design to check for weak SSL ciphers.\n
 #Convert XML files to HTML
 #xsltproc <nmap-output.xml> -o <nmap-output.html> 
