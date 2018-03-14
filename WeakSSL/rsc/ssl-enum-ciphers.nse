@@ -564,16 +564,14 @@ end
 
 local function letter_grade (score)
   if not tonumber(score) then return "unknown" end
-  if score >= 0.90 then
+  if score >= 0.95 then
     return "A"
-  elseif score >= 0.80 then
+  elseif score >= 0.85 then
     return "B"
-  elseif score >= 0.70 then
+  elseif score >= 0.75 then
     return "C"
-  elseif score >= 0.60 then
+  elseif score >= 0.65 then
     return "D"
-  elseif score >= 0.50 then
-    return "E"
   else
     return "F"
   end
