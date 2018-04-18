@@ -46,6 +46,7 @@ for IP in $(cat $pth/livehosts); do
         if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
             echo "--------------------------------------------------" | aha -t "SSLScan Output" >> Reports/sslscan_output.html
             echo "Using sslscan to scan $IP:$PORTNUM" | aha -t "SSLScan Output" >> Reports/sslscan_output.html
+            echo "Using sslscan to scan $IP:$PORTNUM"
             echo "--------------------------------------------------" | aha -t "SSLScan Output" >> Reports/sslscan_output.html
             sslscan --xml=SSLScan/sslscan_output.xml $IP:$PORTNUM | aha -t "SSLScan Output" >> Reports/sslscan_output.html            fi
         fi
@@ -65,6 +66,7 @@ for IP in $(cat $pth/livehosts); do
         if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
             echo "--------------------------------------------------" | aha -t "SSLyze Output" >> Reports/sslyze_output.html
             echo "Using sslyze to scan $IP:$PORTNUM" | aha -t "SSLyze Output" >> Reports/sslyze_output.html
+            echo "Using sslyze to scan $IP:$PORTNUM"
             echo "--------------------------------------------------" | aha -t "SSLyze Output" >> Reports/sslyze_output.html
             sslyze --xml_out=SSLyze/SSLyze.xml --regular $IP:$PORTNUM | aha -t "SSLyze Output"  >> Reports/sslyze_output.html
         fi
@@ -79,12 +81,13 @@ echo "--------------------------------------------------"
 cd TestSSL #You step into the folder because the testssl command uses the --log & --csv flags
 for IP in $(cat $pth/livehosts); do
     for PORTNUM in ${PORT[*]};do
-        STAT1=$(cat ../Nmap/nmap_output.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
-        STAT2=$(cat ../Nmap/nmap_output.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
-        STAT3=$(cat ../Nmap/nmap_output.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
+        STAT1=$(cat $pth/Nmap/nmap_output.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
+        STAT2=$(cat $pth/Nmap/nmap_output.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
+        STAT3=$(cat $pth/Nmap/nmap_output.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
         if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
             echo "--------------------------------------------------" | aha -t "TestSSL Output" >> $pth/Reports/testssl_output.html
             echo "Using testssl to scan $IP:$PORTNUM" | aha -t "TestSSL Output" >> $pth/Reports/testssl_output.html
+            echo "Using testssl to scan $IP:$PORTNUM"
             echo "--------------------------------------------------" | aha -t "TestSSL Output" >> $pth/Reports/testssl_output.html
             testssl --log --csv $IP:$PORTNUM | aha -t "TestSSL output"  >> $pth/Reports/testssl_output.html
         fi
@@ -108,6 +111,7 @@ for IP in $(cat $pth/livehosts); do
         if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
             echo "--------------------------------------------------" | aha -t "Cipherscan Output" >> $pth/Reports/CipherScan_output.html
             echo "Using cipherscan to scan $IP:$PORTNUM" | aha -t "Cipherscan Output" >> $pth/Reports/CipherScan_output.html
+            echo "Using cipherscan to scan $IP:$PORTNUM"
             echo "--------------------------------------------------" | aha -t "Cipherscan Output" >> $pth/Reports/CipherScan_output.html
             bash cipherscan $IP:$PORTNUM | aha -t "Cipherscan output"  > $pth/Cipherscan/$IP-$PORTNUM-Cipherscan_detailed_output.html
             python2 analyze -t $IP:$PORTNUM | aha -t "Cipherscan output"  >> $pth/Reports/CipherScan_output.html
@@ -131,6 +135,7 @@ for IP in $(cat $pth/livehosts); do
         if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
             echo "--------------------------------------------------" | aha -t "SSH-Audit Output" >> $pth/SSH-Audit/$IP-SSH-Audit_detailed_output.html
             echo "Using ssh-audit to scan $IP:$PORTNUM" | aha -t "SSH-Audit Output" >> $pth/SSH-Audit/$IP-SSH-Audit_detailed_output.html
+            echo "Using ssh-audit to scan $IP:$PORTNUM"
             echo "--------------------------------------------------" | aha -t "SSH-Audit Output" >> $pth/SSH-Audit/$IP-SSH-Audit_detailed_output.html
             bash ssh-audit.py $IP:$PORTNUM | aha -t "SSH-Audit output"  >> $pth/SSH-Audit/$IP-SSH-Audit_detailed_output.html
         fi
@@ -152,19 +157,19 @@ for IP in $(cat $pth/livehosts); do
         if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
             for ciphr in ${Ciphers[*]};do
                 echo "---------------------------------------------SSLv3---------------------------------------------------------"
-                echo "Address: $IP"
+                echo "Address: $IP:$PORTNUM"
                 echo "Cipher: $Ciphers"
                 bash /tmp/cipherscan/openssl s_client -connect $IP:$PORTNUM -ssl3 -cipher $ciphr | aha -t "OpenSSL Scan" >> $pth/WeakSSL/$IP-WeakCiphers.html
                 echo "---------------------------------------------TLSv1---------------------------------------------------------"
-                echo "Address: $IP"
+                echo "Address: $IP:$PORTNUM"
                 echo "Cipher: $Ciphers"
                 bash /tmp/cipherscan/openssl s_client -connect $IP:$PORTNUM -tls1 -cipher $ciphr | aha -t "OpenSSL Scan" >> $pth/WeakSSL/$IP-WeakCiphers.html
                 echo "---------------------------------------------TLSv1.1-------------------------------------------------------"
-                echo "Address: $IP"
+                echo "Address: $IP:$PORTNUM"
                 echo "Cipher: $Ciphers"
                 bash /tmp/cipherscan/openssl s_client -connect $IP:$PORTNUM -tls1_1 -cipher $ciphr | aha -t "OpenSSL Scan" >> $pth/WeakSSL/$IP-WeakCiphers.html
                 echo "---------------------------------------------TLSv1.2-------------------------------------------------------"
-                echo "Address: $IP"
+                echo "Address: $IP:$PORTNUM"
                 echo "Cipher: $Ciphers"
                 bash /tmp/cipherscan/openssl s_client -connect $IP:$PORTNUM -tls1_2 -cipher $ciphr | aha -t "OpenSSL Scan" >> $pth/WeakSSL/$IP-WeakCiphers.html
                 echo "--------------------------------------------------"

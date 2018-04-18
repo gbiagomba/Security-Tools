@@ -74,19 +74,16 @@ function UserSelect()
     #Switch case
     case $answer in
         1)
-            GitUpdate
-            destructor
+            GitUpdate            
             UserSelect
             ;;
         2)
-            GitLinks
-            destructor
+            GitLinks            
             UserSelect
             ;;
         3)
             GitUpdate
-            GitLinks
-            destructor
+            GitLinks            
             UserSelect
             ;;
         4)
