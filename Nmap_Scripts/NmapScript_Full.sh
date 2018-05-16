@@ -43,8 +43,8 @@ nmap -sU -PN -T4 -iL $pth/livehosts -oA $pth/UDPdetails
 cat $pth/UDPdetails.gnmap | grep ' 161/open\?\!|' | cut -d ' ' -f 2 > $pth/SNMP
 cat $pth/UDPdetails.gnmap | grep ' 500/open\?\!|' | cut -d ' ' -f 2 > $pth/isakmp
 
-# Nmap - Scan for possible vulnerabilities using vulscan and vulner
-nmap -sV -sS --script=vulscan/vulscan.nse,vulners -iL $pth/livehosts -oA $pth/VulScan
+# Nmap - Scan for possible vulnerabilities using vulners
+nmap -sV -sS -sU --script=vulners -R -iL target2 -A -p 0-65535-iL $pth/livehosts -oA $pth/VulScan
 
 # Empty file cleanup
 find $pth -size 0c -type f -exec rm -rf {} \;

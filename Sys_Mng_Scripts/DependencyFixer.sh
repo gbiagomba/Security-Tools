@@ -5,11 +5,13 @@
 #	      THis could help you resolve that issue or other related issues.\n
 
 apt-get autoremove
-apt-get --purge remove && apt-get autoclean
+apt-get --purge remove
+apt-get autoclean
 apt-get -f install -y
 apt-get install --fix-broken -y
 apt-get install --reinstall software-properties-common -y
 apt-get update
-apt-get upgrade && apt-get dist-upgrade
+apt-get upgrade -y
+apt-get dist-upgrade -y
 #dpkg-reconfigure -a
 dpkg --configure -a
