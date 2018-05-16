@@ -15,7 +15,7 @@ function GitUpdate()
     ls > GITPATHTEMP.txt
     cat GITPATHTEMP.txt | grep -v GITPATHTEMP.txt > GITPATH.txt
 
-    for pths in $(cat GITPATH.txt);do
+    for pths in $(cat $ORGPATH/GITPATH.txt);do
         cd $pths
         echo "----------------------------------------------------------"
         echo "You are updating this Git repo:"
@@ -29,7 +29,7 @@ function GitUpdate()
 #Downloading new git repos
 function GitLinks()
 {
-    for links in $(cat GitLinks.txt);do
+    for links in $(cat $ORGPATH/GitLinks.txt);do
         echo "----------------------------------------------------------"
         echo "You are downloading this Git repo:"
         echo $links
