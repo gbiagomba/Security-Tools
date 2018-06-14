@@ -13,6 +13,7 @@ TodaysDATE=$(date +%Y.%m.%d)
 RunTIME=$(date +%H:%M)
 diskSize=$(df | grep /dev/sda1 | cut -d " " -f 11 | cut -d "%" -f 1)
 diskMax=90
+App="jexboss"
 
 #Checking system resources (HDD space)
 if ["$diskSize" -ge "$diskMax"];then
@@ -24,10 +25,6 @@ fi
 #Setting Envrionment
 mkdir -p $pth/$TodaysDATE/$RunTIME/JexBoss/Logs $pth/$TodaysDATE/$RunTIME/Sniper $pth/$TodaysDATE/$RunTIME/Nikto
 mkdir -p $pth/$TodaysDATE/$RunTIME/Nmap $pth/$TodaysDATE/$RunTIME/Reports
-if ["jexboss" != "$(ls | grep jexboss)"];then
-	cd /tmp/
-	git clone https://github.com/joaomatosf/jexboss.git
-fi
 
 #git clone https://github.com/hlldz/wildPwn.git
 #git clone https://github.com/johndekroon/serializekiller.git
@@ -44,20 +41,44 @@ cat $pth/$TodaysDATE/$RunTIME/Nmap/NBME_JBOSS.gnmap | grep -i "apache" | cut -d 
 xsltproc $pth/$TodaysDATE/$RunTIME/Nmap/NBME_JBOSS.xml -o $pth/$TodaysDATE/$RunTIME/Reports/NBME_JBOSS_Nmap.html
 
 #Perform targeted scan using jexboss
-cd /tmp/jexboss
-for IP in $(cat $pth/$TodaysDATE/$RunTIME/Nmap/livehosts); do
-	for PORTNUM in ${PORT[*]}; do
-		STAT1=$(cat $pth/$TodaysDATE/$RunTIME/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
-        STAT2=$(cat $pth/$TodaysDATE/$RunTIME/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
-        STAT3=$(cat $pth/$TodaysDATE/$RunTIME/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
-        if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
-			python jexboss.py -u http://$IP:$PORTNUM -results "$pth/$TodaysDATE/$RunTIME/JexBoss/$IP-$PORTNUM-HTTP-JexBOSS" -out "$pth/$TodaysDATE/$RunTIME/JexBoss/Logs/$IP-$PORTNUM-report_file_scan.log" | tee $pth/$TodaysDATE/$RunTIME/JexBoss/$IP-$PORTNUM
-			python jexboss.py -u https://$IP:$PORTNUM -results "$pth/$TodaysDATE/$RunTIME/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$pth/$TodaysDATE/$RunTIME/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a $pth/$TodaysDATE/$RunTIME/JexBoss/Logs/$IP-$PORTNUM
-			cat $pth/$TodaysDATE/$RunTIME/JexBoss/$IP:$PORTNUM | aha -t "$IP JexBoss Results" >> $pth/$TodaysDATE/$RunTIME/Reports/$IP-JexBoss-Final.html
-			echo "--------------------------------$IP:$PORTNUM---------------------------------------------" >> $pth/$TodaysDATE/$RunTIME/Reports/$IP-FInal.html
-		fi
+cd $pth
+if ["$App" != "$(ls | grep jexboss)"];then
+	cd /tmp/
+	git clone https://github.com/joaomatosf/jexboss.git
+	cd jexboss/
+	for IP in $(cat $pth/$TodaysDATE/$RunTIME/Nmap/livehosts); do
+		for PORTNUM in ${PORT[*]}; do
+			STAT1=$(cat $pth/$TodaysDATE/$RunTIME/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
+			STAT2=$(cat $pth/$TodaysDATE/$RunTIME/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
+			STAT3=$(cat $pth/$TodaysDATE/$RunTIME/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
+			if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
+				python jexboss.py -u http://$IP:$PORTNUM -results "$pth/$TodaysDATE/$RunTIME/JexBoss/$IP-$PORTNUM-HTTP-JexBOSS" -out "$pth/$TodaysDATE/$RunTIME/JexBoss/Logs/$IP-$PORTNUM-report_file_scan.log" | tee $pth/$TodaysDATE/$RunTIME/JexBoss/$IP-$PORTNUM
+				python jexboss.py -u https://$IP:$PORTNUM -results "$pth/$TodaysDATE/$RunTIME/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$pth/$TodaysDATE/$RunTIME/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a $pth/$TodaysDATE/$RunTIME/JexBoss/Logs/$IP-$PORTNUM
+				cat $pth/$TodaysDATE/$RunTIME/JexBoss/$IP:$PORTNUM | aha -t "$IP JexBoss Results" >> $pth/$TodaysDATE/$RunTIME/Reports/$IP-JexBoss-Final.html
+				echo "--------------------------------$IP:$PORTNUM---------------------------------------------" >> $pth/$TodaysDATE/$RunTIME/Reports/$IP-FInal.html
+			fi
+		done
 	done
-done
+	cd ..
+else
+	cd jexboss/
+	for IP in $(cat $pth/$TodaysDATE/$RunTIME/Nmap/livehosts); do
+		for PORTNUM in ${PORT[*]}; do
+			STAT1=$(cat $pth/$TodaysDATE/$RunTIME/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
+			STAT2=$(cat $pth/$TodaysDATE/$RunTIME/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
+			STAT3=$(cat $pth/$TodaysDATE/$RunTIME/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
+			if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
+				python jexboss.py -u http://$IP:$PORTNUM -results "$pth/$TodaysDATE/$RunTIME/JexBoss/$IP-$PORTNUM-HTTP-JexBOSS" -out "$pth/$TodaysDATE/$RunTIME/JexBoss/Logs/$IP-$PORTNUM-report_file_scan.log" | tee $pth/$TodaysDATE/$RunTIME/JexBoss/$IP-$PORTNUM
+				python jexboss.py -u https://$IP:$PORTNUM -results "$pth/$TodaysDATE/$RunTIME/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$pth/$TodaysDATE/$RunTIME/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a $pth/$TodaysDATE/$RunTIME/JexBoss/Logs/$IP-$PORTNUM
+				cat $pth/$TodaysDATE/$RunTIME/JexBoss/$IP:$PORTNUM | aha -t "$IP JexBoss Results" >> $pth/$TodaysDATE/$RunTIME/Reports/$IP-JexBoss-Final.html
+				echo "--------------------------------$IP:$PORTNUM---------------------------------------------" >> $pth/$TodaysDATE/$RunTIME/Reports/$IP-FInal.html
+			fi
+		done
+	done
+	cd ..
+fi
+
+
 
 #Performing a Nikto scan
 for IP in $(cat $pth/$TodaysDATE/$RunTIME/Nmap/livehosts); do
@@ -92,6 +113,7 @@ done
 #python serializekiller.py --url example.com
 
 #cleaning up
+unset App
 unset diskMax
 unset diskSize
 unset IP
