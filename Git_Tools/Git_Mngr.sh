@@ -29,6 +29,7 @@ function GitUpdate()
 #Downloading new git repos
 function GitLinks()
 {
+    cd $ORGPATH
     for links in $(cat $ORGPATH/GitLinks.txt);do
         echo "----------------------------------------------------------"
         echo "You are downloading this Git repo:"
@@ -74,14 +75,17 @@ function UserSelect()
     #Switch case
     case $answer in
         1)
+            cd $ORGPATH
             GitUpdate            
             UserSelect
             ;;
         2)
+            cd $ORGPATH
             GitLinks            
             UserSelect
             ;;
         3)
+            cd $ORGPATH
             GitUpdate
             GitLinks            
             UserSelect
