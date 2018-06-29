@@ -137,11 +137,11 @@ for IP in $(cat $workpth/Nmap/livehosts); do
         STAT2=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
         STAT3=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
         if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
-			sniper -w JBOSS -t $IP -m webporthttps -p $PORTNUM | tee -a $workpth/Sniper/$IP-$PORTNUM
-			cat $workpth/Sniper/$IP:$PORTNUM | aha -t "$IP Sniper Results" >> $workpth/Reports/$IP-Sniper-Final.html
+			sniper -w JBOSS -t $IP -m webporthttps -p $PORTNUM | tee -a $workpth/Sniper/$IP-$PORTNUM			
 		fi
 	done
 done
+cat $workpth/Sniper/* | aha -t "$IP Sniper Results" >> $workpth/Reports/$IP-Sniper-Final.html
 
 #cleaning up
 unset App
