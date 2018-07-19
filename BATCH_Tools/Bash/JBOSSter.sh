@@ -12,11 +12,9 @@ App="jexboss"
 diskMax=90
 diskSize=$(df | grep /dev/sda1 | cut -d " " -f 13 | cut -d "%" -f 1)
 pth=$(pwd)
-RunTIME=$(date +%H:%M)
 TodaysDAY=$(date +%m-%d)
-TodaysMONTH=$(date +%b)
 TodaysYEAR=$(date +%Y)
-workpth="$pth/$TodaysYEAR/$TodaysMONTH/$TodaysDAY/$RunTIME/"
+workpth="$TodaysYEAR/$TodaysDAY"
 
 #Checking system resources (HDD space)
 if [ "$diskSize" -ge "$diskMax" ];then
@@ -36,7 +34,7 @@ cd $pth
 
 #Setting Envrionment
 mkdir -p $workpth/Masscan $workpth/wildPwn/ $workpth/SerializeKiller/ $workpth/Nmap
-mkdir -p $workpth/JexBoss/Logs $workpth/Sniper $workpth/Nikto $workpth/Reports
+mkdir -p $pth/$workpth/JexBoss/Logs $workpth/Sniper $workpth/Nikto $workpth/Reports
 
 #Requesting target file 
 clear
@@ -47,21 +45,20 @@ read targets
 #Launching scans
 
 #Use masscan to perform a quick port sweep
-cat $targets | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" > temptargets
-cat $targets | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\/[0-9]\{1,\}'  >> temptargets
-cat temptargets | sort | uniq > targets2
-masscan -iL $pth/targets2 -p 0-65535 --open-only --banners -oL $workpth/Masscan/masscan_output
-#Above the above stores the openports list to the variable to be later sent to nmap
+# cat $targets | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" > temptargets
+# cat $targets | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\/[0-9]\{1,\}'  >> temptargets
+# cat temptargets | sort | uniq > targets2
+# masscan -iL $pth/targets2 -p 0-65535 --open-only --banners -oL $workpth/Masscan/masscan_output
 OpenPORT=($(cat $workpth/Masscan/masscan_output | cut -d " " -f 3 | grep -v masscan | sort | uniq))
 
 #Use nmap to perform a targeted scan then sorting the various hosts based on their technologies
-cd $pth
-nmap -A -Pn -R -sS -sU -sV --script=ssl-enum-ciphers,vulners,wildfly-detect -iL $pth/$targets -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') -oA $workpth/Nmap/NBME_JBOSS
-cat $workpth/Nmap/NBME_JBOSS.gnmap | grep "Up" | cut -d " " -f 2 | sort | uniq > $workpth/Nmap/livehosts
-cat $workpth/Nmap/NBME_JBOSS.gnmap | grep -i "jboss" | cut -d " " -f 2 | sort | uniq > $workpth/Nmap/jboss
-cat $workpth/Nmap/NBME_JBOSS.gnmap | grep -i "java" | cut -d " " -f 2 | sort | uniq > $workpth/Nmap/java
-cat $workpth/Nmap/NBME_JBOSS.gnmap | grep -i "apache" | cut -d " " -f 2 | sort | uniq > $workpth/Nmap/apache
-xsltproc $workpth/Nmap/NBME_JBOSS.xml -o $workpth/Reports/NBME_JBOSS_Nmap.html
+# cd $pth
+# nmap -A -Pn -R -sS -sU -sV --script=ssl-enum-ciphers,vulners,wildfly-detect -iL $pth/$targets -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') -oA $pth/$workpth/Nmap/NBME_JBOSS
+# cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep "Up" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/livehosts
+# cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "jboss" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/jboss
+# cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "java" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/java
+# cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "apache" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/apache
+# xsltproc $pth/$workpth/Nmap/NBME_JBOSS.xml -o $workpth/Reports/NBME_JBOSS_Nmap.html
 
 # to do
 # fix the jexboss logging (log file)
@@ -71,25 +68,24 @@ xsltproc $workpth/Nmap/NBME_JBOSS.xml -o $workpth/Reports/NBME_JBOSS_Nmap.html
 
 #Perform targeted scan using jexboss
 cd /tmp/jexboss/
-for IP in $(cat $workpth/Nmap/livehosts); do
+for IP in $(cat $pth/$workpth/Nmap/livehosts); do
 	for PORTNUM in ${PORT[*]}; do
-		STAT1=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
-		STAT2=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
-		STAT3=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
+		STAT1=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
+		STAT2=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
+		STAT3=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
 		if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
-			if [ "$PORTNUM" == "443" ]
-				python jexboss.py -u https://$IP -results "$workpth/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a $workpth/JexBoss/Logs/$IP-$PORTNUM
+			if [ "$PORTNUM" == "443" ]; then
+				python jexboss.py -u https://$IP -results "$pth/$workpth/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a $pth/$workpth/JexBoss/Logs/$IP-$PORTNUM
 			fi
-			python jexboss.py -u http://$IP:$PORTNUM -results "$workpth/JexBoss/$IP-$PORTNUM-HTTP-JexBOSS" -out "$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan.log" | tee $workpth/JexBoss/$IP-$PORTNUM
-			python jexboss.py -u https://$IP:$PORTNUM -results "$workpth/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a $workpth/JexBoss/Logs/$IP-$PORTNUM
+			python jexboss.py -u http://$IP:$PORTNUM -results "$pth/$workpth/JexBoss/$IP-$PORTNUM-HTTP-JexBOSS" -out "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan.log" | tee $pth/$workpth/JexBoss/$IP-$PORTNUM
+			python jexboss.py -u https://$IP:$PORTNUM -results "$pth/$workpth/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a $pth/$workpth/JexBoss/Logs/$IP-$PORTNUM
 		fi
 	done
 done
-cat $workpth/JexBoss/* | aha -t "JBOSS Report - $TodaysDAY-$TodaysMONTH-$TodaysYEAR" > $workpth/Reports/Jxboss.html
-cat $workpth/JexBoss/* | grep VUNERABLE > $workpth/Reports/Final_Vulnerable.txt
-cat $workpth/JexBoss/* | grep EXPOSED > $workpth/Reports/Final_EXPOSED.txt
-cat $workpth/JexBoss/* | grep OK > $workpth/Reports/Final_OK.txt
-cd $pth
+cat $pth/$workpth/JexBoss/* | aha -t "JBOSS Report - $TodaysDAY-$TodaysYEAR" > $pth/$workpth/Reports/Jxboss.html
+cat $pth/$workpth/JexBoss/* | grep VUNERABLE > $pth/$workpth/Reports/Final_Vulnerable.txt
+cat $pth/$workpth/JexBoss/* | grep EXPOSED > $pth/$workpth/Reports/Final_EXPOSED.txt
+cat $pth/$workpth/JexBoss/* | grep OK > $pth/$workpth/Reports/Final_OK.txt
 
 #Perform targeted scanning using wildPwn
 #python wildPwn.py -m deploy --target <TARGET> --port <PORT> -pass /usr/share/seclists/Passwords/Common-Credentials/10-million-password-list-top-1000.txt -user /usr/share/seclists/Usernames/top-usernames-shortlist.txt
@@ -98,42 +94,41 @@ echo "What is the test account username?"
 read usrname
 echo "What is the test account password?"
 read passwrd
-for IP in $(cat $workpth/Nmap/livehosts); do
+for IP in $(cat $pth/$workpth/Nmap/livehosts); do
 	for PORTNUM in ${PORT[*]}; do
-		STAT1=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
-        STAT2=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
-        STAT3=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
+		STAT1=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
+        STAT2=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
+        STAT3=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
         if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
-			python wildPwn.py  -m deploy --target $IP --port $PORTNUM -u $usrname -p $passwrd | tee $workpth/wildPwn/$IP-$PORTNUM
+			python wildPwn.py  -m deploy --target $IP --port $PORTNUM -u $usrname -p $passwrd | tee $pth/$workpth/wildPwn/$IP-$PORTNUM
 		fi
 	done
 done
-cat $workpth/wildPwn/* | aha -t "$IP wildPwn Results" >> $workpth/Reports/$IP-wildPwn-Final.html
+cat $workpth/wildPwn/* | aha -t "$IP wildPwn Results" >> $pth/$workpth/Reports/$IP-wildPwn-Final.html
 cd $pth
 
 #Perform targeted scanning using serializekiller
 #python serializekiller.py --url example.com
 cd /tmp/SerializeKiller
-for IP in $(cat $workpth/Nmap/livehosts); do
+for IP in $(cat $pth/$workpth/Nmap/livehosts); do
 	for PORTNUM in ${PORT[*]}; do
-		STAT1=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
-        STAT2=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
-        STAT3=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
+		STAT1=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
+        STAT2=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
+        STAT3=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
         if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
-			python serializekiller.py $pth/targets | tee $workpth/SerializeKiller/$IP-$PORTNUM
+			python serializekiller.py $pth/targets | tee $pth/$workpth/SerializeKiller/$IP-$PORTNUM
 		fi
 	done
 done
 cat $workpth/SerializeKiller/* | aha -t "$IP serializekiller Results" >> $workpth/Reports/$IP-SerializeKiller-Final.html
-cd $pth
 
 #Performing a Nikto scan
 cd $pth
-for IP in $(cat $workpth/Nmap/livehosts); do
+for IP in $(cat $pth/$workpth/Nmap/livehosts); do
 	for PORTNUM in ${PORT[*]}; do
-		STAT1=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
-        STAT2=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
-        STAT3=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
+		STAT1=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
+        STAT2=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
+        STAT3=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
         if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
 			nikto -C all -h $IP:$PORTNUM -o $workpth/Nikto/$IP-$PORTNUM.txt
 		fi
@@ -142,11 +137,11 @@ done
 cat $workpth/Nikto/* | aha -t "$IP Nikto Results" >> $workpth/Reports/$IP-Nikto-Final.html
 
 #Performing a Sniper scan
-for IP in $(cat $workpth/Nmap/livehosts); do
+for IP in $(cat $pth/$workpth/Nmap/livehosts); do
 	for PORTNUM in ${PORT[*]}; do
-		STAT1=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
-        STAT2=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
-        STAT3=$(cat $workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
+		STAT1=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
+        STAT2=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
+        STAT3=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
         if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
 			sniper -w JBOSS -t $IP -m webporthttps -p $PORTNUM | tee -a $workpth/Sniper/$IP-$PORTNUM			
 		fi
@@ -155,6 +150,20 @@ done
 cat $workpth/Sniper/* | aha -t "$IP Sniper Results" >> $workpth/Reports/$IP-Sniper-Final.html
 
 #cleaning up
+
+# Empty file cleanup
+find $pth/$wrkpth/ -size 0c -type f -exec rm -rf {} \;
+
+#Deleting Temp files
+rm -rf /tmp/jexboss
+rm -rf /tmp/wildPwn
+rm -rf /tmp/serializekiller
+
+#Removing unnessary files
+rm $pth/temptargets
+rm $pth/targets2
+
+#Uninitializing variables
 unset App
 unset diskMax
 unset diskSize
@@ -164,12 +173,10 @@ unset passwrd
 unset PORT
 unset PORTNUM
 unset pth
-unset RunTIME
 unset STAT1
 unset STAT2
 unset STAT3
 unset TodaysDAY
-unset TodaysMONTH
 unset TodaysYEAR
 unset usrname
 unset workpth
