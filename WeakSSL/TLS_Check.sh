@@ -66,7 +66,7 @@ for IP in $(cat $pth/$wrkpth/livehosts); do
                 "$SVRNAME"="Unknown"
             fi
         fi
-        echo $SVRNAME $STAT1 $STAT2 $STAT3
+        echo $SVRNAME:$PORTNUM
         if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ]; then
             echo "--------------------------------------------------" | tee -a $pth/$wrkpth/SSLScan/$IP:$PORTNUM-sslscan_output.txt $pth/$wrkpth/SSLyze/$IP:$PORTNUM-sslyze_output.txt $pth/$wrkpth/TestSSL/$IP:$PORTNUM-TestSSL_output.txt $pth/$wrkpth/Cipherscan/$IP:$PORTNUM-CipherScan_output.txt $pth/$wrkpth/Cipherscan/$IP:$PORTNUM-Analyze_output.txt
             echo "Performing a TLS 1.1 scan of $IP:$PORTNUM ($SVRNAME:$PORTNUM)" | tee -a $pth/$wrkpth/SSLScan/$IP:$PORTNUM-sslscan_output.txt $pth/$wrkpth/SSLyze/$IP:$PORTNUM-sslyze_output.txt $pth/$wrkpth/TestSSL/$IP:$PORTNUM-TestSSL_output.txt $pth/$wrkpth/Cipherscan/$IP:$PORTNUM-CipherScan_output.txt $pth/$wrkpth/Cipherscan/$IP:$PORTNUM-Analyze_output.txt
