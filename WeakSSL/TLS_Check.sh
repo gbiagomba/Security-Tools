@@ -27,7 +27,10 @@ echo "What is the name of the targets file? The file with all the IP addresses"
 read targets
 
 #Use masscan to perform a quick port sweep
-masscan -iL $pth/$targets -p $(echo ${SSLPORT[*]} | sed 's/ /,/g') --open-only --banners -oL $wrkpth/Masscan/masscan_output
+cat $targets | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" > temptargets
+cat $targets | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\/[0-9]\{1,\}'  >> temptargets
+cat temptargets | sort | uniq > targets2
+masscan -iL $pth/target2 -p $(echo ${SSLPORT[*]} | sed 's/ /,/g') --open-only --banners -oL $wrkpth/Masscan/masscan_output
 OpenPORT=($(cat $pth/$wrkpth/Masscan/masscan_output | cut -d " " -f 3 | grep -v masscan | sort | uniq))
 cat $pth/$wrkpth/Masscan/masscan_output | cut -d " " -f 4 | grep -v masscan | sort | uniq >> $wrkpth/livehosts
 
@@ -101,6 +104,8 @@ find $pth/$wrkpth/ -size 0c -type f -exec rm -rf {} \;
 
 #Deleting Temp files
 rm -rf /tmp/cipherscan/
+rm $pth/temptargets
+rm $pth/targets2
 
 #De-initialize all variables & set them to NULL
 unset ciphr
