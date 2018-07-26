@@ -45,20 +45,24 @@ read targets
 #Launching scans
 
 #Use masscan to perform a quick port sweep
-# cat $targets | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" > temptargets
-# cat $targets | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\/[0-9]\{1,\}'  >> temptargets
-# cat temptargets | sort | uniq > targets2
-# masscan -iL $pth/targets2 -p 0-65535 --open-only --banners -oL $workpth/Masscan/masscan_output
+cat $targets | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" > temptargets
+cat $targets | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\/[0-9]\{1,\}'  >> temptargets
+cat temptargets | sort | uniq > targets2
+masscan -iL $pth/targets2 -p 0-65535 --open-only --banners -oL $workpth/Masscan/masscan_output
 OpenPORT=($(cat $workpth/Masscan/masscan_output | cut -d " " -f 3 | grep -v masscan | sort | uniq))
 
 #Use nmap to perform a targeted scan then sorting the various hosts based on their technologies
-# cd $pth
-# nmap -A -Pn -R -sS -sU -sV --script=ssl-enum-ciphers,vulners,wildfly-detect -iL $pth/$targets -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') -oA $pth/$workpth/Nmap/NBME_JBOSS
-# cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep "Up" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/livehosts
-# cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "jboss" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/jboss
-# cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "java" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/java
-# cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "apache" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/apache
-# xsltproc $pth/$workpth/Nmap/NBME_JBOSS.xml -o $workpth/Reports/NBME_JBOSS_Nmap.html
+cd $pth
+nmap -A -Pn -R -sS -sU -sV --script=ssl-enum-ciphers,vulners,wildfly-detect -iL $pth/$targets -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') -oA $pth/$workpth/Nmap/NBME_JBOSS
+cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep "Up" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/livehosts
+cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "jboss" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/jboss
+cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "java" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/java
+cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "apache" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/apache
+cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "servlet" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/servlet
+cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "oracle" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/oracle
+cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "cichild" | cut -d " " -f 2 | sort | uniq >> $pth/$workpth/Nmap/oracle
+cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep -i "JSP" | cut -d " " -f 2 | sort | uniq > $pth/$workpth/Nmap/jsp
+xsltproc $pth/$workpth/Nmap/NBME_JBOSS.xml -o $workpth/Reports/NBME_JBOSS_Nmap.html
 
 # to do
 # fix the jexboss logging (log file)
@@ -74,18 +78,23 @@ for IP in $(cat $pth/$workpth/Nmap/livehosts); do
 		STAT2=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
 		STAT3=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
 		if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
-			if [ "$PORTNUM" == "443" ]; then
-				python jexboss.py -u https://$IP -results "$pth/$workpth/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a $pth/$workpth/JexBoss/Logs/$IP-$PORTNUM
+			if [ "$PORTNUM" == "443" ];then
+				python jexboss.py -u https://$IP -results "$pth/$workpth/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM"
 			fi
-			python jexboss.py -u http://$IP:$PORTNUM -results "$pth/$workpth/JexBoss/$IP-$PORTNUM-HTTP-JexBOSS" -out "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan.log" | tee $pth/$workpth/JexBoss/$IP-$PORTNUM
-			python jexboss.py -u https://$IP:$PORTNUM -results "$pth/$workpth/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a $pth/$workpth/JexBoss/Logs/$IP-$PORTNUM
+			python jexboss.py -u http://$IP:$PORTNUM -results "$pth/$workpth/JexBoss/$IP-$PORTNUM-HTTP-JexBOSS" -out "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan.log" | tee -a "$pth/$workpth/JexBoss/$IP-$PORTNUM"
+			python jexboss.py -u https://$IP:$PORTNUM -results "$pth/$workpth/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM"
+			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTP-JexBOSS" | aha -t "JBOSS Report - $TodaysDAY-$TodaysYEAR" >> "$pth/$workpth/Reports/Jxboss.html"
+			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTP-JexBOSS" | grep VUNERABLE >> "$pth/$workpth/Reports/Final_Vulnerable.txt"
+			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTP-JexBOSS" | grep EXPOSED >> "$pth/$workpth/Reports/Final_EXPOSED.txt"
+			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTP-JexBOSS" | grep OK >> "$pth/$workpth/Reports/Final_OK.txt"
+			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTPS-JexBOSS" | aha -t "JBOSS Report - $TodaysDAY-$TodaysYEAR" >> "$pth/$workpth/Reports/Jxboss.html"
+			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTPS-JexBOSS" | grep VUNERABLE >> "$pth/$workpth/Reports/Final_Vulnerable.txt"
+			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTPS-JexBOSS" | grep EXPOSED >> "$pth/$workpth/Reports/Final_EXPOSED.txt"
+			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTPS-JexBOSS" | grep OK >> "$pth/$workpth/Reports/Final_OK.txt"
 		fi
 	done
 done
-cat $pth/$workpth/JexBoss/* | aha -t "JBOSS Report - $TodaysDAY-$TodaysYEAR" > $pth/$workpth/Reports/Jxboss.html
-cat $pth/$workpth/JexBoss/* | grep VUNERABLE > $pth/$workpth/Reports/Final_Vulnerable.txt
-cat $pth/$workpth/JexBoss/* | grep EXPOSED > $pth/$workpth/Reports/Final_EXPOSED.txt
-cat $pth/$workpth/JexBoss/* | grep OK > $pth/$workpth/Reports/Final_OK.txt
+
 
 #Perform targeted scanning using wildPwn
 #python wildPwn.py -m deploy --target <TARGET> --port <PORT> -pass /usr/share/seclists/Passwords/Common-Credentials/10-million-password-list-top-1000.txt -user /usr/share/seclists/Usernames/top-usernames-shortlist.txt
@@ -94,8 +103,8 @@ echo "What is the test account username?"
 read usrname
 echo "What is the test account password?"
 read passwrd
-for IP in $(cat $pth/$workpth/Nmap/livehosts); do
-	for PORTNUM in ${PORT[*]}; do
+for IP in $(cat $pth/$workpth/Nmap/livehosts);do
+	for PORTNUM in ${PORT[*]};do
 		STAT1=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
         STAT2=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
         STAT3=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
