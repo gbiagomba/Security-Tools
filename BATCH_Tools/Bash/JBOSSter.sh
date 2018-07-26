@@ -95,7 +95,6 @@ for IP in $(cat $pth/$workpth/Nmap/livehosts); do
 	done
 done
 
-
 #Perform targeted scanning using wildPwn
 #python wildPwn.py -m deploy --target <TARGET> --port <PORT> -pass /usr/share/seclists/Passwords/Common-Credentials/10-million-password-list-top-1000.txt -user /usr/share/seclists/Usernames/top-usernames-shortlist.txt
 cd /tmp/wildPwn
@@ -178,6 +177,7 @@ unset diskMax
 unset diskSize
 unset IP
 unset mainpth
+unset OpenPORT
 unset passwrd
 unset PORT
 unset PORTNUM
