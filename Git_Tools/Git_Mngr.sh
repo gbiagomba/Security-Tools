@@ -16,7 +16,7 @@ function GitUpdate()
     cat GITPATHTEMP.txt | grep -v GITPATHTEMP.txt > GITPATH.txt
 
     for pths in $(cat $ORGPATH/GITPATH.txt);do
-        cd $pths
+        cd $ORGPATH/$pths
         echo "----------------------------------------------------------"
         echo "You are updating this Git repo:"
         echo $pths
