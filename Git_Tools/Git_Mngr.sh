@@ -2,20 +2,17 @@
 #Author: Gilles Biagomba
 #Program: Git_Cloner.sh
 #Description: This script was design to update or clone multiple git repos.\n
-# 	      Open the GitLinks.txt file, copy all git links into it.\n
-#	      Save and close the file, then run Git_Cloner.sh.\n
+# 	          Open the GitLinks.txt file, copy all git links into it.\n
+#	          Save and close the file, then run Git_Cloner.sh.\n
 
 #Setting path to working directory
+GITPATHTEMP=($(ls))
 ORGPATH=$(pwd)
 
 #Updating existing git repos
 function GitUpdate()
-{    
-    echo " " > GITPATHTEMP.txt
-    ls > GITPATHTEMP.txt
-    cat GITPATHTEMP.txt | grep -v GITPATHTEMP.txt > GITPATH.txt
-
-    for pths in $(cat $ORGPATH/GITPATH.txt);do
+{
+    for pths in ${GITPATHTEMP[*]}; do
         cd $ORGPATH/$pths
         echo "----------------------------------------------------------"
         echo "You are updating this Git repo:"
@@ -30,7 +27,9 @@ function GitUpdate()
 function GitLinks()
 {
     cd $ORGPATH
-    for links in $(cat $ORGPATH/GitLinks.txt);do
+    echo  "What is the name of the file with all the git links (e.g., GitLinks.txt)?"
+    read GitLinks
+    for links in $(cat $ORGPATH/$GitLinks);do
         echo "----------------------------------------------------------"
         echo "You are downloading this Git repo:"
         echo $links
@@ -50,6 +49,8 @@ function destructor()
 {
     rm $ORGPATH/GITPATHTEMP.txt $ORGPATH/GITPATH.txt -rf
     unset answer
+    unset GitLinks
+    unset GITPATHTEMP
     unset links
     unset ORGPATH
     unset pths
