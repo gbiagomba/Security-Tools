@@ -6,9 +6,9 @@
 pth=$(pwd)
 
 # Prompting user for questions
-echo "What file(s) would you like to find?"
+echo "What filetype are you trying to ind?"
 read FTYPE
-echo "What is keyword/filter you would like to use?"
+echo "What is keyword/filter you would like to use in your search?"
 read FILTER
 echo "What is the name of the zip file you would like to use?"
 read ZFILE
@@ -20,7 +20,7 @@ updatedb
 if [ -z $FILTER ]; then
 	FILES=($(locate *.$FTYPE))
 else
-	FILES=($(locate *.$FTYPE | grep $FILTER))
+	FILES=($(locate *.$FTYPE | grep -i $FILTER))
 fi
 
 # Zipping up said files
