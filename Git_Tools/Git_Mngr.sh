@@ -47,7 +47,7 @@ function pause()
 #De-initialize all variables & setting them to NULL
 function destructor()
 {
-    rm $ORGPATH/GITPATHTEMP.txt $ORGPATH/GITPATH.txt -rf
+#    rm $ORGPATH/GITPATHTEMP.txt $ORGPATH/GITPATH.txt -rf
     unset answer
     unset GitLinks
     unset GITPATHTEMP
