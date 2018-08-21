@@ -8,6 +8,7 @@
 #	      and research purposes. It was not intented to be used\n
 #	      maliciously, if used as such, I will not be held liable!\n
 #PATH=$(pwd)
+n=0
 for url in $(cat targets);do
-nikto -C all -h $url -o Nikto_Output.txt
+nikto -C all -h $url -o Nikto_Output-"$((++n))".txt
 done

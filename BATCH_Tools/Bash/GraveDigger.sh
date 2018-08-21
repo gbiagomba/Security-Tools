@@ -1,6 +1,6 @@
 # Author: Gilles Biagomba
 # Program: GraveDigger.sh
-# Description: This script was designed to mass copy files and zip them.\n
+# Description: This script was designed to find files you want, mass copy files and zip them.\n
 
 # Setting working directory
 pth=$(pwd)
