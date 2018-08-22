@@ -232,11 +232,6 @@ echo
 # Empty file cleanup
 find $pth -size 0c -type f -exec rm -rf {} \;
 
-# Deleting Temp files
-rm -rf /tmp/jexboss
-rm -rf /tmp/wildPwn
-rm -rf /tmp/serializekiller
-
 # Removing unnessary files
 rm IPtargets -f
 rm temptargets -f
