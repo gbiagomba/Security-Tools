@@ -29,12 +29,25 @@ function GitLinks()
     cd $ORGPATH
     echo  "What is the name of the file with all the git links (e.g., GitLinks.txt)?"
     read GitLinks
+
+    #cat GitLinks.txt | cut -d "/" -f 4
+
     for links in $(cat $ORGPATH/$GitLinks);do
-        echo "----------------------------------------------------------"
-        echo "You are downloading this Git repo:"
-        echo $links
-        echo "----------------------------------------------------------"
-        git clone $links
+        PrjSiteStatus=$(curl -o /dev/null --silent --get --write-out "%{http_code} $links\n" "$links" | cut -d " " -f 1)
+        PrjDiskStatus=$(echo $links | cut -d "/" -f 5)
+        if [ "$PrjSiteStatus" != "404" ] && [ "$PrjDiskStatus" != "$(ls | grep $PrjDiskStatus)" ]; then
+            echo "----------------------------------------------------------"
+            echo "You are downloading this Git repo:"
+            echo $links
+            echo "----------------------------------------------------------"
+            git clone $links
+        elif [ "$PrjSiteStatus" == "404" ]; then
+            echo "$(date +%c): Thhe project $PrjDiskStatus no longer exists or has been moved" | tee -a $ORGPATH/Git_Mngr.log
+        elif [ "$PrjDiskStatus" == "$(ls | grep $PrjDiskStatus)" ]; then
+            echo "$(date +%c): You have already downloaded the project $PrjDiskStatus before" | tee -a $ORGPATH/Git_Mngr.log
+        else
+            echo "$(date +%c): If you are reading this, something want EPICLY WRONG.." | tee -a $ORGPATH/Git_Mngr.log
+        fi
     done
 }
 
@@ -54,6 +67,7 @@ function destructor()
     unset links
     unset ORGPATH
     unset pths
+    unset PrjSiteStatus
     set -u
 }
 

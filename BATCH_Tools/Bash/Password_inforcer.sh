@@ -6,5 +6,6 @@
 #https://jerrygamblin.com/2017/08/24/disallow-million-most-common-passwords/
 
 apt-get install libpam-cracklib -y
-wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/10_million_password_list_top_100000.txt /usr/share/dict/ -O /usr/share/dict/million.txt
+#git clone https://github.com/danielmiessler/SecLists
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt /usr/share/dict/ -O /usr/share/dict/million.txt
 create-cracklib-dict /usr/share/dict/million.txt
