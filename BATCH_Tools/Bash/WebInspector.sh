@@ -10,14 +10,14 @@
 # move all subroutines into functions
 # limit amount of data stored to disk, use more variables
 
-#Declaring variables
+# Declaring variables
 n=0
 pth=$(pwd)
 TodaysDAY=$(date +%m-%d)
 TodaysYEAR=$(date +%Y)
 wrkpth="$pth/$TodaysYEAR/$TodaysDAY"
 
-Setting Envrionment
+# Setting Envrionment
 mkdir -p  $wrkpth/Halberd/ $wrkpth/Sublist3r/ $wrkpth/Harvester $wrkpth/Metagoofil
 mkdir -p $wrkpth/Nikto/ $wrkpth/Dirb/ $wrkpth/Nmap/ $wrkpth/Sniper/
 mkdir -p $wrkpth/Masscan/
@@ -77,15 +77,13 @@ cd $pth
 echo "What is the name of the targets file? The file with all the IP addresses or sites"
 read targets
 
-if [ "$targets" == "$(ls $pth/$targets)" ]; then
-    cp $targets $wrkpth/
-else
+if [ "$targets" != "$(ls $pth | grep $targets)" ]; then
     echo "File not found! Try again!"
     exit
 fi
 
 # Parsing the target file
-cat $targets | grep http > WebTargets
+cat $targets | grep -E "(\.gov|\.us|\.net|\.com|\.edu|\.org|\.biz)" > WebTargets
 cat $targets | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" > temptargets
 cat $targets | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\/[0-9]\{1,\}'  >> temptargets
 cat temptargets | sort | uniq > IPtargets
@@ -107,7 +105,7 @@ echo
 echo "--------------------------------------------------"
 echo "Performing scan using Halberd"
 echo "--------------------------------------------------"
-halberd -u $targets -o $wrkpth/Halberd/halberd_output
+halberd -u $pth/WebTargets -o $wrkpth/Halberd/halberd_output
 grep $wrkpth/Halberd/halberd_output | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" >> temptargets
 cat temptargets | sort | uniq > IPtargets
 echo
@@ -119,7 +117,7 @@ echo "--------------------------------------------------"
 n=0
 x=0
 for web in $(cat $pth/WebTargets);do
-	theharvester -d $web -l 500 -b all -h | tee $wrkpth/Harvester/harvester_output-"$((++n))"
+    theharvester -d $web -l 500 -b all -h | tee $wrkpth/Harvester/harvester_output-"$((++n))"
     metagoofil -d $web -l 500 -o $wrkpth/Harvester/Evidence -f $wrkpth/Harvester/metagoofil_output-"$((++x))".html -t pdf,doc,xls,ppt,odp,od5,docx,xlsx,pptx
     # wait
 done
@@ -142,8 +140,8 @@ echo "--------------------------------------------------"
 n=0
 x=0
 for web in $(cat $pth/WebTargets);do
-	nikto -C all -h https://$web -o Nikto_Output-"$((++n))"
-	dirb $web /usr/share/dirbuster/wordlists/directory-list-1.0.txt -o dirb_output-"$((++x))" -w	
+    nikto -C all -h https://$web -o Nikto_Output-"$((++n))"
+    dirb $web /usr/share/dirbuster/wordlists/directory-list-1.0.txt -o dirb_output-"$((++x))" -w	
 done
 echo
 
@@ -234,7 +232,6 @@ find $pth -size 0c -type f -exec rm -rf {} \;
 
 # Removing unnessary files
 rm IPtargets -f
-rm temptargets -f
 rm temptargets -f
 rm tempusr -f
 rm TempWeb -f
