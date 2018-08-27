@@ -30,10 +30,12 @@ function GitLinks()
     echo  "What is the name of the file with all the git links (e.g., GitLinks.txt)?"
     read GitLinks
 
+    #cat GitLinks.txt | cut -d "/" -f 4
+
     for links in $(cat $ORGPATH/$GitLinks);do
         PrjSiteStatus=$(curl -o /dev/null --silent --get --write-out "%{http_code} $links\n" "$links" | cut -d " " -f 1)
         PrjDiskStatus=$(echo $links | cut -d "/" -f 5)
-        if [ "$PrjSiteStatus" != "404" ] && [ "$PrjDiskStatus" != "$(ls | grep $PrjDiskStatus)" ]; then
+        if [ "$PrjSiteStatus" != "404" ] && [ "$PrjDiskStatus" != "$(ls | grep -o "$PrjDiskStatus")" ]; then
             echo "----------------------------------------------------------"
             echo "You are downloading this Git repo:"
             echo $links
@@ -41,7 +43,7 @@ function GitLinks()
             git clone $links
         elif [ "$PrjSiteStatus" == "404" ]; then
             echo "$(date +%c): Thhe project $PrjDiskStatus no longer exists or has been moved" | tee -a $ORGPATH/Git_Mngr.log
-        elif [ "$PrjDiskStatus" == "$(ls | grep $PrjDiskStatus)" ]; then
+        elif [ "$PrjDiskStatus" == "$(ls | grep -o "$PrjDiskStatus")" ]; then
             echo "$(date +%c): You have already downloaded the project $PrjDiskStatus before" | tee -a $ORGPATH/Git_Mngr.log
         else
             echo "$(date +%c): If you are reading this, something want EPICLY WRONG.." | tee -a $ORGPATH/Git_Mngr.log
