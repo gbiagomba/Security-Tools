@@ -1,3 +1,8 @@
+https://github.com/securitytxt/security-txt
+https://github.com/theInfectedDrake/TIDoS-Framework
+https://github.com/jpillora/chisel
+https://github.com/SandboxEscaper/randomrepo
+https://github.com/web-token/jwt-doc
 https://aur.archlinux.org/testsslserver
 https://bitbucket.org/cse-assemblyline/assemblyline
 https://fbb-github.io/stealth/

@@ -62,8 +62,8 @@ cat $pth/UDPdetails.gnmap | grep ' 500/open\?\!|' | cut -d ' ' -f 2 > $pth/isakm
 xsltproc UDPdetails.xml -o UDPdetails.html
 
 # Nmap - Firewall evasion
-nmap -f -mtu 24 --spoof-mac Dell --randomize-hosts -A -Pn -R -sS -sU -sV --script=vulners -iL targets -oA FW_Evade
-nmap -D RND:10 --badsum --data-length 24 --randomize-hosts -A -Pn -R -sS -sU -sV --script=vulners -iL targets -oA FW_Evade2
+nmap -f -mtu 24 --spoof-mac Dell --randomize-hosts -A -Pn -R -sS -sU -sV --script=vulners -iL $pth/livehosts -oA FW_Evade
+nmap -D RND:10 --badsum --data-length 24 --randomize-hosts -A -Pn -R -sS -sU -sV --script=vulners -iL $pth/livehosts -oA FW_Evade2
 #nmap -sI 8.8.8.8 --source-port 53 -Pn -R -sV --script=vulners -iL targets -oA FW_Evade3
 
 # Nmap - Scan for possible vulnerabilities using vulners

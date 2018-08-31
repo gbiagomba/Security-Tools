@@ -121,6 +121,12 @@ for web in $(cat $pth/WebTargets);do
     metagoofil -d $web -l 500 -o $wrkpth/Harvester/Evidence -f $wrkpth/Harvester/metagoofil_output-"$((++x))".html -t pdf,doc,xls,ppt,odp,od5,docx,xlsx,pptx
     # wait
 done
+cat harvester_output-* | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" >> temptargets
+cat harvest_output-* |grep -E "(\.gov|\.us|\.net|\.com|\.edu|\.org|\.biz)" | cut -d ":" -f 1 >> TempWeb
+cat WebTargets >> TempWeb
+cat IPtargets >> temptargets
+cat TempWeb | sort | uniq > WebTargets
+cat temptargets | sort | uniq > IPtargets
 
 # Parsing PDF documents
 echo "--------------------------------------------------"
