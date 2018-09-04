@@ -44,7 +44,7 @@ cat $pth/live | sort | uniq > $pth/livehosts
 # PORT SCANNING
 
 # Nmap - Full TCP SYN scan on live targets
-nmap -sS -PN -O -sV -T4 -R -p0-65535 -script=vulners -iL $pth/livehosts -oA $pth/TCPdetails
+nmap -sS -Pn -O -sV -T4 -R -p0-65535 --script=vulners -iL $pth/livehosts -oA $pth/TCPdetails
 cat $pth/TCPdetails.gnmap | grep ' 25/open' | cut -d ' ' -f 2 > $pth/SMTP
 cat $pth/TCPdetails.gnmap | grep ' 53/open' | cut -d ' ' -f 2 > $pth/DNS
 cat $pth/TCPdetails.gnmap | grep ' 23/open' | cut -d ' ' -f 2 > $pth/telnet
@@ -56,15 +56,22 @@ cat $pth/TCPdetails.gnmap | grep ssl | grep open | cut -d ' ' -f 2 > $pth/ssl
 xsltproc TCPdetails.xml -o TCPdetails.html
 
 # Nmap - Default UDP scan on live targets
-nmap -sU -PN -T4 -iL $pth/livehosts -oA $pth/UDPdetails
+nmap -sU -Pn -T4 -iL $pth/livehosts -oA $pth/UDPdetails
 cat $pth/UDPdetails.gnmap | grep ' 161/open\?\!|' | cut -d ' ' -f 2 > $pth/SNMP
 cat $pth/UDPdetails.gnmap | grep ' 500/open\?\!|' | cut -d ' ' -f 2 > $pth/isakmp
 xsltproc UDPdetails.xml -o UDPdetails.html
 
+# Nmap - Finding zombie machines
+nmap -F -iR 0 -O -R -sA -v -iL $pth/livehosts -oA $pth/Zombies
+xsltproc $pth/Zombies.xml -o Zombies.html
+
 # Nmap - Firewall evasion
 nmap -f -mtu 24 --spoof-mac Dell --randomize-hosts -A -Pn -R -sS -sU -sV --script=vulners -iL $pth/livehosts -oA FW_Evade
 nmap -D RND:10 --badsum --data-length 24 --randomize-hosts -A -Pn -R -sS -sU -sV --script=vulners -iL $pth/livehosts -oA FW_Evade2
-#nmap -sI 8.8.8.8 --source-port 53 -Pn -R -sV --script=vulners -iL targets -oA FW_Evade3
+#nmap -sI google.com --source-port 53 -Pn -R -sV --script=vulners -iL $pth/livehosts -oA FW_Evade3
+xsltproc $pth/FW_Evade.xml -o FW_Evade.html
+xsltproc $pth/FW_Evade2.xml -o FW_Evade2.html
+#xsltproc $pth/FW_Evade3.xml -o FW_Evade3.html
 
 # Nmap - Scan for possible vulnerabilities using vulners
 # nmap -sV -sS -sU --script=vulners -R -iL target2 -A -p 0-65535-iL $pth/livehosts -oA $pth/VulScan
