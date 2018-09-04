@@ -16,21 +16,21 @@ echo
 # Nmap - Pingsweep using ICMP echo
 echo
 echo "Pingsweep using ICMP echo"
-nmap -sP -PE -iL $pth/targets -oA $pth/icmpecho
+nmap -R -sP -PE -iL $pth/targets -oA $pth/icmpecho
 cat $pth/icmpecho.gnmap | grep Up | cut -d ' ' -f 2 > $pth/live
 xsltproc icmpecho.xml -o icmpecho.html
 
 # Nmap - Pingsweep using ICMP timestamp
 echo
 echo "Pingsweep using ICMP timestamp"
-nmap -sP -PP -iL $pth/targets -oA $pth/icmptimestamp
+nmap -R sP -PP -iL $pth/targets -oA $pth/icmptimestamp
 cat $pth/icmptimestamp.gnmap | grep Up | cut -d ' ' -f 2 >> $pth/live
 xsltproc icmptimestamp.xml -o icmptimestamp.html
 
 # Nmap - Pingsweep using ICMP netmask
 echo
 echo "Pingsweep using ICMP netmask"
-nmap -sP -PM -iL $pth/targets -oA $pth/icmpnetmask
+nmap -R -sP -PM -iL $pth/targets -oA $pth/icmpnetmask
 cat $pth/icmpnetmask.gnmap | grep Up | cut -d ' ' -f 2 >> $pth/live
 xsltproc icmpnetmask.xml -o icmpnetmask.html
 
@@ -40,8 +40,8 @@ echo "Sorting what systems responded to our previous array of pingsweeps"
 cat $pth/live | sort | uniq > $pth/pingresponse
 
 # Nmap - Pingsweep using TCP SYN and UDP
-nmap -sP -PS 21,22,23,25,53,80,88,110,111,135,139,443,445,8080 -iL $pth/targets -oA $pth/pingsweepTCP
-nmap -sP -PU 53,111,135,137,161,500 -iL $pth/targets -oA $pth/pingsweepUDP
+nmap -R -sP -PS 21,22,23,25,53,80,88,110,111,135,139,443,445,8080 -iL $pth/targets -oA $pth/pingsweepTCP
+nmap -R -sP -PU 53,111,135,137,161,500 -iL $pth/targets -oA $pth/pingsweepUDP
 cat $pth/pingsweepTCP.gnmap | grep Up | cut -d ' ' -f 2 >> $pth/live
 cat $pth/pingsweepUDP.gnmap | grep Up | cut -d ' ' -f 2 >> $pth/live
 xsltproc pingsweepTCP.xml -o pingsweepTCP.html
@@ -55,7 +55,7 @@ cat $pth/live | sort | uniq > $pth/livehosts
 # Nmap - Full TCP SYN scan on live targets
 echo
 echo "Stealth network mapping scan using TCP SYN packets"
-nmap -sS -Pn -O -sV -T4 -R -p0-65535 --script=vulners -iL $pth/livehosts -oA $pth/TCPdetails
+nmap -R -sS -Pn -O -sV -T4 -R -p0-65535 --script=vulners -iL $pth/livehosts -oA $pth/TCPdetails
 cat $pth/TCPdetails.gnmap | grep ' 25/open' | cut -d ' ' -f 2 > $pth/SMTP
 cat $pth/TCPdetails.gnmap | grep ' 53/open' | cut -d ' ' -f 2 > $pth/DNS
 cat $pth/TCPdetails.gnmap | grep ' 23/open' | cut -d ' ' -f 2 > $pth/telnet
@@ -69,7 +69,7 @@ xsltproc TCPdetails.xml -o TCPdetails.html
 # Nmap - Default UDP scan on live targets
 echo
 echo "Stealth network mapping scan using UDP packets"
-nmap -sU -Pn -T4 -iL $pth/livehosts -oA $pth/UDPdetails
+nmap -R -sU -Pn -T4 --R -p0-65535 --script=vulners -iL $pth/livehosts -oA $pth/UDPdetails
 cat $pth/UDPdetails.gnmap | grep ' 161/open\?\!|' | cut -d ' ' -f 2 > $pth/SNMP
 cat $pth/UDPdetails.gnmap | grep ' 500/open\?\!|' | cut -d ' ' -f 2 > $pth/isakmp
 xsltproc UDPdetails.xml -o UDPdetails.html
@@ -77,7 +77,7 @@ xsltproc UDPdetails.xml -o UDPdetails.html
 # Nmap - Finding zombie machines
 echo
 echo "Stealth network mapping scan using TCP ACK Packets"
-nmap -F -iR 0 -O -R -sA -v -iL $pth/livehosts -oA $pth/Zombies
+nmap -iR 0 -O -R -sA -v -iL $pth/livehosts -oA $pth/Zombies
 xsltproc $pth/Zombies.xml -o Zombies.html
 
 # Nmap - Firewall evasion
