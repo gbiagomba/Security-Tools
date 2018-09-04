@@ -34,3 +34,14 @@ cat $pth/live | sort | uniq > $pth/livehosts
 echo
 echo "Stealth network mapping scan"
 nmap -A -F -Pn -R -sS -sU -sV -iL $pth/livehosts -oA FInal
+
+# Nmap - Firewall evasion
+echo
+echo "Stealth network mapping scan with Firewall evasion techniques"
+nmap -f -mtu 24 --spoof-mac Dell --randomize-hosts -A -F -Pn -R -sS -sU -sV --script=vulners -iL $pth/livehosts -oA FW_Evade
+nmap -D RND:10 --badsum --data-length 24 --randomize-hosts -A -F -Pn -R -sS -sU -sV --script=vulners -iL $pth/livehosts -oA FW_Evade2
+xsltproc $pth/FW_Evade.xml -o FW_Evade.html
+xsltproc $pth/FW_Evade2.xml -o FW_Evade2.html
+
+# Empty file cleanup
+find $pth -size 0c -type f -exec rm -rf {} \;
