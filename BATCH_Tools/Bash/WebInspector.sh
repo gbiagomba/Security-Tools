@@ -20,9 +20,10 @@ wrkpth="$pth/$TodaysYEAR/$TodaysDAY"
 # Setting Envrionment
 mkdir -p  $wrkpth/Halberd/ $wrkpth/Sublist3r/ $wrkpth/Harvester $wrkpth/Metagoofil
 mkdir -p $wrkpth/Nikto/ $wrkpth/Dirb/ $wrkpth/Nmap/ $wrkpth/Sniper/
-mkdir -p $wrkpth/Masscan/
+mkdir -p $wrkpth/Masscan/ $wrkpth/Arachni/ $wrkpth/OpenVAS/ $wrkpth/SSL/
 
-# Checking dependencies - halberd, sublist3r, theharvester, metagoofil, nikto, dirb, nmap, sn1per and masscan
+# Checking dependencies - halberd, sublist3r, theharvester, metagoofil, nikto, dirb, nmap, sn1pe, masscan, arachni, openvas, and zap
+# Add dependency check for arachni, openvas, and ssl later
 if [ "halberd" != "$(ls /usr/local/bin/ | grep halberd)" ]; then
     cd /opt/
     git clone https://github.com/jmbr/halberd
@@ -93,8 +94,9 @@ echo
 echo "--------------------------------------------------"
 echo "Performing scan using Sublist3r"
 echo "--------------------------------------------------"
+n=0
 for web in $(cat $pth/WebTargets);do
-	sublist3r -d $web -v -t 10 -o $wrkpth/Sublist3r/sublist3r_output-"$((++n))"
+	sublist3r -d $web -v -t 5 -o "$wrkpth/Sublist3r/sublist3r_output-$((++n))"
 done
 cat $wrkpth/Sublist3r/sublist3r_output* > TempWeb
 cat WebTargets >> TempWeb
@@ -105,8 +107,11 @@ echo
 echo "--------------------------------------------------"
 echo "Performing scan using Halberd"
 echo "--------------------------------------------------"
-halberd -u $pth/WebTargets -o $wrkpth/Halberd/halberd_output
-grep $wrkpth/Halberd/halberd_output | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" >> temptargets
+n=0
+for web in $(cat $pth/WebTargets);do
+	halberd $web -o $wrkpth/Halberd/halberd_output-$((++n)) -v -p 5 &
+done
+grep $wrkpth/Halberd/halberd_output-* | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" >> temptargets
 cat temptargets | sort | uniq > IPtargets
 echo
 
@@ -117,9 +122,8 @@ echo "--------------------------------------------------"
 n=0
 x=0
 for web in $(cat $pth/WebTargets);do
-    theharvester -d $web -l 500 -b all -h | tee $wrkpth/Harvester/harvester_output-"$((++n))"
-    metagoofil -d $web -l 500 -o $wrkpth/Harvester/Evidence -f $wrkpth/Harvester/metagoofil_output-"$((++x))".html -t pdf,doc,xls,ppt,odp,od5,docx,xlsx,pptx
-    # wait
+    theharvester -d $web -l 500 -b all -h | tee $wrkpth/Harvester/harvester_output-$((++n))
+    metagoofil -d $web -l 500 -o $wrkpth/Harvester/Evidence -f $wrkpth/Harvester/metagoofil_output-$((++x)).html -t pdf,doc,xls,ppt,odp,od5,docx,xlsx,pptx
 done
 cat harvester_output-* | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" >> temptargets
 cat harvest_output-* |grep -E "(\.gov|\.us|\.net|\.com|\.edu|\.org|\.biz)" | cut -d ":" -f 1 >> TempWeb
@@ -139,18 +143,6 @@ done
 cat $wrkpth/Harvester/tempusr | sort | uniq > Usernames
 echo
 
-# Using nikto & dirb
-echo "--------------------------------------------------"
-echo "Performing scan using Nikto and Dirb"
-echo "--------------------------------------------------"
-n=0
-x=0
-for web in $(cat $pth/WebTargets);do
-    nikto -C all -h https://$web -o Nikto_Output-"$((++n))"
-    dirb $web /usr/share/dirbuster/wordlists/directory-list-1.0.txt -o dirb_output-"$((++x))" -w	
-done
-echo
-
 # Using masscan to perform a quick port sweep
 echo "--------------------------------------------------"
 echo "Performing scan using Masscan"
@@ -165,7 +157,7 @@ echo "--------------------------------------------------"
 echo "Merging all targets files"
 echo "--------------------------------------------------"
 cat $pth/IPtargets > $pth/FinalTargets
-cat $pth/WebTargets > $pth/FinalTargets
+cat $pth/WebTargets >> $pth/FinalTargets
 echo
 
 # Using Nmap
@@ -205,7 +197,11 @@ xsltproc $wrkpth/Nmap/pingsweepUDP.xml -o $wrkpth/Nmap/pingsweepUDP.html
 echo
 
 # Nmap - Full TCP SYN scan on live targets
-nmap -A -Pn -R -sS -sV -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') --script=ssl-enum-ciphers,vulners -iL $pth/FinalTargets -oA $wrkpth/Nmap/TCPdetails
+# nmap http scripts: http-backup-finder,http-cookie-flags,http-cors,http-default-accounts,http-iis-short-name-brute,http-iis-webdav-vuln,http-internal-ip-disclosure,http-ls,http-malware-host 
+# nmap http scripts: http-method-tamper,http-mobileversion-checker,http-ntlm-info,http-open-redirect,http-passwd,http-referer-checker,http-rfi-spider,http-robots.txt,http-robtex-reverse-ip,http-security-headers
+# nmap http scripts: http-server-header,http-slowloris-check,http-sql-injection,http-stored-xss,http-svn-enum,http-svn-info,http-trace,http-traceroute,http-unsafe-output-escaping,http-userdir-enum
+# nmap http scripts: http-vhosts,membase-http-info
+nmap -A -Pn -R -sS -sV -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') --script=http-headers,http-methods,ssl-enum-ciphers,vulners -iL $pth/FinalTargets -oA $wrkpth/Nmap/TCPdetails
 xsltproc $wrkpth/Nmap/TCPdetails.xml -o $wrkpth/Nmap/Nmap_Output.html
 cat $wrkpth/Nmap/TCPdetails.gnmap | grep ' 25/open' | cut -d ' ' -f 2 > $wrkpth/Nmap/SMTP
 cat $wrkpth/Nmap/TCPdetails.gnmap | grep ' 53/open' | cut -d ' ' -f 2 > $wrkpth/Nmap/DNS
@@ -232,6 +228,72 @@ nmap -D RND:10 --badsum --data-length 24 --randomize-hosts -A -Pn -R -sS -sU -sV
 xsltproc $wrkpth/Nmap/FW_Evade.xml -o $wrkpth/Nmap/FW_Evade.html
 xsltproc $wrkpth/Nmap/FW_Evade2.xml -o $wrkpth/Nmap/FW_Evade2.html
 echo
+
+# Using nikto
+echo "--------------------------------------------------"
+echo "Performing scan using Nikto"
+echo "--------------------------------------------------"
+n=0
+for web in $(cat $pth/FinalTargets);do
+    nikto -C all -h https://$web -port $(echo ${OpenPORT[*]} | sed 's/ /,/g') -o $wrkpth/Nikto/nikto_https_output-$((++n)).csv | tee $wrkpth/Nikto/nikto_https_output-$((++n)).txt &
+    nikto -C all -h http://$web -port $(echo ${OpenPORT[*]} | sed 's/ /,/g') -o $wrkpth/Nikto/nikto_http_output-$((++n)).csv | tee $wrkpth/Nikto/nikto_http_output-$((++n)).txt &
+    wait
+done
+echo
+
+# Using dirb
+echo "--------------------------------------------------"
+echo "Performing scan using Dirb"
+echo "--------------------------------------------------"
+n=0
+for web in $(cat $pth/FinalTargets);do
+    for PORTNUM in ${OpenPORT[*]}; do
+        STAT1=$(cat $wrkpth/Nmap/TCPdetails.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
+        STAT2=$(cat $wrkpth/Nmap/TCPdetails.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
+        STAT3=$(cat $wrkpth/Nmap/TCPdetails.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
+        if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ]; then
+            dirb https://$web:$PORTNUM /usr/share/dirbuster/wordlists/directory-list-1.0.txt -o $wrkpth/Dirb/dirb_https_output-$((++n)) -w &
+            dirb http://$web:$PORTNUM /usr/share/dirbuster/wordlists/directory-list-1.0.txt -o $wrkpth/Dirb/dirb_http_output-$((++n)) -w &
+            wait
+        fi
+    done
+done
+echo
+
+# Using sniper
+echo "--------------------------------------------------"
+echo "Performing scan using Sn1per"
+echo "--------------------------------------------------"
+echo "What is the name of the project?"
+read prj_name
+for web in $(cat $pth/FinalTargets);do
+    for PORTNUM in ${OpenPORT[*]}; do
+        STAT1=$(cat $wrkpth/Nmap/TCPdetails.gnmap | grep $IP | grep "Status: Up" -m 1 -o | cut -c 9-10)
+        STAT2=$(cat $wrkpth/Nmap/TCPdetails.gnmap | grep $IP | grep "$PORTNUM/open" -m 1 -o | grep "open" -o)
+        STAT3=$(cat $wrkpth/Nmap/TCPdetails.gnmap | grep $IP | grep "$PORTNUM/filtered" -m 1 -o | grep "filtered" -o)
+        if [ "$STAT1" == "Up" ] && [ "$STAT2" == "open" ] || [ "$STAT3" == "filtered" ]; then
+            sniper -w $prj_name -t $web -m webporthttps -p $PORTNUM
+        fi
+    done
+done
+echo
+
+# Using arachni
+echo "--------------------------------------------------"
+echo "Performing scan using arachni"
+echo "--------------------------------------------------"
+n=0
+x=0
+for web in $(cat $pth/FinalTargets);do
+    arachni_multi https://$web http://$web --report-save-path=$wrkpth/Arachni/$prj_name-$((++n)).afr
+    arachni_reporter $wrkpth/Arachni/$prj_name-$((n)).afr --reporter=html:outfile=$wrkpth/Arachni/HTML_Report$((++x)).zip
+    arachni_reporter $wrkpth/Arachni/$prj_name-$((n)).afr --reporter=json:outfile=$wrkpth/Arachni/JSON_Report$((x)).zip
+    arachni_reporter $wrkpth/Arachni/$prj_name-$((n)).afr --reporter=txt:outfile=$wrkpth/Arachni/TXT_Report$((x)).zip
+    arachni_reporter $wrkpth/Arachni/$prj_name-$((n)).afr --reporter=xml:outfile=$wrkpth/Arachni/XML_Report$((x)).zip
+done
+
+# Add OpenVAS,  and some SSL (e.g., sslyze, ssltest or testssl) checking later
+# Add zipping of all content and sending it via some medium (e.g., email, ftp, etc)
 
 # Empty file cleanup
 find $pth -size 0c -type f -exec rm -rf {} \;
