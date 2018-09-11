@@ -38,7 +38,7 @@ nmap -A -F -Pn -R -sS -sU -sV -iL $pth/livehosts -oA FInal
 # Nmap - Firewall evasion
 echo
 echo "Stealth network mapping scan with Firewall evasion techniques"
-nmap -f -D RND:10 --badsum --data-length 24 --mtu 24 --spoof-mac Dell --randomize-hosts -A -F -Pn -R -sS -sU -sV -iL $pth/livehosts --script=vulners -oA $pth/fw_evade/FW_Evade
+nmap -D RND:10 --badsum --data-length 24 --mtu 24 --spoof-mac Dell --randomize-hosts -A -F -Pn -R -sS -sU -sV -iL $pth/livehosts --script=vulners -oA $pth/fw_evade/FW_Evade
 xsltproc $pth/fw_evade/FW_Evade.xml -o $pth/report/FW_Evade.html
 
 # Empty file cleanup
