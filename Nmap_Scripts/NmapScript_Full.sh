@@ -83,11 +83,8 @@ xsltproc $pth/Zombies.xml -o Zombies.html
 # Nmap - Firewall evasion
 echo
 echo "Stealth network mapping scan with Firewall evasion techniques"
-nmap -f -mtu 24 --spoof-mac Dell --randomize-hosts -A -Pn -R -sS -sU -sV --script=vulners -iL $pth/livehosts -oA FW_Evade &
-nmap -D RND:10 --badsum --data-length 24 --randomize-hosts -A -Pn -R -sS -sU -sV --script=vulners -iL $pth/livehosts -oA FW_Evade2 &
-wait
+nmap -f -D RND:10 --badsum --data-length 24 --mtu 24 --spoof-mac Dell --randomize-hosts -A -p0-65535 -Pn -R -sS -sU -sV -iL $pth/livehosts --script=vulners -oA FW_Evade
 xsltproc $pth/FW_Evade.xml -o FW_Evade.html
-xsltproc $pth/FW_Evade2.xml -o FW_Evade2.html
 
 # Empty file cleanup
 find $pth -size 0c -type f -exec rm -rf {} \;

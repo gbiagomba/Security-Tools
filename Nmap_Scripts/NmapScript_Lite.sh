@@ -1,5 +1,5 @@
 # Setting up work envrionment
-mkdir -p icmpecho icmptimestamp icmpnetmask report
+mkdir -p fw_evade icmpecho icmptimestamp icmpnetmask report
 
 # Variables - Set these
 pth=$(pwd)
@@ -38,10 +38,8 @@ nmap -A -F -Pn -R -sS -sU -sV -iL $pth/livehosts -oA FInal
 # Nmap - Firewall evasion
 echo
 echo "Stealth network mapping scan with Firewall evasion techniques"
-nmap -f -mtu 24 --spoof-mac Dell --randomize-hosts -A -F -Pn -R -sS -sU -sV --script=vulners -iL $pth/livehosts -oA FW_Evade
-nmap -D RND:10 --badsum --data-length 24 --randomize-hosts -A -F -Pn -R -sS -sU -sV --script=vulners -iL $pth/livehosts -oA FW_Evade2
-xsltproc $pth/FW_Evade.xml -o FW_Evade.html
-xsltproc $pth/FW_Evade2.xml -o FW_Evade2.html
+nmap -f -D RND:10 --badsum --data-length 24 --mtu 24 --spoof-mac Dell --randomize-hosts -A -F -Pn -R -sS -sU -sV -iL $pth/livehosts --script=vulners -oA $pth/fw_evade/FW_Evade
+xsltproc $pth/fw_evade/FW_Evade.xml -o $pth/report/FW_Evade.html
 
 # Empty file cleanup
 find $pth -size 0c -type f -exec rm -rf {} \;
