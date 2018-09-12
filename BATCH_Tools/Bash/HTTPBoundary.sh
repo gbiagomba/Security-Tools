@@ -54,7 +54,10 @@ for URL in $(cat $wrkpth/PARSED/HTTP_Code_OK | cut -d " " -f 2);do
 	cutycapt --url=$URL --out=$URL.jpg --insecure --max-wait=1000 &
 	wait
 done
+
+# Zipping up findings
 cd $pth
+zip -ru -9 HTTPBoundary.zip $wrkpth/*
 
 # Empty file cleanup
 find $wrkpth/ -size 0c -type f -exec rm -rf {} \;
