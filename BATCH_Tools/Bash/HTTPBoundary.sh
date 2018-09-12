@@ -16,13 +16,13 @@ TodaysYEAR=$(date +%Y)
 wrkpth="$pth/$TodaysYEAR/$TodaysDAY"
 
 # mkdir -p HEAD GET TRACE POST PUT DELETE PATCH OPTIONS CONNECT
-mkdir $wrkpth/OUTPUT $wrkpth/PARSED $wrkpth/EVIDENCE
+mkdir -p $wrkpth/OUTPUT $wrkpth/PARSED $wrkpth/EVIDENCE
 
 echo "What is the name of the target file? (That's the file with all the links)"
 read links
 
 #touch $wrkpth/OUTPUT/HTTP_HEAD_output.txt $wrkpth/OUTPUT/HTTP_GET_output.txt $wrkpth/OUTPUT/HTTP_TRACE_output.txt $wrkpth/OUTPUT/HTTP_POST_output.txt $wrkpth/OUTPUT/HTTP_PUT_output.txt $wrkpth/OUTPUT/HTTP_DELETE_output.txt $wrkpth/OUTPUT/HTTP_PATCH_output.txt $wrkpth/OUTPUT/HTTP_OPTIONS_output.txt $wrkpth/OUTPUT/HTTP_CONNECT_output.txt
-for URL in $(cat links); do
+for URL in $(cat $links); do
 	curl -o /dev/null --silent --head --write-out "%{http_code} $URL\n" "$URL" | tee -a $wrkpth/OUTPUT/HTTP_HEAD_output.txt &
 	curl -o /dev/null --silent --get --write-out "%{http_code} $URL\n" "$URL" | tee -a $wrkpth/OUTPUT/HTTP_GET_output.txt  &
 	curl -o /dev/null --silent -X TRACE --write-out "%{http_code} $URL\n" "$URL" | tee -a $wrkpth/OUTPUT/HTTP_TRACE_output.txt  &
