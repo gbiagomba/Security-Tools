@@ -4,12 +4,17 @@ pth=$(pwd)
 
 # Setting up workspace
 mkdir -p ICMP PING SERV REPORTS
-mkdir -p TCP UDP
+mkdir -p TCP UDP MASSCAN
 
 # Project name
 echo "What is the name of the project?"
 read workspace
 echo
+
+# Masscan - Used tro
+echo
+echo "Masscan - Checking all 65,535 ports"
+masscan -iL $pth/targets -p 0-65535 --open-only -oL $pth/MASSCAN/masscan_output
 
 # HOST DISCOVERY
 
