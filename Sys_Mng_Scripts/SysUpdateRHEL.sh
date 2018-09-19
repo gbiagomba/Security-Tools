@@ -12,7 +12,7 @@ yum update
 yum upgrade -y
 yum dist-upgrade -y
 yum autoclean
-#yum autoremove -y
+yum autoremove -y
 gem update
 gem2.3 update
 pause 'Press [Enter] key to continue...'

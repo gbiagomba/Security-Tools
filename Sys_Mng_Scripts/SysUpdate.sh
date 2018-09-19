@@ -15,7 +15,7 @@ apt update
 apt upgrade -y --allow-downgrades
 apt full-upgrade -y --allow-downgrades
 apt autoclean
-#apt autoremove -y
+apt autoremove -y
 
 #Updating all ruby packages
 gem2.5 update
