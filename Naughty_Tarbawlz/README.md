@@ -1,4 +1,4 @@
-![alt tag](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB7XJtYmZm8uuTQeDlsGKRJeqTTys45SabP9cMfeU3iQfCV8Ti)
+![alt tag](https://cdn-images-1.medium.com/max/1200/1*zHmD0vnFF9phLu2LIlJJpQ.png)
 
 ```
   _   _                   _     _           _______         _                    _     _ 
