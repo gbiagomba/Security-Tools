@@ -35,5 +35,12 @@ The zip files all share the same password! (see below):
 P4ssw0rd!
 ```
 
+# AV Evasion Checklist
+Use the screenshot below to help you assessment
+![alt tag](https://www.nextron-systems.com/wp-content/uploads/2018/06/Screen-Shot-2018-05-12-at-11.55.11.png)
+1. https://www.nextron-systems.com/2018/05/12/new-antivirus-event-analysis-cheat-sheet-version-1-2/
+2. https://www.nextron-systems.com/wp-content/uploads/2018/06/Software-Problem-Solving-Cheat-Sheet.pdf
+3. https://www.nextron-systems.com/wp-content/uploads/2018/05/Antivirus_Event_Analysis_CheatSheet_1.2.pdf
+
 # Got questions?
 Submit an issue and I will address your concerns there
