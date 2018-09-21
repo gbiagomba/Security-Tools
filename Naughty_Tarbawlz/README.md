@@ -15,7 +15,7 @@
 This folder contains a collection of encrytpted zip files (yes though not technically a tar file) that contain both non-malicious and malicious binaries from kali Linux (and other projects). The purpose of this folder and its contents is for anti-virus risk acceptance testing. 
 
 # Side note: Encryption
-If you are wondering why I password protected the zip file, it is to prevent the AV solution you are testing from reading the contents of the archive, and removing or modifying the zip file(s) the moment you connect the thumbdrive and/or copy the files to disk. BY password protecting the zip files, it makes it so that the AV solution can not identify which files are malicious and which are not unless you extra the contents.
+If you are wondering why I password protected the zip file, it is to prevent the AV solution you are testing from reading the contents of the archive, and removing or modifying the zip file(s) the moment you connect the thumbdrive and/or copy the files to disk. By password protecting the zip files, it makes it so that the AV solution can not identify which files are malicious and which are not unless you extra the contents.
 
 # HOWTO: Usage
 All you have to do is:
@@ -36,11 +36,11 @@ P4ssw0rd!
 ```
 
 # AV Evasion Checklist
-Use the screenshot below to help you assessment
+Use the screenshot and links (the pdfs are in the pdf folder of this directory) below to help you with your assessment
 ![alt tag](https://www.nextron-systems.com/wp-content/uploads/2018/06/Screen-Shot-2018-05-12-at-11.55.11.png)
-1. https://www.nextron-systems.com/2018/05/12/new-antivirus-event-analysis-cheat-sheet-version-1-2/
-2. https://www.nextron-systems.com/wp-content/uploads/2018/06/Software-Problem-Solving-Cheat-Sheet.pdf
-3. https://www.nextron-systems.com/wp-content/uploads/2018/05/Antivirus_Event_Analysis_CheatSheet_1.2.pdf
+1. hhttps://www.nextron-systems.com/2018/09/08/antivirus-event-analysis-cheat-sheet-v1-4/
+2. https://www.nextron-systems.com/wp-content/uploads/2018/09/Antivirus_Event_Analysis_CheatSheet_1.4.pdf
+3. https://www.nextron-systems.com/wp-content/uploads/2018/09/Antivirus_Event_Analysis_CheatSheet_1.5-2.pdf
 
 # Got questions?
 Submit an issue and I will address your concerns there
