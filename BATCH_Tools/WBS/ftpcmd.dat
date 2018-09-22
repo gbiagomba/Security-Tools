@@ -1,0 +1,5 @@
+bin
+prompt off
+lcd C:/PCI//Other/Misc/Browsers/FireFox
+mget /pub/mozilla.org/firefox/releases/latest/win32/en-US/*.exe
+bye

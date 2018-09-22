@@ -1,0 +1,1 @@
+java -jar \Documents\GBiagomba\Applications\Burp\burpsuite_free_v1.6.jar -Xmx2g
