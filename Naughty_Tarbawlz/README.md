@@ -14,8 +14,15 @@
 # Naughty Tar Bawl
 This folder contains a collection of encrytpted zip files (yes though not technically a tar file) that contain both non-malicious and malicious binaries from kali Linux (and other projects). The purpose of this folder and its contents is for anti-virus risk acceptance testing. 
 
-# Side note: Encryption
+# Side notes: 
+## Encryption:
 If you are wondering why I password protected the zip file, it is to prevent the AV solution you are testing from reading the contents of the archive, and removing or modifying the zip file(s) the moment you connect the thumbdrive and/or copy the files to disk. By password protecting the zip files, it makes it so that the AV solution can not identify which files are malicious and which are not unless you extra the contents.
+
+## NaughtyExec Directory:
+I had another compressed file but it was too large to upload to I split it into 75MB chucks. That file has even more content in it, about 1GB (870MB to be exact). You could use either the lite version if you want something quick or the heavy.
+
+## Manifesto files:
+Thse files will disclose the contents of the zip files, so you are aware of what you're extracting. I do need to recompile the files because I have made modifications to them (nothing naughty ;) because I removed senative files from the zip but did not reflect thse changes from the manifesto.
 
 # HOWTO: Usage
 All you have to do is:
