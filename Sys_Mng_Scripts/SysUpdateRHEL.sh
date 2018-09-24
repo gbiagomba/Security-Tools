@@ -1,9 +1,10 @@
 #!/bin/bash
-#Author: Gilles Biagomba
-#Program: SysUpdater.sh
-#Description: This script automates updating a debian based OS.\n
-# 	      It was written on and for Kali2, because I was being lazy.\n
-# init
+# Author: Gilles Biagomba
+# Program: SysUpdater.sh
+# Description: This script automates updating a RHEL based OS.\n
+#  	      It was written on Kali2, and tested on RHEL 6.\n
+#  	      I wrote it because I was being lazy lol.\n
+
 function pause()
 {
    read -p "$*"
