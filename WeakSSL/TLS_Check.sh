@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 # Author: Gilles Biagomba
 # Program: TLS_Check.sh
 # Description: Test to see if TLS 1.0 and TLS 1.1 are enables.\n
