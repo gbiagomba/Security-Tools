@@ -56,8 +56,11 @@ nmap -A -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') -Pn -R -sS -sU -sV -iL $pth/li
 # Nmap - Firewall evasion
 echo
 echo "Stealth network mapping scan with Firewall evasion techniques"
-nmap -D RND:10 --badsum --data-length 24 --mtu 24 --spoof-mac Dell --randomize-hosts -A -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') -Pn -R -sS -sU -sV -iL $pth/livehosts --script=vulners -oA $pth/fw_evade/FW_Evade
+# nmap -D RND:10 --badsum --data-length 24 --mtu 24 --spoof-mac Dell --randomize-hosts -A -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') -Pn -R -sS -sU -sV -iL $pth/livehosts --script=vulners -oA $pth/fw_evade/FW_Evade
+nmap -f -mtu 24 --randomize-hosts --reason --resolve-all --spoof-mac Dell -T2 -A -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') -Pn -R -sS -sU -sV --script=vulners -iL $pth/livehosts -oA $pth/fw_evade/FW_Evade
+nmap -D RND:10 --badsum --data-length 24 --randomize-hosts -reason --resolve-all -T2 -A -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') -Pn -R -sS -sU -sV --script=vulners -iL $pth/livehosts -oA $pth/fw_evade/FW_Evade2
 xsltproc $pth/fw_evade/FW_Evade.xml -o $pth/report/FW_Evade.html
+xsltproc $pth/fw_evade/FW_Evade2.xml -o $pth/report/FW_Evade2.html
 
 # Empty file cleanup
 find $pth -size 0c -type f -exec rm -rf {} \;
