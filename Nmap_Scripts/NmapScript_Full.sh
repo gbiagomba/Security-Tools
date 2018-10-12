@@ -87,7 +87,7 @@ cat $pth/live | sort | uniq > $pth/livehosts
 # Nmap - Full TCP SYN scan on live $targetf
 echo
 echo "Stealth network mapping scan using TCP SYN packets"
-nmap -R -sS -Pn -O -sV -T4 -R -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') --script=vulners -iL $pth/livehosts -oA $pth/TCPdetails
+nmap -R --reason --resolve-all -sS -Pn -O -sV -T4 -R -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') --script=vulners -iL $pth/livehosts -oA $pth/TCPdetails
 cat $pth/TCPdetails.gnmap | grep ' 25/open' | cut -d ' ' -f 2 > $pth/SMTP
 cat $pth/TCPdetails.gnmap | grep ' 53/open' | cut -d ' ' -f 2 > $pth/DNS
 cat $pth/TCPdetails.gnmap | grep ' 23/open' | cut -d ' ' -f 2 > $pth/telnet

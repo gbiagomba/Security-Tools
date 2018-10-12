@@ -51,7 +51,7 @@ cat $pth/live | sort | uniq > $pth/livehosts
 # FInal scan
 echo
 echo "Stealth network mapping scan"
-nmap -A -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') -Pn -R -sS -sU -sV -iL $pth/livehosts -oA FInal
+nmap -A -p $(echo ${OpenPORT[*]} | sed 's/ /,/g') -Pn -R  --reason --resolve-all -sS -sU -sV -T4 -iL $pth/livehosts -oA FInal
 
 # Nmap - Firewall evasion
 echo
