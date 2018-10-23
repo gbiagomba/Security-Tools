@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Author: Gilles Biagomba
 # Program: SysUpdater.sh
 # Description: This script automates updating a debian based OS.\n
