@@ -1,0 +1,20 @@
+Archive:  VMware-Tools-core-10.3.2-9925305.zip
+   creating: floppies/
+  inflating: floppies/pvscsi-Windows2008.flp  
+  inflating: floppies/pvscsi-Windows8.flp  
+  inflating: floppies/pvscsi-WindowsVista.flp  
+   creating: vmtools/
+ extracting: vmtools/buildNumber.txt  
+  inflating: vmtools/linux.iso.sig   
+  inflating: vmtools/windows.iso     
+  inflating: vmtools/isoimages_manifest.txt.sig  
+  inflating: vmtools/linux_avr_manifest.txt  
+  inflating: vmtools/linux.iso       
+  inflating: vmtools/windows_avr_manifest.txt  
+  inflating: vmtools/windows.iso.sha  
+  inflating: vmtools/windows_avr_manifest.txt.sig  
+  inflating: vmtools/linux_avr_manifest.txt.sig  
+  inflating: vmtools/windows.iso.sig  
+  inflating: vmtools/isoimages_manifest.txt  
+  inflating: vmtools/linux.iso.sha   
+ extracting: vmtools/version.txt     
