@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Author: Gilles Biagomba
 # Program: Git_Cloner.sh
 # Description: This script was design to update or clone multiple git repos.\n
