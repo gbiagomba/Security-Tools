@@ -31,8 +31,6 @@ function GitLinks()
     echo  "What is the name of the file with all the git links (e.g., GitLinks.txt)?"
     read GitLinks
 
-    # cat GitLinks.txt | cut -d "/" -f 4
-
     for links in $(cat $ORGPATH/$GitLinks);do
         PrjSiteStatus=$(curl -o /dev/null --silent --get --write-out "%{http_code} $links\n" "$links" | cut -d " " -f 1)
         PrjDiskStatus=$(echo $links | cut -d "/" -f 5)
@@ -61,7 +59,6 @@ function pause()
 # De-initialize all variables & setting them to NULL
 function destructor()
 {
-#     rm $ORGPATH/GITPATHTEMP.txt $ORGPATH/GITPATH.txt -rf
     unset answer
     unset GitLinks
     unset GITPATHTEMP
