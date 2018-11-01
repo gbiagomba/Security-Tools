@@ -1,3 +1,0 @@
-http://www.gmodules.com/ig/proxy?url=http://example.com/
-http://googleweblight.com/?lite_url=http://mobiviki.com/
-
