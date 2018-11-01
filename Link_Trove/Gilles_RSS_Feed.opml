@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<opml version="1.0">
+ <head>
+  <title>OPML exported from Outlook</title>
+  <dateCreated>Thu, 1 Nov 2018 15:38:20 -0400</dateCreated>
+  <dateModified>Thu, 1 Nov 2018 15:38:20 -0400</dateModified>
+ </head>
+ <body>
+  <outline text="Black Hills Information Security" type="rss"
+  xmlUrl="https://www.blackhillsinfosec.com/feed/"/>
+  <outline text="Blog – Red Canary" type="rss"
+  xmlUrl="https://www.redcanary.com/blog/feed/"/>
+  <outline text="PCWorld Privacy" type="rss"
+  xmlUrl="http://www.pcworld.com/category/privacy/index.rss"/>
+  <outline text="Mathy Vanhoef, PhD" type="rss"
+  xmlUrl="http://www.mathyvanhoef.com/feeds/comments/default"/>
+  <outline text="Hacker News" type="rss"
+  xmlUrl="https://news.ycombinator.com/bigrss"/>
+  <outline text="CyberPunk" type="rss"
+  xmlUrl="https://feeds.feedburner.com/n0where"/>
+  <outline text="Troy Hunt's Blog" type="rss"
+  xmlUrl="https://feeds.feedburner.com/TroyHunt"/>
+  <outline text="GitHub Trends - SQL - Monthly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_sql_monthly.rss"/>
+  <outline text="Network World Security" type="rss"
+  xmlUrl="http://www.networkworld.com/category/security/index.rss"/>
+  <outline text="InfoSec Resources" type="rss"
+  xmlUrl="http://feeds.feedburner.com/infosecResources"/>
+  <outline text="Packet Storm" type="rss"
+  xmlUrl="https://rss.packetstormsecurity.com/"/>
+  <outline text="Red Canary" type="rss" xmlUrl="http://www.redcanary.co/feed"/>
+  <outline text="National Vulnerability Database" type="rss"
+  xmlUrl="https://nvd.nist.gov/download/nvd-rss.xml"/>
+  <outline text="The Daily Beast Latest Articles" type="rss"
+  xmlUrl="https://feeds.thedailybeast.com/summary/rss/security"/>
+  <outline text="GitHub Trends - Hack - Weekly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_hack_weekly.rss"/>
+  <outline text="MSRC" type="rss"
+  xmlUrl="https://blogs.technet.microsoft.com/msrc/feed/"/>
+  <outline text="Hacking News -- ScienceDaily" type="rss"
+  xmlUrl="https://www.sciencedaily.com/rss/computers_math/hacking.xml"/>
+  <outline text="security – Ars Technica" type="rss"
+  xmlUrl="http://feeds.arstechnica.com/arstechnica/security"/>
+  <outline text="Ars Technica" type="rss"
+  xmlUrl="http://feeds.arstechnica.com/arstechnica/index"/>
+  <outline text="GitHub Trends - PowerShell - Weekly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_powershell_weekly.rss"/>
+  <outline text="VulnHub ~ Entries" type="rss"
+  xmlUrl="https://www.vulnhub.com/feeds/added/rss/"/>
+  <outline text="Scientific American: Technology" type="rss"
+  xmlUrl="http://rss.sciam.com/sciam/technology"/>
+  <outline text="InformationWeek: " type="rss"
+  xmlUrl="https://informationweek.com/rss_simple.asp"/>
+  <outline text="Security and Defense News -- ScienceDaily" type="rss"
+  xmlUrl="https://www.sciencedaily.com/rss/science_society/security_and_defense.xml"/>
+  <outline text="GitHub Trends - PowerShell - Monthly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_powershell_monthly.rss"/>
+  <outline text="The Hacker News" type="rss"
+  xmlUrl="https://feeds.feedburner.com/TheHackersNews"/>
+  <outline text="GitHub Trends - SQL - Weekly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_sql_weekly.rss"/>
+  <outline text="GitHub Trends - Visual Basic - Monthly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_visual-basic_monthly.rss"/>
+  <outline text="TechWeb Digital Library" type="rss"
+  xmlUrl="http://www.informationweek.com/whitepaper/rss"/>
+  <outline text="GitHub Trends - Go - Monthly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_go_monthly.rss"/>
+  <outline text="Computerworld Security" type="rss"
+  xmlUrl="http://www.computerworld.com/category/security/index.rss"/>
+  <outline text="The first stop for security news | Threatpost " type="rss"
+  xmlUrl="https://threatpost.com/feed"/>
+  <outline text="GitHub Trends - Go - Weekly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_go_weekly.rss"/>
+  <outline text="Tenable News Feed" type="rss"
+  xmlUrl="https://www.tenable.com/feed/news"/>
+  <outline text="SecurityFocus Vulnerabilities" type="rss"
+  xmlUrl="http://www.securityfocus.com/rss/vulnerabilities.xml"/>
+  <outline text="GitHub Trends - Swift - Daily" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_swift_daily.rss"/>
+  <outline text="Dark Reading: " type="rss"
+  xmlUrl="http://www.darkreading.com/rss_simple.asp"/>
+  <outline text="CNET" type="rss" xmlUrl="https://www.cnet.com/rss/all/"/>
+  <outline text="GitHub Trends - JavaScript - Weekly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_javascript_weekly.rss"/>
+  <outline text="GitHub Trends - Visual Basic - Weekly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_visual-basic_weekly.rss"/>
+  <outline
+  text="Security News - Software vulnerabilities, data leaks, malware, viruses"
+  type="rss"
+  xmlUrl="https://phys.org/rss-feed/breaking/technology-news/security/"/>
+  <outline text="Blog – Hackaday" type="rss"
+  xmlUrl="https://hackaday.com/blog/feed/"/>
+  <outline text="BleepingComputer" type="rss"
+  xmlUrl="https://www.bleepingcomputer.com/feed/"/>
+  <outline text="Engadget RSS Feed" type="rss"
+  xmlUrl="https://www.engadget.com/rss.xml"/>
+  <outline text="Conscious Hacker" type="rss"
+  xmlUrl="https://blog.conscioushacker.io/index.php/feed/"/>
+  <outline text="The Register" type="rss"
+  xmlUrl="https://www.theregister.co.uk/headlines.atom"/>
+  <outline text="Shell is Only the Beginning" type="rss"
+  xmlUrl="https://www.darkoperator.com/?format=rss"/>
+  <outline text="GitHub Trends - JavaScript - Monthly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_javascript_monthly.rss"/>
+  <outline text="The Register - Security" type="rss"
+  xmlUrl="https://www.theregister.co.uk/security/headlines.atom"/>
+  <outline text="TechCrunch" type="rss"
+  xmlUrl="http://feeds.feedburner.com/TechCrunch/"/>
+  <outline text="GitHub Trends - Batchfile - Daily" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_batchfile_daily.rss"/>
+  <outline text="Most popular articles from SC Magazine" type="rss"
+  xmlUrl="https://www.scmagazine.com/pages/rss.aspx?mp=true&amp;mpc=20"/>
+  <outline text="Files ≈ Packet Storm" type="rss"
+  xmlUrl="https://rss.packetstormsecurity.com/files/"/>
+  <outline text="News ≈ Packet Storm" type="rss"
+  xmlUrl="https://rss.packetstormsecurity.com/news/"/>
+  <outline text="GitHub Trends - Hack - Monthly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_hack_monthly.rss"/>
+  <outline text="Tenable Product Security Advisories" type="rss"
+  xmlUrl="https://tenable.com/security/feed"/>
+  <outline text="GitHub Trends - Python - Monthly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_python_monthly.rss"/>
+  <outline text="KitPloit - PenTest Tools!" type="rss"
+  xmlUrl="http://feeds.feedburner.com/PentestTools"/>
+  <outline text="Haider Mahmood Infosec Blog" type="rss"
+  xmlUrl="https://haiderm.com/feed/rss/"/>
+  <outline text="ToolsWatch.org – The Hackers Arsenal Tools Portal" type="rss"
+  xmlUrl="http://www.toolswatch.org/feed/"/>
+  <outline text="Note to Self " type="rss"
+  xmlUrl="http://feeds.wnyc.org/notetoself-podcast"/>
+  <outline text="Twitter Search / whitehat_zero " type="rss"
+  xmlUrl="https://www.twitrss.me/twitter_user_to_rss/?user=whitehat_zero"/>
+  <outline text="TrustedSec" type="rss"
+  xmlUrl="https://www.trustedsec.com/feed/"/>
+  <outline text="GitHub Trends - Python - Weekly" type="rss"
+  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_python_weekly.rss"/>
+  <outline text="Latest topics for ZDNet in Security" type="rss"
+  xmlUrl="http://www.zdnet.com/topic/security/rss.xml"/>
+  <outline text="GBHackers On Security" type="rss"
+  xmlUrl="https://gbhackers.com/feed/"/>
+  <outline text="Security Boulevard" type="rss"
+  xmlUrl="https://securityboulevard.com/feed/"/>
+  <outline text="The Verge -  All Posts" type="rss"
+  xmlUrl="https://www.theverge.com/rss/index.xml"/>
+  <outline text="Virus, Spyware, and Malware Removal Guides" type="rss"
+  xmlUrl="https://www.bleepingcomputer.com/virus-removal/feed/"/>
+  <outline text="The Next Web" type="rss"
+  xmlUrl="https://feeds2.feedburner.com/thenextweb"/>
+  <outline text="VentureBeat" type="rss"
+  xmlUrl="https://feeds.feedburner.com/venturebeat/SZYF"/>
+  <outline text="CNET News" type="rss" xmlUrl="https://www.cnet.com/rss/news/"/>
+ </body>
+</opml>
