@@ -1,15 +1,15 @@
-#!/usr/bin/env bash
-# Author: Gilles Biagomba
-# Program: Git_Cloner.sh
-# Description: This script was design to update or clone multiple git repos.\n
-#  	          Open the GitLinks.txt file, copy all git links into it.\n
-# 	          Save and close the file, then run Git_Cloner.sh.\n
+#!/bin/bash
+#Author: Gilles Biagomba
+#Program: Git_Cloner.sh
+#Description: This script was design to update or clone multiple git repos.\n
+# 	          Open the GitLinks.txt file, copy all git links into it.\n
+#	          Save and close the file, then run Git_Cloner.sh.\n
 
-# Setting path to working directory
-GITPATHTEMP=($(ls))
+#Setting path to working directory
+GITPATHTEMP=($(ls | sort | uniq))
 ORGPATH=$(pwd)
 
-# Updating existing git repos
+#Updating existing git repos
 function GitUpdate()
 {
     for pths in ${GITPATHTEMP[*]}; do
@@ -18,18 +18,21 @@ function GitUpdate()
         echo "You are updating this Git repo:"
         echo $pths
         echo "----------------------------------------------------------"
-        git reset --hard
         git pull
         cd ..
     done
 }
 
-# Downloading new git repos
+#Downloading new git repos
 function GitLinks()
 {
     cd $ORGPATH
-    echo  "What is the name of the file with all the git links (e.g., GitLinks.txt)?"
+    echo  "What is the name of the file with all the git links (Default: GitLinks.txt)?"
     read GitLinks
+
+    if [ -z $GitLinks ]; then
+        GitLinks="GitLinks.txt"
+    fi
 
     for links in $(cat $ORGPATH/$GitLinks);do
         PrjSiteStatus=$(curl -o /dev/null --silent --get --write-out "%{http_code} $links\n" "$links" | cut -d " " -f 1)
@@ -50,15 +53,16 @@ function GitLinks()
     done
 }
 
-# Pause on exit
+#Pause on exit
 function pause()
 {
    read -p "$*"
 }
 
-# De-initialize all variables & setting them to NULL
+#De-initialize all variables & setting them to NULL
 function destructor()
 {
+#    rm $ORGPATH/GITPATHTEMP.txt $ORGPATH/GITPATH.txt -rf
     unset answer
     unset GitLinks
     unset GITPATHTEMP
@@ -69,7 +73,7 @@ function destructor()
     set -u
 }
 
-# User selection
+#User selection
 function UserSelect()
 {
     echo
@@ -85,7 +89,7 @@ function UserSelect()
         UserSelect
     fi
 
-    # Switch case
+    #Switch case
     case $answer in
         1)
             cd $ORGPATH
