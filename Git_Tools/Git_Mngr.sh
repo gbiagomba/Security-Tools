@@ -6,7 +6,7 @@
 #	          Save and close the file, then run Git_Cloner.sh.\n
 
 #Setting path to working directory
-GITPATHTEMP=($(ls | sort | uniq))
+GITPATHTEMP=($(ls -d */ | sort | uniq))
 ORGPATH=$(pwd)
 
 #Updating existing git repos
