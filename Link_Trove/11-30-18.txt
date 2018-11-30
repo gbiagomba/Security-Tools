@@ -1,0 +1,78 @@
+Track People on the Internet: trape
+http://feedproxy.google.com/~r/n0where/~3/4_na5ak3c5U/people-tracker-on-the-internet-trape
+https://github.com/boxug/trape
+
+The Incident Response Tracking Application:  DFIRTrack
+http://feedproxy.google.com/~r/n0where/~3/rXtLMHzJORE/the-incident-response-tracking-application-dfirtrack
+https://github.com/stuhli/dfirtrack
+
+Endpoint for Out-of-Band Exfiltration: Arecibo
+http://feedproxy.google.com/~r/n0where/~3/XI4c8PVff_0/endpoint-for-out-of-band-exfiltration-arecibo
+https://www.tarlogic.com/en/blog/arecibo-exfiltration-tool/
+https://github.com/TarlogicSecurity/Arecibo
+
+Asynchronous Target Enumeration Tool: bscan
+http://feedproxy.google.com/~r/n0where/~3/BlpIgW6znVI/asynchronous-target-enumeration-tool-bscan
+https://github.com/welchbj/bscan
+
+Investigate Inline Hooks: PE-sieve
+http://feedproxy.google.com/~r/n0where/~3/1K85aVS4EhI/investigate-inline-hooks-pe-sieve
+https://hshrzd.wordpress.com/pe-sieve/
+https://github.com/hasherezade/pe-sieve
+
+Red Team’s SIEM: RedELK
+http://feedproxy.google.com/~r/n0where/~3/vl5W-7JBiqU/red-teams-siem-redelk
+https://github.com/outflanknl/RedELK
+
+Modular Distributed Fingerprinting Engine: Scannerl
+http://feedproxy.google.com/~r/n0where/~3/RYnr1ex5izU/modular-distributed-fingerprinting-engine-scannerl
+https://github.com/kudelskisecurity/scannerl
+
+ProcDump Sysinternals Tool for Linux
+http://feedproxy.google.com/~r/n0where/~3/4ej-A6RE3pM/procdump-sysinternals-tool-for-linux
+https://github.com/Microsoft/ProcDump-for-Linux
+
+Network and Web Pentest Framework: Jok3r
+http://feedproxy.google.com/~r/n0where/~3/nOkuugMLx3c/network-and-web-pentest-framework-jok3r
+https://jok3r.readthedocs.io/en/latest/
+https://github.com/koutto/jok3r
+
+Extract Digital Evidences From Images: Imago-Forensics
+http://feedproxy.google.com/~r/n0where/~3/dp-b6iFFh0Q/extract-digital-evidences-from-images-imago-forensics
+https://github.com/redaelli/imago-forensics
+
+Nmap Web Dashboard and Reporting: WebMap
+http://feedproxy.google.com/~r/n0where/~3/YGjhCoslrJg/nmap-web-dashboard-and-reporting-webmap
+https://github.com/Rev3rseSecurity/WebMap
+
+Suricata Based IDS/IPS Distro: SELKS
+http://feedproxy.google.com/~r/n0where/~3/b85yEvSDmks/suricata-based-ids-ips-distro-selks
+https://github.com/StamusNetworks/SELKS/wiki
+https://www.stamus-networks.com/downloads/
+
+Unified hosts File With Base Extensions: hosts
+http://feedproxy.google.com/~r/n0where/~3/ncVYo-Ito2E/unified-hosts-file-with-base-extensions-hosts
+https://github.com/StevenBlack/hosts
+
+Advanced XSS Detection and Exploitation Suite: XSStrike
+http://feedproxy.google.com/~r/n0where/~3/8RpQnlWHPu4/advanced-xss-detection-and-exploitation-suite
+https://github.com/s0md3v/XSStrike
+
+Open Source Network Access Control: PacketFence
+http://feedproxy.google.com/~r/n0where/~3/1O2n9nQ0miM/open-source-network-access-control
+http://www.packetfence.org/documentation/guides.html
+https://github.com/inverse-inc/packetfence/releases
+
+Open Source IPS: Suricata
+http://feedproxy.google.com/~r/n0where/~3/T43naZNYUNs/open-source-ips-suricata
+https://suricata-ids.org/docs/
+http://suricata-ids.org/download/
+
+Digital Forensics Distro: CAINE
+http://feedproxy.google.com/~r/n0where/~3/b5U8wCQWbpM/digital-forensics-distro-caine
+https://www.caine-live.net/index.html
+
+Automatic SQL injection and database takeover tool: sqlmap
+http://feedproxy.google.com/~r/n0where/~3/5tQftmUmJFs/automatic-sql-injection
+https://github.com/sqlmapproject/sqlmap/wiki/Introduction
+https://github.com/sqlmapproject/sqlmap
