@@ -17,13 +17,10 @@ if [ -z $1 ] || [ -z $srvrname ]; then
 	echo "Sorry you did not give me an input"
 	echo "Usage: ./ntwrk_srvc_reboot.sh example.com"
 	exit
-else
-	echo "You appear to have an active connection"
-	exit
 fi
 
 # Checking internet status
-if [ $STATUS1 != "eth" ] || [ $STATUS2 != "wlan" ]; then
+if [ "$STATUS1" != "eth" ] || [ "$STATUS2" != "wlan" ]; then
 	service networking restart
 	service network-manager restart
 fi
@@ -36,7 +33,7 @@ nmap -PE -PM -PP -R --reason --resolve-all -sP -oA NetworkTest $srvrname
 xsltproc NetworkTest.xml -o NetworkTest.html
 
 # Viewing results
-gnome-terminal --tab -- "firefox --new-tab ip_address.html NetworkTest.html" &
+gnome-terminal --tab -- firefox --new-tab ip_address.html NetworkTest.html &
 
 # ALL
 echo "Have a nice day :)"
