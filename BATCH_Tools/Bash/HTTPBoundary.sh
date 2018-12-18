@@ -15,11 +15,19 @@ TodaysDAY=$(date +%m-%d)
 TodaysYEAR=$(date +%Y)
 wrkpth="$pth/$TodaysYEAR/$TodaysDAY"
 
+# Capturing file from user
+links=$1
+if [ $links != "$(ls $PWD | grep $links)" ]; then
+    echo file does not exist, please enter a valid filename
+    echo usage 'HTTPBoundary.sh links.txt'
+    exit
+fi
+
+echo What is the project name?
+read Prj_name
+
 # mkdir -p HEAD GET TRACE POST PUT DELETE PATCH OPTIONS CONNECT
 mkdir -p $wrkpth/OUTPUT $wrkpth/PARSED $wrkpth/EVIDENCE
-
-echo "What is the name of the target file? (That's the file with all the links)"
-read links
 
 #touch $wrkpth/OUTPUT/HTTP_HEAD_output.txt $wrkpth/OUTPUT/HTTP_GET_output.txt $wrkpth/OUTPUT/HTTP_TRACE_output.txt $wrkpth/OUTPUT/HTTP_POST_output.txt $wrkpth/OUTPUT/HTTP_PUT_output.txt $wrkpth/OUTPUT/HTTP_DELETE_output.txt $wrkpth/OUTPUT/HTTP_PATCH_output.txt $wrkpth/OUTPUT/HTTP_OPTIONS_output.txt $wrkpth/OUTPUT/HTTP_CONNECT_output.txt
 for URL in $(cat $links); do
@@ -57,7 +65,7 @@ done
 
 # Zipping up findings
 cd $pth
-zip -ru -9 HTTPBoundary.zip $wrkpth/*
+zip -ru -9 $Prj_name-HTTPBoundary.zip $wrkpth/*
 
 # Empty file cleanup
 find $wrkpth/ -size 0c -type f -exec rm -rf {} \;
