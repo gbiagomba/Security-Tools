@@ -15,8 +15,9 @@ STATUS2=$(ifconfig | grep -o -m 1 -h wlan)
 srvrname=$1
 if [ -z $1 ] || [ -z $srvrname ]; then
 	echo "Sorry you did not give me an input"
-	echo "Usage: ./ntwrk_srvc_reboot.sh example.com"
-	exit
+	echo "Usage: ./ntwrk_srvc_reboot.sh www.example.com"
+	echo "But no worries, I will set it to google.com for you! :)"
+	srvrname="www.google.com"
 fi
 
 # Checking internet status
