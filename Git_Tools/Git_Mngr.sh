@@ -9,6 +9,17 @@
 GITPATHTEMP=($(ls -d */ | sort | uniq))
 ORGPATH=$(pwd)
 
+#Grabbing file name from the user
+GitLinks=$1
+if [ $GitLinks != "$(ls $PWD | grep $GitLinks)" ]; then
+    echo "$GitLinks does not exist, please enter a valid filename"
+    echo "if a file is not specified, default is GitLinks.txt"
+    echo usage 'Git_Mngr.sh GitLinks.txt'
+    exit
+elif [ -z $GitLinks ]; then
+    targets=$PWD/GitLinks.txt
+fi
+
 #Updating existing git repos
 function GitUpdate()
 {
@@ -27,8 +38,8 @@ function GitUpdate()
 function GitLinks()
 {
     cd $ORGPATH
-    echo  "What is the name of the file with all the git links (Default: GitLinks.txt)?"
-    read GitLinks
+    # echo  "What is the name of the file with all the git links (Default: GitLinks.txt)?"
+    # read GitLinks
 
     if [ -z $GitLinks ]; then
         GitLinks="GitLinks.txt"
