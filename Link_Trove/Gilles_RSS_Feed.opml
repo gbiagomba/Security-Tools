@@ -2,8 +2,8 @@
 <opml version="1.0">
  <head>
   <title>OPML exported from Outlook</title>
-  <dateCreated>Fri, 4 Jan 2019 16:39:20 -0500</dateCreated>
-  <dateModified>Fri, 4 Jan 2019 16:39:20 -0500</dateModified>
+  <dateCreated>Fri, 1 Mar 2019 16:46:58 -0500</dateCreated>
+  <dateModified>Fri, 1 Mar 2019 16:46:58 -0500</dateModified>
  </head>
  <body>
   <outline text="Blog – Red Canary" type="rss"
@@ -72,15 +72,13 @@
   xmlUrl="http://www.informationweek.com/whitepaper/rss"/>
   <outline text="GitHub Trends - Go - Weekly" type="rss"
   xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_go_weekly.rss"/>
-  <outline text="Threatpost | The first stop for security news" type="rss"
-  xmlUrl="https://threatpost.com/feed"/>
+  <outline text="Threatpost" type="rss" xmlUrl="https://threatpost.com/feed"/>
   <outline text="Computerworld Security" type="rss"
   xmlUrl="http://www.computerworld.com/category/security/index.rss"/>
   <outline text="GitHub Trends - Visual Basic - Weekly" type="rss"
   xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_visual-basic_weekly.rss"/>
   <outline text="GitHub Trends - JavaScript - Weekly" type="rss"
   xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_javascript_weekly.rss"/>
-  <outline text="CNET" type="rss" xmlUrl="https://www.cnet.com/rss/all/"/>
   <outline text="Dark Reading: " type="rss"
   xmlUrl="http://www.darkreading.com/rss_simple.asp"/>
   <outline text="GitHub Trends - Swift - Daily" type="rss"
@@ -109,16 +107,10 @@
   xmlUrl="https://www.theregister.co.uk/security/headlines.atom"/>
   <outline text="VentureBeat" type="rss"
   xmlUrl="https://feeds.feedburner.com/venturebeat/SZYF"/>
-  <outline text="GitHub Trends - Hack - Monthly" type="rss"
-  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_hack_monthly.rss"/>
   <outline text="News ≈ Packet Storm" type="rss"
   xmlUrl="https://rss.packetstormsecurity.com/news/"/>
   <outline text="Files ≈ Packet Storm" type="rss"
   xmlUrl="https://rss.packetstormsecurity.com/files/"/>
-  <outline text="Most popular articles from SC Magazine" type="rss"
-  xmlUrl="https://www.scmagazine.com/pages/rss.aspx?mp=true&amp;mpc=20"/>
-  <outline text="GitHub Trends - Batchfile - Daily" type="rss"
-  xmlUrl="http://github-trends.ryotarai.info/rss/github_trends_batchfile_daily.rss"/>
   <outline text="ToolsWatch.org – The Hackers Arsenal Tools Portal" type="rss"
   xmlUrl="http://www.toolswatch.org/feed/"/>
   <outline text="Haider Mahmood Infosec Blog" type="rss"
@@ -183,8 +175,6 @@
   xmlUrl="http://www.enterprisenetworkingplanet.com/rss.xml"/>
   <outline text="Futurist.com: Futurist Speaker Glen Hiemstra" type="rss"
   xmlUrl="http://feeds.feedburner.com/futuristcom"/>
-  <outline text="InformationWeek: Security" type="rss"
-  xmlUrl="https://informationweek.com/rss_simple.asp?f_n=462&amp;f_ln=Security"/>
   <outline text="IT Security News" type="rss"
   xmlUrl="https://feeds.feedburner.com/ItSecurityNewsAggregated"/>
   <outline text="Light Reading: " type="rss"
@@ -197,7 +187,11 @@
   xmlUrl="https://feeds.packetpushers.net/datanauts"/>
   <outline text="RCR Wireless News" type="rss"
   xmlUrl="https://feeds.feedburner.com/rcrwireless/sLmV"/>
-  <outline text="SDxCentral RSS Feed" type="rss"
+  <outline text="SDxCentral News RSS" type="rss"
   xmlUrl="https://feeds.feedblitz.com/sdxcentral"/>
+  <outline text="Microsoft Secure" type="rss"
+  xmlUrl="https://urldefense.proofpoint.com/v2/url?u=https-3A__blogs.technet.microsoft.com_mmpc_feed_&amp;d=DwMFAg&amp;c=Sc1uBXQx8UHNGkEdB9Phpg&amp;r=bXcprQPlb7HyznFdhAsBBQ&amp;m=d7RcJ1EzQy1A9pilBdSFJ9qzTX6yA0RWxVDtZgPqwZY&amp;s=rZTlqwpxdFsaUz2kPg059x8S-SqJUFwk5XwEfYrh8XM&amp;e="/>
+  <outline text="The Privacy, Security, &amp; OSINT Show" type="rss"
+  xmlUrl="http://feeds.soundcloud.com/users/soundcloud:users:261098918/sounds.rss"/>
  </body>
 </opml>
