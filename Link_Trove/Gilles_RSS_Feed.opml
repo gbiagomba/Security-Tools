@@ -2,8 +2,8 @@
 <opml version="1.0">
  <head>
   <title>OPML exported from Outlook</title>
-  <dateCreated>Fri, 1 Mar 2019 16:46:58 -0500</dateCreated>
-  <dateModified>Fri, 1 Mar 2019 16:46:58 -0500</dateModified>
+  <dateCreated>Tue, 5 Mar 2019 18:29:13 -0500</dateCreated>
+  <dateModified>Tue, 5 Mar 2019 18:29:13 -0500</dateModified>
  </head>
  <body>
   <outline text="Blog – Red Canary" type="rss"
@@ -193,5 +193,7 @@
   xmlUrl="https://urldefense.proofpoint.com/v2/url?u=https-3A__blogs.technet.microsoft.com_mmpc_feed_&amp;d=DwMFAg&amp;c=Sc1uBXQx8UHNGkEdB9Phpg&amp;r=bXcprQPlb7HyznFdhAsBBQ&amp;m=d7RcJ1EzQy1A9pilBdSFJ9qzTX6yA0RWxVDtZgPqwZY&amp;s=rZTlqwpxdFsaUz2kPg059x8S-SqJUFwk5XwEfYrh8XM&amp;e="/>
   <outline text="The Privacy, Security, &amp; OSINT Show" type="rss"
   xmlUrl="http://feeds.soundcloud.com/users/soundcloud:users:261098918/sounds.rss"/>
+  <outline text="CSO Online" type="rss"
+  xmlUrl="https://www.csoonline.com/index.rss"/>
  </body>
 </opml>
