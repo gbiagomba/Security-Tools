@@ -5,7 +5,7 @@ echo "Use this script if the npm_install does not work"
 read answer #fix later
 
 # Make our directory to keep it all in
-mkdir  /tmp/local
+src=$(mktemp -d) && cd $src
 
 # Add the location to our path so that we can call it with bash
 echo ‘export PATH=$HOME/local/bin:$PATH’ >> ~/.bashrc
