@@ -53,7 +53,7 @@ echo
 echo "--------------------------------------------------"
 echo "Performing a quick pingsweep w/ nmap"
 echo "--------------------------------------------------"
-nmap -PE -PM -PP -PS 21,22,23,25,53,80,88,110,111,135,139,443,445,8080 -PU 53,111,135,137,161,500 -R --reason --resolve-all -sP -oA NetworkTest $srvrname
+nmap -PE -PM -PP -PS "21,22,23,25,53,80,88,110,111,135,139,443,445,8080" -PU "53,111,135,137,161,500" -R --reason --resolve-all -sP -oA NetworkTest $srvrname
 xsltproc NetworkTest.xml -o NetworkTest.html
 
 # Viewing results
