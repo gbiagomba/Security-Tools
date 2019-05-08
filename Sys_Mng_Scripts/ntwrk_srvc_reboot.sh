@@ -3,8 +3,14 @@
 # Program: ntwrk_srvc_reboot.sh
 # Description: Tests to see if you have an active internet connection and reboot your network services
 
+# Checking if user is root
+if [ "$EUID" -ne 0 ];then
+	echo "Please run as root"
+	exit
+fi
+
 # Checking dependencies
-if [ -z $(which nmap) ]; then
+if [ ! -x $(which nmap) ]; then
 	apt install nmap -y
 fi
 
@@ -36,6 +42,7 @@ echo "--------------------------------------------------"
 echo "Checking internet status"
 echo "--------------------------------------------------"
 if [ "$STATUS1" != "eth" ] || [ "$STATUS2" != "wlan" ] || [ -z "$STATUS3" ]; then
+	echo Restarting network services
 	service networking restart
 	service network-manager restart
 fi
@@ -53,7 +60,7 @@ echo
 echo "--------------------------------------------------"
 echo "Performing a quick pingsweep w/ nmap"
 echo "--------------------------------------------------"
-nmap -PE -PM -PP -PS "21,22,23,25,53,80,88,110,111,135,139,443,445,8080" -PU "53,111,135,137,161,500" -R --reason --resolve-all -sP -oA NetworkTest $srvrname
+nmap -PE -PM -PP -R --reason --resolve-all -sP -oA NetworkTest $srvrname
 xsltproc NetworkTest.xml -o NetworkTest.html
 
 # Viewing results
@@ -62,7 +69,7 @@ echo
 echo "--------------------------------------------------"
 echo "Here are the results!"
 echo "--------------------------------------------------"
-firefox --new-tab ip_address.html NetworkTest.html &
+firefox --new-tab ip_address.html NetworkTest.html &> /dev/null
 
 # Goodbye :)
 echo "Have a nice day :)"
