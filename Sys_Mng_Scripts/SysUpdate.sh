@@ -10,10 +10,17 @@ function pause()
    read -p "$*"
 }
 
-# Checking if the user is root
+# Checking user is root
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
   exit
+fi
+
+# Ensuring system is debian based
+OS_CHK=$(cat /etc/os-release | grep -o debian)
+if [ "$OS_CHK" != "debian" ]; then
+    echo "Unfortunately this install script was written for debian based distributions only, sorry!"
+    exit
 fi
 
 # System update
