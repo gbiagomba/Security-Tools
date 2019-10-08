@@ -4,10 +4,17 @@
 # Description: This script automates updating a debian based OS.\n
 #  	      It was written on and for Kali2, because I was being lazy.\n
 
+# Pause function
 function pause()
 {
    read -p "$*"
 }
+
+# Checking if the user is root
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
 
 # System update
 apt update
@@ -18,8 +25,12 @@ apt autoclean
 
 # Updating all ruby packages
 gem2.5 update
-bundle install
+for i in $(gem list --local | cut -d " " -f 1); do gem update $i; done
 
+# Update all docker images
+docker images |grep -v REPOSITORY|awk '{print $1}'|xargs -L1 docker pull
+
+# Restart the machine
 pause 'Press [Enter] key to continue...'
 
 reboot
