@@ -31,8 +31,8 @@ apt autoclean
 # apt autoremove -y
 
 # Updating all ruby packages
-gem2.5 update
-for i in $(gem list --local | cut -d " " -f 1); do gem update $i; done
+# gem2.5 update
+for i in $(gem list --local | cut -d " " -f 1); do echo $i; gem update $i; done
 
 # Update all docker images
 docker images |grep -v REPOSITORY|awk '{print $1}'|xargs -L1 docker pull
