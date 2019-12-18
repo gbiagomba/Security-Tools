@@ -30,6 +30,9 @@ apt full-upgrade -y --allow-downgrades
 apt autoclean
 # apt autoremove -y
 
+# Upgrading NPM packages
+npm update -g
+
 # Updating all ruby packages
 # gem2.5 update
 for i in $(gem list --local | cut -d " " -f 1); do echo $i; gem update $i; done

@@ -15,7 +15,7 @@ if [ "$OS_CHK" != "debian" ]; then
 fi
 
 # Install the snap, start and add the service to autoload:
-apt install snapd -y
+apt install snapd
 systemctl start snapd
 systemctl enable snapd
 
