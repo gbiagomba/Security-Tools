@@ -1,6 +1,21 @@
+#!/usr/bin/env bash
+
 # Based on these two articles
 # https://medium.com/@airman604/installing-docker-in-kali-linux-2017-1-fbaa4d1447fe
 # https://docs.docker.com/install/linux/docker-ce/debian/
+
+# Checking user is root
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+# Ensuring system is debian based
+OS_CHK=$(cat /etc/os-release | grep -o debian)
+if [ "$OS_CHK" != "debian" ]; then
+    echo "Unfortunately this install script was written for debian based distributions only, sorry!"
+    exit
+fi
 
 # Add Docker PGP key:
 curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -

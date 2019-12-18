@@ -1,9 +1,24 @@
+#!/usr/bin/env bash
+
 #Author: Gilles S. Biagomba
 #Program: $Tron 2.0
 #Description: This program automates the Ubuntu 8 to 10 upgrade & include security\n
 #Links for the hardening:
 #http://www.lampnode.com/linux/howto-harden-ubuntu-1404-after-installation/
 #http://blog.mattbrock.co.uk/hardening-the-security-on-ubuntu-server-14-04/
+
+# Checking user is root
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+# Ensuring system is debian based
+OS_CHK=$(cat /etc/os-release | grep -o debian)
+if [ "$OS_CHK" != "debian" ]; then
+    echo "Unfortunately this install script was written for debian based distributions only, sorry!"
+    exit
+fi
 
 #Check for updates and upgrades again
 apt-get update --yes

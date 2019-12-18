@@ -1,4 +1,5 @@
-#!/bin/bash 
+#!/usr/bin/env bash
+
 #NOTE: THIS IS THE DEBUGGING VERSION, DO NOT RUN THIS UNLESS YOU KNOW WHAT YOU'RE DOING \n
 #Author: Gilles S. Biagomba
 #Program: Codified Likeness Utility or CLU
@@ -6,6 +7,19 @@
 #contd. remove the default share-point(s) and add the desired share-point. \n
 #contd. then it changes the share-point user owner, user group and file permissions \n
 #contd. Lastly, it opens the server application so that the user may double check every was done correctly \n
+
+# Checking user is root
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+# Ensuring system is debian based
+OS_CHK=$(cat /etc/os-release | grep -o debian)
+if [ "$OS_CHK" != "Maverick" ]; then
+    echo "Unfortunately this install script was written for MacOSX only, sorry!"
+    exit
+fi
 
 #contd. copyright © 2014-2015 David's Bridal Inc. All Rights Reserved.
 echo CLU is working on making the perfect system

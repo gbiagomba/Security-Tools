@@ -1,4 +1,18 @@
+#!/usr/bin/env bash
 # Based on the article https://relutiondev.wordpress.com/2016/01/09/installing-nodejs-and-npm-kaliubuntu/
+
+# Checking user is root
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+# Ensuring system is debian based
+OS_CHK=$(cat /etc/os-release | grep -o debian)
+if [ "$OS_CHK" != "debian" ]; then
+    echo "Unfortunately this install script was written for debian based distributions only, sorry!"
+    exit
+fi
 
 # Warning message to user
 echo "Use this script if the npm_install does not work"

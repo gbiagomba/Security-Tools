@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/usr/bin/env bash
 
 #Author: Gilles S. Biagomba
 #Program: Codified Likeness Utility or CLU
@@ -7,6 +7,19 @@
 #contd. then it opens the server application so that the user may double check every was done correctly \n
 #contd. Lastly, it starts the Server services (caching, web, afp and smb), \n
 #contd. copyright © 2014-2015 David's Bridal Inc. All Rights Reserved.
+
+# Checking user is root
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+# Ensuring system is debian based
+OS_CHK=$(cat /etc/os-release | grep -o debian)
+if [ "$OS_CHK" != "Maverick" ]; then
+    echo "Unfortunately this install script was written for MacOSX only, sorry!"
+    exit
+fi
 
 #Temporarily Fixing the PATH
 PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin/

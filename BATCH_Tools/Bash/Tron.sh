@@ -1,12 +1,24 @@
+#!/usr/bin/env bash
+
 #Author: Gilles S. Biagomba
 #Program: $Tron
 #Description: This program automates the Ubuntu 8 to 10 upgrade. \n
 
-#!/bin/sh
-#apt-get install cron-apt --yes
-
 #Log everything happening
 #script
+
+# Checking user is root
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+# Ensuring system is debian based
+OS_CHK=$(cat /etc/os-release | grep -o debian)
+if [ "$OS_CHK" != "debian" ]; then
+    echo "Unfortunately this install script was written for debian based distributions only, sorry!"
+    exit
+fi
 
 #Announcement
 echo 'This Script is going to update all the packages'

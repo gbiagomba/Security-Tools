@@ -1,7 +1,21 @@
+#!/usr/bin/env bash
 # Based on this article https://ourcodeworld.com/articles/read/410/how-to-install-node-js-in-kali-linux
 
+# Checking user is root
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+# Ensuring system is debian based
+OS_CHK=$(cat /etc/os-release | grep -o debian)
+if [ "$OS_CHK" != "debian" ]; then
+    echo "Unfortunately this install script was written for debian based distributions only, sorry!"
+    exit
+fi
+
 # Verify that you have all required tools
-sudo apt-get install python g++ make checkinstall fakeroot -y
+apt-get install python g++ make checkinstall fakeroot -y
 
 # You may get a warning like "dpkg was interrupted", the below command will correct it
 # dpkg --configure -a
