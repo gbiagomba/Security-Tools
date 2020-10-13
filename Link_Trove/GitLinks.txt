@@ -1,3 +1,4 @@
+https://aur.archlinux.org/testsslserver
 https://aur.archlinux.org/testsslserver.git
 https://bitbucket.org/cse-assemblyline/assemblyline
 https://fbb-git.github.io/stealth/
@@ -171,6 +172,7 @@ https://github.com/chrismaddalena/ODIN
 https://github.com/christophetd/censys-subdomain-finder
 https://github.com/ChrisTruncer/EyeWitness
 https://github.com/ChrisTruncer/mikto
+https://github.com/ciehanski/onionbox
 https://github.com/ciscocsirt/GOSINT
 https://github.com/cisco-talos/mutiny-fuzzer
 https://github.com/Cisco-Talos/pyrebox
@@ -249,10 +251,12 @@ https://github.com/deadbits/InsecureProgramming
 https://github.com/deepzec/Bad-Pdf
 https://github.com/DefectDojo/django-DefectDojo
 https://github.com/DefectDojo/sample-scan-files
+https://github.com/defenxor/dsiem
 https://github.com/deibit/cansina
 https://github.com/deibit/cansina/
 https://github.com/dejavusecurity/OutlookPrivacyPlugin
 https://github.com/delvelabs/batea
+https://github.com/demisto/alfred
 ﻿https://github.com/DenizParlak/Zeus
 https://github.com/DenizParlak/Zeus
 https://github.com/deplug/deplug
@@ -316,6 +320,7 @@ https://github.com/eldraco/Salamandra
 https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit
 https://github.com/ElevenPaths/FOCA
 https://github.com/ElevenPaths/HomePWN
+https://github.com/elkarbackup/elkarbackup
 https://github.com/elkokc/reflector
 https://github.com/EmpireProject/Empire
 https://github.com/EmpireProject/Empire-GUI
@@ -339,6 +344,7 @@ https://github.com/eugv86/Robinhood-Ninja
 https://github.com/evict/SSHScan
 https://github.com/evict/SSHScan/
 https://github.com/evilsocket/bleah
+https://github.com/evilsocket/xray
 https://github.com/evyatarmeged/Raccoon
 https://github.com/ex0dus-0x/D0xk1t
 https://github.com/exiftool/exiftool
@@ -405,6 +411,7 @@ https://github.com/gdimi/Ghost-in-the-shell
 https://github.com/GDSSecurity/GDS-PMD-Security-Rules
 https://github.com/geeksonsecurity/js-malicious-dataset
 https://github.com/gen0cide/laforge
+https://github.com/gen2brain/url2img
 https://github.com/gentilkiwi/mimikatz
 https://github.com/genuinetools/bane
 https://github.com/gerardpuig/ubuntu-cleaner
@@ -427,6 +434,7 @@ https://github.com/gkbrk/slowloris
 https://github.com/gleeda/memtriage
 https://github.com/globaleaks/GlobaLeaks
 https://github.com/gobiasinfosec/Wireless_Query
+https://github.com/gocaio/goca
 https://github.com/GoFetchAD/GoFetch
 https://github.com/gojhonny/InSpy
 https://github.com/google/AFL
@@ -442,6 +450,8 @@ https://github.com/googleprojectzero/winafl
 https://github.com/google/santa
 https://github.com/google/stenographer
 https://github.com/google/syzkaller
+https://github.com/google/tsunami-security-scanner
+https://github.com/google/tsunami-security-scanner-plugins
 https://github.com/GoSecure/malboxes
 https://github.com/GossiTheDog/ThreatHunting
 https://github.com/GossiTheDog/zeroday
@@ -483,6 +493,7 @@ https://github.com/hlldz/SpookFlare
 https://github.com/hlldz/wildPwn
 https://github.com/honeynet/apkinspector
 https://github.com/honeynet/apkinspector/
+https://github.com/honze-net/nmap-bootstrap-xsl.git
 https://github.com/hubotio/hubot
 https://github.com/hwdsl2/setup-ipsec-vpn
 https://github.com/hydro_browser_events
@@ -564,6 +575,7 @@ https://github.com/jsha/minica
 https://github.com/jshint/jshint
 https://github.com/Jsitech/relayer
 https://github.com/jsvine/waybackpack
+https://github.com/jtesta/ssh-audit.git
 https://github.com/jtesta/ssh-mitm
 https://github.com/jthomas/serverless-pwned-passwords
 https://github.com/juansacco/exploitpack
@@ -599,8 +611,10 @@ https://github.com/Ladinn/algotrader
 https://github.com/Landsil/haveibeenpwned-password-check
 https://github.com/lanjelot/patator
 https://github.com/lanmaster53/recon-ng
+https://github.com/laramies/metagoofil
 https://github.com/laramies/theHarvester
 https://github.com/lateralblast/lunar
+https://github.com/lavalamp-/ipv666
 https://github.com/leechristensen/Random
 https://github.com/leoloobeek/LAPSToolkit
 https://github.com/leonstafford/wp2static
@@ -644,6 +658,7 @@ https://github.com/maldroid/maldrolyzer
 https://github.com/mandatoryprogrammer/xsshunter
 https://github.com/Manisso/fsociety
 https://github.com/MAN-uhl/DataLossPrevention
+https://github.com/marco-lancini/docker_offensive_elk
 https://github.com/marshyski/sshwatch
 https://github.com/Marten4n6/EvilOSX
 https://github.com/martindrapeau/csvjson-app
@@ -698,6 +713,7 @@ https://github.com/movidius/ncappzoo
 https://github.com/movidius/ncappzoo/
 https://github.com/mozilla/cipherscan
 https://github.com/mozilla/MozDef
+https://github.com/mozilla/MozDef.git
 https://github.com/mozilla/seasponge
 https://github.com/mozilla-services/pytest-services
 https://github.com/mozilla/ssh_scan
@@ -1003,6 +1019,7 @@ https://github.com/sh4hin/Androl4b
 https://github.com/shadow/shadow
 https://github.com/SharadKumar97/OSINT-SPY
 https://github.com/ShawnDEvans/smbmap
+https://github.com/sherifabdlnaby/elastdocker
 https://github.com/sherlock-project/sherlock
 https://github.com/sherlock-project/sherlock/
 https://github.com/shieldfy/API-Security-Checklist
@@ -1055,6 +1072,7 @@ https://github.com/sqren/fb-sleep-stats
 https://github.com/square/certigo
 https://github.com/squiffy/Masochist
 https://github.com/ssdeep-project/ssdeep
+https://github.com/ssh-vault/ssh-vault
 https://github.com/ssl/ezXSS
 https://github.com/stamparm/DSSS
 https://github.com/stamparm/maltrail
@@ -1132,6 +1150,7 @@ https://github.com/thesp0nge/owasp-orizon
 https://github.com/TheTorProject/ooni-probe
 https://github.com/thewhiteh4t/pwnedOrNot
 https://github.com/thinkst/canarytokens-docker
+https://github.com/thomaspatzke/elk-detection-lab
 https://github.com/threat9/routersploit
 https://github.com/threatexpress/red-team-scripts
 https://github.com/ThreatResponse/aws_ir
@@ -1216,6 +1235,7 @@ https://github.com/vletoux/NTLMInjector
 https://github.com/volatilityfoundation/community
 https://github.com/volatilityfoundation/profiles
 https://github.com/vr00n/Amazon-Web-Shenanigans/tree/master/S3PublicBucketCheck
+https://github.com/vulhub/vulhub
 https://github.com/vulnersCom/api
 https://github.com/vulnersCom/burp-vulners-scanner
 https://github.com/vulnersCom/nmap-vulners
@@ -1292,4 +1312,7 @@ https://git.zx2c4.com/WireGuard
 https://kd8bny.github.io/LiMEaide/
 https://LaNMaSteR53@bitbucket.org/LaNMaSteR53/recon-ng
 https://magoo.github.io/model-risk-aws/
+https://ossec.github.io/
+https://ossechub.io/
 https://sourceware.org/git/binutils-gdb.git
+https://wiki.thc.org/BlueMaho
