@@ -28,7 +28,7 @@ apt update
 apt upgrade -y --allow-downgrades
 apt full-upgrade -y --allow-downgrades
 apt autoclean
-# apt autoremove -y
+apt autoremove -y
 
 # Upgrading NPM packages
 npm update -g

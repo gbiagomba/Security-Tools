@@ -36,40 +36,48 @@ STATUS1=$(ifconfig | grep -o -m 1 -h eth)
 STATUS2=$(ifconfig | grep -o -m 1 -h wlan)
 STATUS3=$(host $srvrname | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b")
 
-# Checking internet status
-echo
-echo "--------------------------------------------------"
-echo "Checking internet status"
-echo "--------------------------------------------------"
-if [ "$STATUS1" != "eth" ] || [ "$STATUS2" != "wlan" ] || [ -z "$STATUS3" ]; then
-	echo Restarting network services
-	service networking restart
-	service network-manager restart
+function netreset
+{
+	# Checking internet status
+	echo
+	echo "--------------------------------------------------"
+	echo "Checking internet status"
+	echo "--------------------------------------------------"
+	if [ "$STATUS1" != "eth" ] || [ "$STATUS2" != "wlan" ] || [ -z "$STATUS3" ]; then
+		echo Restarting network services
+		service networking restart
+		service network-manager restart
+	fi
+
+	# Viewing IP address
+	echo
+	echo "--------------------------------------------------"
+	echo "Viewing/Checking IP address"
+	echo "--------------------------------------------------"
+	ifconfig | tee ip_address.txt
+	cat  ip_address.txt | aha > ip_address.html
+
+	# Quick ping sweep
+	echo
+	echo "--------------------------------------------------"
+	echo "Performing a quick pingsweep w/ nmap"
+	echo "--------------------------------------------------"
+	nmap -PE -PM -PP -R --reason --resolve-all -sP -oA NetworkTest $srvrname
+	xsltproc NetworkTest.xml -o NetworkTest.html
+
+	# Viewing results
+	# gnome-terminal --tab -- 
+	echo
+	echo "--------------------------------------------------"
+	echo "Here are the results!"
+	echo "--------------------------------------------------"
+	firefox --new-tab ip_address.html NetworkTest.html &> /dev/null
+
+	# Goodbye :)
+	echo "Have a nice day :)"
+} 2 > /dev/null | tee -a $PWD/ntwrk_srvc_reboot.log
+
+netreset
+if [ -z `cat /tmp/Net-Tests/NetworkTest.gnmap | grep -o "0 hosts up"` ]; then
+	netreset
 fi
-
-# Viewing IP address
-echo
-echo "--------------------------------------------------"
-echo "Viewing/Checking IP address"
-echo "--------------------------------------------------"
-ifconfig | tee ip_address.txt
-cat  ip_address.txt | aha > ip_address.html
-
-# Quick ping sweep
-echo
-echo "--------------------------------------------------"
-echo "Performing a quick pingsweep w/ nmap"
-echo "--------------------------------------------------"
-nmap -PE -PM -PP -R --reason --resolve-all -sP -oA NetworkTest $srvrname
-xsltproc NetworkTest.xml -o NetworkTest.html
-
-# Viewing results
-# gnome-terminal --tab -- 
-echo
-echo "--------------------------------------------------"
-echo "Here are the results!"
-echo "--------------------------------------------------"
-firefox --new-tab ip_address.html NetworkTest.html &> /dev/null
-
-# Goodbye :)
-echo "Have a nice day :)"

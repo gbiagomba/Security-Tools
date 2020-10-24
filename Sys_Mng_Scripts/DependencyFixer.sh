@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Author: Gilles Biagomba
 # Program: DependencyFixer.sh
 # Description: This script written to automatically resolve software dependency issues.\n
