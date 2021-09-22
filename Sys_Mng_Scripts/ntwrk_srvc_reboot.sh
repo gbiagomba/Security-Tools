@@ -54,19 +54,17 @@ function netreset
 	echo "--------------------------------------------------"
 	echo "Viewing/Checking IP address"
 	echo "--------------------------------------------------"
-	ifconfig | tee ip_address.txt
-	cat  ip_address.txt | aha > ip_address.html
+	ifconfig | aha > ip_address.html
 
 	# Quick ping sweep
 	echo
 	echo "--------------------------------------------------"
 	echo "Performing a quick pingsweep w/ nmap"
 	echo "--------------------------------------------------"
-	nmap -PE -PM -PP -R --reason --resolve-all -sP -oA NetworkTest $srvrname
+	map -T5 --min-rate 300 -6 --resolve-all -PA21-23,25,53,79,80-83,88,110,111,135,139,161,179,443,445,497,515,535,548,993,1025,1028,1029,1917,2869,3389,5000,5060,6000,8080,9001,9100,49000 -PS21-23,25,53,79,80-83,88,110,111,135,139,161,179,443,445,497,515,535,548,993,1025,1028,1029,1917,2869,3389,5000,5060,6000,8080,9001,9100,49000 -PU42,53,67-68,88,111,123,135,137,138,161,500,3389,535 -PY22,80,179,5060 -oA NetworkTest $srvrname
 	xsltproc NetworkTest.xml -o NetworkTest.html
 
 	# Viewing results
-	# gnome-terminal --tab -- 
 	echo
 	echo "--------------------------------------------------"
 	echo "Here are the results!"
@@ -75,7 +73,7 @@ function netreset
 
 	# Goodbye :)
 	echo "Have a nice day :)"
-} 2 > /dev/null | tee -a $PWD/ntwrk_srvc_reboot.log
+} 2> /dev/null | tee -a $PWD/ntwrk_srvc_reboot.log
 
 netreset
 if [ -z `cat /tmp/Net-Tests/NetworkTest.gnmap | grep -o "0 hosts up"` ]; then
