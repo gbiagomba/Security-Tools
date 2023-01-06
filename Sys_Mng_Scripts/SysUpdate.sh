@@ -16,19 +16,44 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-# Ensuring system is debian based
-OS_CHK=$(cat /etc/os-release | grep -o debian)
-if [ "$OS_CHK" != "debian" ]; then
-    echo "Unfortunately this install script was written for debian based distributions only, sorry!"
-    exit
+# Figuring out the default package monitor
+if hash apt 2> /dev/null; then
+  PKGMAN_INSTALL="apt install -y --allow-downgrades"
+  PKGMAN_UPDATE="apt update"
+  PKGMAN_UPGRADE="apt upgrade -y --allow-downgrades"
+  PKGMAN_RM="apt autoremove -y"
+  PKGMAN_CLEAN="apt clean -y"
+elif hash yum; then
+  PKGMAN_INSTALL="yum install -y --skip-broken"
+  PKGMAN_UPDATE="yum update -y --skip-broken"
+  PKGMAN_UPGRADE="yum upgrade -y --skip-broken"
+  PKGMAN_RM="yum remove -y"
+  PKGMAN_CLEAN="yum clean -y"
+elif hash snap 2> /dev/null; then
+  PKGMAN_INSTALL="snap install"
+  PKGMAN_UPGRADE="snap refresh"
+  PKGMAN_UPDATE=$PKGMAN_UPGRADE
+  PKGMAN_RM="snap remove"
+elif hash brew 2> /dev/null; then
+  PKGMAN_INSTALL="brew install"
+  PKGMAN_UPDATE="brew update"
+  PKGMAN_UPGRADE="brew upgrade"
+  PKGMAN_RM="brew uninstall"
 fi
 
+# Doing the basics
+banner "system updates"
+$PKGMAN_UPDATE
+$PKGMAN_UPGRADE
+$PKGMAN_RM
+$PKGMAN_CLEAN
+
 # System update
-apt update
-apt upgrade -y --allow-downgrades
-apt full-upgrade -y --allow-downgrades
-apt autoclean
-apt autoremove -y
+# apt update
+# apt upgrade -y --allow-downgrades
+# apt full-upgrade -y --allow-downgrades
+# apt autoclean
+# apt autoremove -y
 
 # Upgrading NPM packages
 npm update -g
