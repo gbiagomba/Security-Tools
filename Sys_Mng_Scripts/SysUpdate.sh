@@ -73,5 +73,4 @@ docker images |grep -v REPOSITORY|awk '{print $1}'|xargs -L1 docker pull
 
 # Restart the machine
 pause 'Press [Enter] key to continue...'
-
-reboot
+reboot now
