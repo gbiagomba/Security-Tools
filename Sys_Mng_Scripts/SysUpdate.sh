@@ -10,6 +10,16 @@ function pause()
    read -p "$*"
 }
 
+# Banner funct
+function Banner
+{
+    echo
+    echo "--------------------------------------------------"
+    echo "$1
+    Current Time : $current_time"
+    echo "--------------------------------------------------"
+}
+
 # Checking user is root
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
@@ -48,21 +58,17 @@ $PKGMAN_UPGRADE
 $PKGMAN_RM
 $PKGMAN_CLEAN
 
-# System update
-# apt update
-# apt upgrade -y --allow-downgrades
-# apt full-upgrade -y --allow-downgrades
-# apt autoclean
-# apt autoremove -y
-
 # Upgrading NPM packages
+banner "NPM package updates"
 npm update -g
 
 # Updating all ruby packages
 # gem2.5 update
+banner "Gem Pakcage updates"
 for i in $(gem list --local | cut -d " " -f 1); do echo $i; gem update $i; done
 
 # Update all docker images
+banner "Updating docker packages"
 docker images |grep -v REPOSITORY|awk '{print $1}'|xargs -L1 docker pull
 
 # Restart the machine
