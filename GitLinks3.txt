@@ -1,2 +1,0 @@
-origin	https://github.com/gbiagomba/Security-Tools (fetch)
-origin	https://github.com/gbiagomba/Security-Tools (push)
