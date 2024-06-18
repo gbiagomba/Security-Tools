@@ -11,7 +11,7 @@ function pause()
 }
 
 # Banner funct
-function Banner
+function banner
 {
     echo
     echo "--------------------------------------------------"
