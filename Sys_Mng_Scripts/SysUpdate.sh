@@ -30,7 +30,7 @@ fi
 if hash apt 2> /dev/null; then
   PKGMAN_INSTALL="apt install -y --allow-downgrades"
   PKGMAN_UPDATE="apt update"
-  PKGMAN_UPGRADE="apt upgrade -y --allow-downgrades"
+  PKGMAN_UPGRADE="apt upgrade -y || apt full-upgrade -y"
   PKGMAN_RM="apt autoremove -y"
   PKGMAN_CLEAN="apt clean -y"
 elif hash yum; then
